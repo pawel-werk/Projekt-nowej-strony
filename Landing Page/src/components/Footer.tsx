@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ tr, onOpenPrivacy, onOpenBlog })
           <div>
             <img
               src={logoImg}
-              alt="Werk Mebel - Made in Germany"
+              alt="Werk Mebel"
               className="h-8 w-auto object-contain mb-4"
               style={{ filter: 'brightness(0) invert(1)' }}
             />
