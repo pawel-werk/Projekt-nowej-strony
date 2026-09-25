@@ -1,0 +1,10 @@
+{
+  "description": "Showcases custom furniture projects with a sleek portfolio and seamless Instagram integration to attract premium clients and simplify inquiries.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
