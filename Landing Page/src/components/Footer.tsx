@@ -1,6 +1,6 @@
 import React from 'react';
 import { TranslationSchema } from '../data/translations';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/logo.svg';
 
 interface FooterProps {
   tr: TranslationSchema;
