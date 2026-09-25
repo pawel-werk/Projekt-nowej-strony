@@ -1,6 +1,5 @@
 import React from 'react';
 import { TranslationSchema } from '../data/translations';
-import logoImg from '../assets/logo.svg';
 
 interface FooterProps {
   tr: TranslationSchema;
@@ -25,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ tr, onOpenPrivacy, onOpenBlog })
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-14">
           <div>
             <img
-              src={logoImg}
+              src="/logo.svg"
               alt="Werk Mebel"
               className="h-8 w-auto object-contain mb-4"
               style={{ filter: 'brightness(0) invert(1)' }}
