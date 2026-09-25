@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { TranslationSchema } from '../data/translations';
-import logoImg from '../assets/logo.png';
 
 interface NavbarProps {
   tr: TranslationSchema;
@@ -61,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="group flex items-center gap-2 focus:outline-none transition-opacity duration-300 hover:opacity-80"
         >
           <img
-            src={logoImg}
+            src="/logo.png"
             alt="Werk Mebel - Made in Germany"
             className="h-8 md:h-9 w-auto object-contain transition-all duration-300"
             style={{
