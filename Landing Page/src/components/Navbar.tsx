@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="group flex items-center gap-2 focus:outline-none transition-opacity duration-300 hover:opacity-80"
         >
           <img
-            src="/logo.webp"
+            src="/logo.svg"
             alt="Werk Mebel - Made in Germany"
             className="h-8 md:h-9 w-auto object-contain transition-all duration-300"
             style={{
