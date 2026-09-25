@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { blogPosts } from '../../data/blogPosts';
 import { BlogCard } from './BlogCard';
-import logoImg from '../../assets/logo.png';
 
 interface BlogPostPageProps {
   slug: string;
@@ -64,7 +63,7 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
             <img
-              src={logoImg}
+              src="/logo.svg"
               alt="Werk Mebel"
               className="h-7 md:h-8 w-auto object-contain"
               style={{ filter: 'brightness(0) invert(1)' }}

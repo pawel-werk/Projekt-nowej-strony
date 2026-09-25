@@ -1,6 +1,5 @@
 import React from 'react';
 import { privacySections, PRIVACY_INTRO, PRIVACY_LAST_UPDATED } from '../data/privacyData';
-import logoImg from '../assets/logo.png';
 
 interface PrivacyPolicyPageProps {
   onBackToHome?: () => void;
@@ -31,7 +30,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onBackToHo
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
             <img
-              src={logoImg}
+              src="/logo.svg"
               alt="Werk Mebel"
               className="h-7 md:h-8 w-auto object-contain"
               style={{ filter: 'brightness(0) invert(1)' }}
