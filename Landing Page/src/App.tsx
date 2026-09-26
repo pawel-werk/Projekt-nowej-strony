@@ -202,11 +202,14 @@ export default function App() {
         onOpenBlog={() => navigateTo('blog')}
       />
 
-      {/* Pływający przycisk CTA */}
+{/* Pływający przycisk CTA */}
       <FloatingCTA
         label={tr.floating}
         onClick={() => scrollTo('contact')}
       />
+
+      {/* Nasz nowy Pop-up */}
+      <ImagePopup />
     </div>
   );
 }

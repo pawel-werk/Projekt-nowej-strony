@@ -9,7 +9,6 @@ interface BeholdPost {
   id: string;
   mediaUrl: string;
   permalink: string;
-  mediaType?: string; // Dodano mediaType dla sprawdzenia typu posta
   caption?: string;
   prunedCaption?: string;
   thumbnailUrl?: string;
@@ -76,33 +75,27 @@ export const InstagramFeed: React.FC<InstagramFeedProps> = ({ tr }) => {
             ? Array.from({ length: 6 }).map((_, idx) => (
                 <div key={idx} className="aspect-square bg-gray-100 animate-pulse" />
               ))
-            : posts.map((post) => {
-                // Determine the correct image source
-                const isVideo = post.mediaType === 'VIDEO' || post.mediaUrl.endsWith('.mp4');
-                const imageSource = isVideo && post.thumbnailUrl ? post.thumbnailUrl : post.mediaUrl;
-
-                return (
-                  <a
-                    key={post.id}
-                    href={post.permalink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative aspect-square overflow-hidden bg-gray-100 block shadow-sm"
-                  >
-                    <img
-                      src={imageSource}
-                      alt={post.prunedCaption || post.caption || 'Werk Mebel realizacja'}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 text-center">
-                      <span className="text-white text-xs font-light tracking-wider uppercase">
-                        Zobacz na IG →
-                      </span>
-                    </div>
-                  </a>
-                );
-              })}
+            : posts.map((post) => (
+                <a
+                  key={post.id}
+                  href={post.permalink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-square overflow-hidden bg-gray-100 block shadow-sm"
+                >
+                  <img
+                    src={post.thumbnailUrl || post.mediaUrl}
+                    alt={post.prunedCaption || post.caption || 'Werk Mebel realizacja'}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 text-center">
+                    <span className="text-white text-xs font-light tracking-wider uppercase">
+                      Zobacz na IG →
+                    </span>
+                  </div>
+                </a>
+              ))}
         </div>
       </div>
     </section>
