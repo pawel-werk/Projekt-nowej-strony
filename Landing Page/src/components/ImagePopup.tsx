@@ -47,7 +47,7 @@ export const ImagePopup: React.FC = () => {
 
         {/* Grafika promocyjna */}
         <img
-          src="/popup.webp" // ZMIEŃ ROZSZERZENIE jeśli wrzucisz np. popup.jpg
+          src="/Popup.jpg" // ZMIEŃ ROZSZERZENIE jeśli wrzucisz np. popup.jpg
           alt="Promocja Werk Mebel"
           className="w-full h-auto object-contain shadow-2xl"
         />

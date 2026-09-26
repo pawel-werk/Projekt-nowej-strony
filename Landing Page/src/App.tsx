@@ -15,6 +15,7 @@ import { FloatingCTA } from './components/FloatingCTA';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { BlogPage } from './components/Blog/BlogPage';
 import { BlogPostPage } from './components/Blog/BlogPostPage';
+import { ImagePopup } from './components/ImagePopup';
 
 type AppView = 'home' | 'privacy' | 'blog' | 'blog-post';
 
