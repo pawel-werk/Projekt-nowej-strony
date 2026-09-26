@@ -47,10 +47,10 @@ export const ImagePopup: React.FC = () => {
 
         {/* Grafika promocyjna */}
         <img
-          src="/popup.gif" // ZMIEŃ ROZSZERZENIE jeśli wrzucisz np. popup.jpg
-          alt="Promocja Werk Mebel"
-          className="w-full h-auto object-contain shadow-2xl"
-        />
+  src="https://i.postimg.cc/pLwCDmgK/Banner-rabat-A3-03-09.jpg" // Tutaj wklej skopiowany bezpośredni link
+  alt="Promocja Werk Mebel"
+  className="w-full h-auto object-contain shadow-2xl"
+/>
       </div>
     </div>
   );
