@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ tr, onOpenPrivacy, onOpenBlog })
               {[
                 { name: "Instagram", url: "https://instagram.com/werkmebel" },
                 { name: "Facebook", url: "https://facebook.com/werkmebel" },
-                { name: "Pinterest", url: "https://pinterest.com/werkmebel" },
+                { name: "YouTube", url: "https://youtube.com/@WerkMebel" },
                 { name: "TikTok", url: "https://tiktok.com/@werk.mebel" },
               ].map((s) => (
                 <a
