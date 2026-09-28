@@ -12,9 +12,12 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: process.env.FIGMA_PUBLIC_URL ? `${process.env.FIGMA_PUBLIC_URL}/` : '/',
-    build: {
+build: {
       sourcemap: emitSourcemaps ? 'inline' : false,
       minify: !emitSourcemaps,
+      rollupOptions: {
+        input: path.resolve(__dirname, 'index.html'),
+      },
     },
     plugins: [
       react(),
