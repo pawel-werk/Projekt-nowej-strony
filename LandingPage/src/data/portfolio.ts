@@ -47,9 +47,6 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 'kuchnia-orzech-antracyt',
-// ... (tutaj zaczyna się kolejny stary kafelek, resztę pliku zostaw bez zmian)
-  {
-    id: 'kuchnia-orzech-antracyt',
     title: 'Kuchnia Fornirowana Orzech & Antracyt',
     titleEn: 'Walnut & Anthracite Kitchen Island',
     category: 'Kuchnie',
