@@ -33,9 +33,9 @@ export const portfolioItems: PortfolioItem[] = [
       'https://i.postimg.cc/J0XFzDnD/4.jpg'
     ],
     materials: [
-      'Fornir naturalny o pionowym usłojeniu',
+      'Fornir naturalny z pionowym ryflowaniem',
       'Masywne blaty z ciemnego kamienia',
-      'Matowe fronty bezuchwytowe',
+      'Matowe fronty Anty Finger bezuchwytowe',
       'Przeszklenia z czarnego szkła'
     ]
   },
