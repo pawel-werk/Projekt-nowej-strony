@@ -85,7 +85,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
     },
     hero: {
       eyebrow: "Wrocław · od 2011",
-      headline: "Werkstatt mit Seele.\nMeble z duszą.",
+      headline: "Jedna firma.\nWszystkie meble.",
       sub: "Kompleksowe wykonanie mebli na wymiar dla całego domu — od kuchni, przez garderoby, po salony. Precyzja, trwałość i design premium.",
       cta1: "Zobacz realizacje",
       cta2: "Zapytaj o wycenę",
