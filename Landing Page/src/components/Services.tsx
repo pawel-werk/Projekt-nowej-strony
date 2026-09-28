@@ -41,9 +41,6 @@ export const Services: React.FC<ServicesProps> = ({ tr, lang, onSelectService })
                   <span className="text-xs tracking-[0.25em] uppercase text-[#c5a880] font-semibold">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-[10px] tracking-[0.2em] uppercase text-gray-400 group-hover:text-gray-400 transition-colors">
-                    Indywidualny projekt
-                  </span>
                 </div>
 
                 <h3 className="font-serif text-2xl mb-4 text-[#0a0a0a] group-hover:text-white transition-colors">
