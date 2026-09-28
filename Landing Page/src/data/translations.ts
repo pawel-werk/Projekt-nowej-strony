@@ -84,8 +84,8 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       lang: "EN",
     },
     hero: {
-      eyebrow: "Meble na wymiar · 15 lat doświadczenia",
-      headline: "Jedna firma.\nWszystkie meble.",
+      eyebrow: "Wrocław · od 2011",
+      headline: "Werkstatt mit Seele.\nMeble z duszą.",
       sub: "Kompleksowe wykonanie mebli na wymiar dla całego domu — od kuchni, przez garderoby, po salony. Precyzja, trwałość i design premium.",
       cta1: "Zobacz realizacje",
       cta2: "Zapytaj o wycenę",
@@ -127,7 +127,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       body: "Werk Mebel to rodzinna pracownia meblarska z Wrocławia. Od 2011 roku tworzymy meble na wymiar, które łączą precyzję wykonania z ponadczasowym designem. Używamy materiałów klasy premium i pracujemy z najlepszymi dostawcami okuć i frontów z Niemiec, Włoch i Polski.",
       stats: [
         { val: "15+", label: "Lat doświadczenia" },
-        { val: "2400+", label: "Zrealizowanych projektów" },
+        { val: "2400+", label: "Zrealizowanych projects" },
         { val: "98%", label: "Zadowolonych klientów" },
         { val: "6", label: "Etapów realizacji" },
       ],
@@ -148,8 +148,8 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
         { title: "Garderoby i szafy", desc: "Garderoby walk-in, szafy przesuwne i wnękowe z pełną organizacją przestrzeni." },
         { title: "Meble do salonu", desc: "Biblioteczki, komody, meble TV, zabudowy ścienne — w każdym stylu." },
         { title: "Łazienki", desc: "Szafki łazienkowe, lustra z oświetleniem, blaty i fronty odporne na wilgoć." },
-        { title: "Kompleksowe wnętrza", desc: "Projektujemy i wykonujemy meble do całego mieszkania lub domu — jeden projekt, jeden wykonawca." },
         { title: "Biura i lokale", desc: "Zabudowy biurowe, recepcje, meble do sklepów i lokali usługowych." },
+        { title: "Kompleksowe wnętrza", desc: "Projektujemy i wykonujemy meble do całego mieszkania lub domu — jeden projekt, jeden wykonawca." },
       ],
     },
     instagram: {
@@ -206,8 +206,8 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       lang: "PL",
     },
     hero: {
-      eyebrow: "Custom furniture · 15 years of experience",
-      headline: "One company.\nAll your furniture.",
+      eyebrow: "Wrocław · since 2011",
+      headline: "Werkstatt mit Seele.\nFurniture with a soul.",
       sub: "End-to-end custom furniture for the entire home — from kitchens to wardrobes and living rooms. Premium design, precision craftsmanship, lasting quality.",
       cta1: "View projects",
       cta2: "Request a quote",
@@ -246,7 +246,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
     about: {
       eyebrow: "About us",
       title: "15 years. Thousands of happy clients.",
-      body: "Werk Mebel is a family-owned furniture workshop from Wrocław. Since 2009 we have been creating custom furniture that combines precision craftsmanship with timeless design. We use premium materials and work with the best hardware and front suppliers from Germany, Italy, and Poland.",
+      body: "Werk Mebel is a family-owned furniture workshop from Wrocław. Since 2011 we have been creating custom furniture that combines precision craftsmanship with timeless design. We use premium materials and work with the best hardware and front suppliers from Germany, Italy, and Poland.",
       stats: [
         { val: "15+", label: "Years of experience" },
         { val: "2400+", label: "Completed projects" },
@@ -270,8 +270,8 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
         { title: "Wardrobes & walk-ins", desc: "Walk-in wardrobes, sliding and alcove wardrobes with full interior organisation." },
         { title: "Living room furniture", desc: "Bookcases, sideboards, TV units, wall systems — in any style." },
         { title: "Bathrooms", desc: "Bathroom cabinets, lit mirrors, moisture-resistant countertops and fronts." },
-        { title: "Full interiors", desc: "We design and manufacture furniture for an entire apartment or house — one project, one contractor." },
         { title: "Offices & commercial", desc: "Office builds, reception desks, shop and hospitality furniture." },
+        { title: "Full interiors", desc: "We design and manufacture furniture for an entire apartment or house — one project, one contractor." },
       ],
     },
     instagram: {
