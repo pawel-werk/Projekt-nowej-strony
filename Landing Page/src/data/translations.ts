@@ -283,7 +283,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
     contact: {
       eyebrow: "Contact",
       title: "Get in touch",
-      sub: "We respond within 24 business hours.",
+      sub: "We usually respond within 24 business hours.",
       labels: {
         name: "Full name",
         email: "Email address",
@@ -311,9 +311,9 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
     },
     footer: {
       tagline: "Custom furniture for discerning clients.",
-      address: "ul. Braniborska 14 (Domar Interior Gallery), 53-680 Wrocław, Poland",
+      address: "ul. Czekoladowa 20, Aleja Bielany II, 55-040 Bielany Wrocławskie, Poland",
       phone: "+48 71 778 90 80",
-      email: "domar@werkmebel.pl",
+      email: "biuro@werkmebel.pl",
       social: "Follow us",
       copy: "© 2026 Werk Mebel. All rights reserved.",
     },
