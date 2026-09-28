@@ -84,7 +84,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       lang: "EN",
     },
     hero: {
-      eyebrow: "Wrocław · od 2011",
+      eyebrow: "Meble na wymiar · 15 lat doświadczenia",
       headline: "Jedna firma.\nWszystkie meble.",
       sub: "Kompleksowe wykonanie mebli na wymiar dla całego domu — od kuchni, przez garderoby, po salony. Precyzja, trwałość i design premium.",
       cta1: "Zobacz realizacje",
@@ -206,7 +206,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       lang: "PL",
     },
     hero: {
-      eyebrow: "Wrocław · since 2011",
+      eyebrow: "Custom furniture · 15 years of experience",
       headline: "One company.\nAll your furniture.",
       sub: "End-to-end custom furniture for the entire home — from kitchens to wardrobes and living rooms. Premium design, precision craftsmanship, lasting quality.",
       cta1: "View projects",
