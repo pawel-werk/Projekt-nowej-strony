@@ -207,7 +207,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
     },
     hero: {
       eyebrow: "Wrocław · since 2011",
-      headline: "Werkstatt mit Seele.\nFurniture with a soul.",
+      headline: "One company.\nAll your furniture.",
       sub: "End-to-end custom furniture for the entire home — from kitchens to wardrobes and living rooms. Premium design, precision craftsmanship, lasting quality.",
       cta1: "View projects",
       cta2: "Request a quote",
