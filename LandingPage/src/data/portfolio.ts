@@ -13,33 +13,41 @@ export interface PortfolioItem {
   materials: string[];
 }
 
+// Import zdjęć z nowego folderu assets/portfolio
+import img1 from '../assets/portfolio/1.jpg';
+import img2 from '../assets/portfolio/2.jpg';
+import img3 from '../assets/portfolio/3.jpg';
+import img4 from '../assets/portfolio/4.jpg';
+
 export const portfolioItems: PortfolioItem[] = [
   /* 1. KUCHNIE */
   {
-    id: 'kuchnia-monochromatyczna',
-    title: 'Monochromatyczna Kuchnia ze Spiekiem',
-    titleEn: 'Monochrome Kitchen with Quartzite',
+    id: 'kuchnia-fornir-czarny-kamien',
+    title: 'Kuchnia z Fornirem i Czarnym Kamieniem',
+    titleEn: 'Wood Veneer & Black Stone Kitchen',
     category: 'Kuchnie',
     categoryEn: 'Kitchens',
     tag: 'NOWOŚĆ',
-    location: 'Wrocław, Krzyki',
-    img: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=80',
-    description: 'Minimalistyczna kuchnia na wymiar z frontami w głębokim macie zapobiegającym powstawaniu odcisków palców. Monolityczna wyspa oraz blaty robocze wykonane ze spieku kwarcowego 12mm zintegrowane ze szczelinowym okapem płytowym BORA Pure.',
-    descEn: 'Bespoke minimalist kitchen featuring anti-fingerprint deep matt fronts. The monolithic island and countertops are crafted from 12mm quartzite slabs with an integrated cooktop ventilation system.',
+    location: 'Wrocław',
+    img: img1, 
+    description: 'Nowoczesna kuchnia łącząca matowe fronty w odcieniach ciepłej szarości z wyraźnym rysunkiem drewnianego forniru. Centrum przestrzeni stanowi wyspa z masywnym blatem z ciemnego kamienia. Całość dopełnia elegancka witryna z czarnym szkłem, zintegrowane sprzęty AGD oraz designerska, drewniana lampa liniowa.',
+    descEn: 'A modern kitchen combining matte fronts in warm grey tones with the distinct grain of wood veneer. The space is centered around an island featuring a massive dark stone countertop, complemented by an elegant black glass cabinet and integrated appliances.',
     gallery: [
-      'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=80'
+      img1,
+      img2,
+      img3,
+      img4
     ],
     materials: [
-      'Spiek kwarcowy Laminam 12mm',
-      'Fronty lakierowane PerfectSense Matt',
-      'Systemy szuflad Blum Legrabox z dożywotnią gwarancją',
-      'Oświetlenie liniowe LED Hafele Loox5 3000K'
+      'Fornir naturalny o pionowym usłojeniu',
+      'Masywne blaty z ciemnego kamienia',
+      'Matowe fronty bezuchwytowe',
+      'Przeszklenia z czarnego szkła'
     ]
   },
+  {
+    id: 'kuchnia-orzech-antracyt',
+// ... (tutaj zaczyna się kolejny stary kafelek, resztę pliku zostaw bez zmian)
   {
     id: 'kuchnia-orzech-antracyt',
     title: 'Kuchnia Fornirowana Orzech & Antracyt',
