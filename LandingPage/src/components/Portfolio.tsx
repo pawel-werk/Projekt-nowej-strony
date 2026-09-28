@@ -12,10 +12,14 @@ interface PortfolioProps {
 export const Portfolio: React.FC<PortfolioProps> = ({ tr, lang, onSelectProjectForQuote }) => {
   const [activeFilter, setActiveFilter] = useState(0);
   const [modalProject, setModalProject] = useState<PortfolioItem | null>(null);
+  
+  // Nowy stan określający ile kafelków ma być widocznych na start
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const filterKeys = ["Wszystkie", "Kuchnie", "Garderoby", "Wnętrza", "Łazienki"];
   const filterKeysEn = ["All", "Kitchens", "Wardrobes", "Interiors", "Bathrooms"];
 
+  // Filtrowanie elementów po kategorii
   const filteredItems = activeFilter === 0
     ? portfolioItems
     : portfolioItems.filter((item) =>
@@ -23,6 +27,15 @@ export const Portfolio: React.FC<PortfolioProps> = ({ tr, lang, onSelectProjectF
           ? item.category === filterKeys[activeFilter]
           : item.categoryEn === filterKeysEn[activeFilter]
       );
+
+  // Ucięcie listy do określonej liczby widocznych elementów
+  const visibleItems = filteredItems.slice(0, visibleCount);
+
+  // Funkcja resetująca widok po zmianie filtru
+  const handleFilterChange = (index: number) => {
+    setActiveFilter(index);
+    setVisibleCount(6);
+  };
 
   return (
     <section id="portfolio" className="py-24 bg-white">
@@ -52,7 +65,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ tr, lang, onSelectProjectF
             return (
               <button
                 key={i}
-                onClick={() => setActiveFilter(i)}
+                onClick={() => handleFilterChange(i)}
                 className={`relative text-xs tracking-[0.2em] uppercase transition-all pb-4 -mb-[17px] font-medium cursor-pointer ${
                   isActive
                     ? 'text-[#0a0a0a]'
@@ -68,9 +81,9 @@ export const Portfolio: React.FC<PortfolioProps> = ({ tr, lang, onSelectProjectF
           })}
         </div>
 
-        {/* Równa siatka 3 kolumny - każdy kafelek to idealny poziomy prostokąt */}
+        {/* Siatka projektów */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item) => {
+          {visibleItems.map((item) => {
             const title = lang === 'pl' ? item.title : item.titleEn;
             const category = lang === 'pl' ? item.category : item.categoryEn;
             const photoCount = item.gallery?.length || 1;
@@ -82,7 +95,6 @@ export const Portfolio: React.FC<PortfolioProps> = ({ tr, lang, onSelectProjectF
                 className="group relative overflow-hidden bg-neutral-900 cursor-pointer shadow-md hover:shadow-2xl transition-all duration-500"
                 onClick={() => setModalProject(item)}
               >
-                {/* Zdjęcie kafelka */}
                 <img
                   src={item.img}
                   alt={title}
@@ -91,13 +103,11 @@ export const Portfolio: React.FC<PortfolioProps> = ({ tr, lang, onSelectProjectF
                   className="transition-transform duration-700 ease-out group-hover:scale-108 block"
                 />
 
-                {/* Znacznik liczby ujęć w lewym górnym rogu */}
                 <div className="absolute top-3.5 left-3.5 z-20 flex items-center gap-1.5 px-2.5 py-1 bg-black/80 backdrop-blur-md border border-white/15 text-white text-[9px] tracking-[0.2em] uppercase font-mono transition-all duration-300 group-hover:border-[#c5a880]">
                   <span className="text-[#c5a880]">⊞</span>
                   <span>{photoCount} {photoCount === 1 ? 'ujęcie' : photoCount < 5 ? 'ujęcia' : 'ujęć'}</span>
                 </div>
 
-                {/* Elegancka, przejrzysta nakładka tekstowa po najechaniu */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/20 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6 z-10">
                   <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     <div className="flex items-center gap-2 mb-1.5">
@@ -128,9 +138,20 @@ export const Portfolio: React.FC<PortfolioProps> = ({ tr, lang, onSelectProjectF
             );
           })}
         </div>
+
+        {/* Przycisk "Zobacz więcej" pojawia się tylko, gdy są ukryte projekty */}
+        {visibleCount < filteredItems.length && (
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 6)}
+              className="px-8 py-3 border border-[#c5a880] text-[#c5a880] text-[11px] tracking-[0.2em] uppercase font-medium hover:bg-[#c5a880] hover:text-white transition-colors duration-300"
+            >
+              {lang === 'pl' ? 'Zobacz więcej' : 'Load more'}
+            </button>
+          </div>
+        )}
       </div>
 
-      {/* Modal szczegółów projektu */}
       <ProjectModal
         project={modalProject}
         lang={lang}
