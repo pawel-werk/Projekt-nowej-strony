@@ -13,12 +13,6 @@ export interface PortfolioItem {
   materials: string[];
 }
 
-// Import zdjęć z nowego folderu assets/portfolio
-import img1 from '../assets/portfolio/1.jpg';
-import img2 from '../assets/portfolio/2.jpg';
-import img3 from '../assets/portfolio/3.jpg';
-import img4 from '../assets/portfolio/4.jpg';
-
 export const portfolioItems: PortfolioItem[] = [
   /* 1. KUCHNIE */
   {
@@ -29,14 +23,14 @@ export const portfolioItems: PortfolioItem[] = [
     categoryEn: 'Kitchens',
     tag: 'NOWOŚĆ',
     location: 'Wrocław',
-    img: img1, 
+    img: '/portfolio/1.jpg', 
     description: 'Nowoczesna kuchnia łącząca matowe fronty w odcieniach ciepłej szarości z wyraźnym rysunkiem drewnianego forniru. Centrum przestrzeni stanowi wyspa z masywnym blatem z ciemnego kamienia. Całość dopełnia elegancka witryna z czarnym szkłem, zintegrowane sprzęty AGD oraz designerska, drewniana lampa liniowa.',
     descEn: 'A modern kitchen combining matte fronts in warm grey tones with the distinct grain of wood veneer. The space is centered around an island featuring a massive dark stone countertop, complemented by an elegant black glass cabinet and integrated appliances.',
     gallery: [
-      img1,
-      img2,
-      img3,
-      img4
+      '/portfolio/1.jpg',
+      '/portfolio/2.jpg',
+      '/portfolio/3.jpg',
+      '/portfolio/4.jpg'
     ],
     materials: [
       'Fornir naturalny o pionowym usłojeniu',
