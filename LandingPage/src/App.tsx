@@ -1,168 +1,236 @@
-import React, { useState, useEffect } from 'react';
-import { TranslationSchema } from '../data/translations';
+import { useState, useEffect } from 'react';
+import { translations } from './data/translations';
+import { TopBar } from './components/TopBar';
+import { mockTopBarItems } from './data/topbarData';
+import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { Services } from './components/Services';
+import { Portfolio } from './components/Portfolio';
+import { WhyUs } from './components/WhyUs';
+import { About } from './components/About';
+import { InstagramFeed } from './components/InstagramFeed';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
+import { FloatingCTA } from './components/FloatingCTA';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { BlogPage } from './components/Blog/BlogPage';
+import { BlogPostPage } from './components/Blog/BlogPostPage';
+import { ImagePopup } from './components/ImagePopup';
 
-interface NavbarProps {
-  tr: TranslationSchema;
-  lang: 'pl' | 'en';
-  hasTopBar?: boolean;
-  onToggleLang: () => void;
-  onScrollTo: (id: string) => void;
-  onOpenBlog?: () => void;
-}
+// IMPORTY SEKCJI WYPRZEDAŻY
+import { SalePage } from './components/Sale/SalePage';
+import { SaleBanner } from './components/Sale/SaleBanner';
 
-export const Navbar: React.FC<NavbarProps> = ({
-  tr,
-  lang,
-  hasTopBar = false,
-  onToggleLang,
-  onScrollTo,
-  onOpenBlog, // Zachowane dla kompatybilności wstecznej
-}) => {
-  const [navScrolled, setNavScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+type AppView = 'home' | 'privacy' | 'blog' | 'blog-post' | 'sale';
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setNavScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+export default function App() {
+  const [lang, setLang] = useState<'pl' | 'en'>('pl');
+  const [prefilledCategory, setPrefilledCategory] = useState<string>('');
+  const [prefilledMessage, setPrefilledMessage] = useState<string>('');
+  const [isTopBarVisible, setIsTopBarVisible] = useState(true);
+  const [currentView, setCurrentView] = useState<AppView>('home');
+  const [activeBlogSlug, setActiveBlogSlug] = useState<string>('');
 
-  const navItems = [
-    { key: 'services', id: 'services' },
-    { key: 'portfolio', id: 'portfolio' },
-    { key: 'about', id: 'about' },
-    { key: 'sale', id: 'sale', isSpecial: true },
-    { key: 'contact', id: 'contact' },
-  ] as const;
+  const tr = translations[lang];
 
-  const handleNavClick = (id: string) => {
-    if (id === 'sale') {
-      window.location.hash = 'wyprzedaz';
-      setMobileMenuOpen(false);
-      return;
+  // Helper do parsowania URL i hasha
+  const parseCurrentUrl = (): { view: AppView; slug?: string } => {
+    const path = window.location.pathname;
+    const hash = window.location.hash;
+
+    if (path === '/polityka-prywatnosci' || hash === '#polityka-prywatnosci') {
+      return { view: 'privacy' };
     }
-    onScrollTo(id);
-    setMobileMenuOpen(false);
+    
+    // Obsługa nowej ścieżki
+    if (path === '/wyprzedaz' || hash === '#wyprzedaz') {
+      return { view: 'sale' };
+    }
+
+    if (path.startsWith('/blog/')) {
+      const slug = path.replace('/blog/', '').replace('/', '');
+      if (slug) return { view: 'blog-post', slug };
+    }
+    if (hash.startsWith('#blog/')) {
+      const slug = hash.replace('#blog/', '');
+      if (slug) return { view: 'blog-post', slug };
+    }
+
+    if (path === '/blog' || hash === '#blog') {
+      return { view: 'blog' };
+    }
+
+    return { view: 'home' };
   };
 
+  useEffect(() => {
+    const initial = parseCurrentUrl();
+    setCurrentView(initial.view);
+    if (initial.slug) setActiveBlogSlug(initial.slug);
+
+    const isDismissed = sessionStorage.getItem('werkmebel_topbar_dismissed');
+    if (isDismissed) {
+      setIsTopBarVisible(false);
+    }
+
+    const handleUrlChange = () => {
+      const parsed = parseCurrentUrl();
+      setCurrentView(parsed.view);
+      if (parsed.slug) setActiveBlogSlug(parsed.slug);
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    };
+
+    window.addEventListener('popstate', handleUrlChange);
+    window.addEventListener('hashchange', handleUrlChange);
+    return () => {
+      window.removeEventListener('popstate', handleUrlChange);
+      window.removeEventListener('hashchange', handleUrlChange);
+    };
+  }, []);
+
+  const navigateTo = (view: AppView, slug?: string) => {
+    setCurrentView(view);
+    if (view === 'blog-post' && slug) {
+      setActiveBlogSlug(slug);
+      window.location.hash = `blog/${slug}`;
+    } else if (view === 'blog') {
+      window.location.hash = 'blog';
+    } else if (view === 'privacy') {
+      window.location.hash = 'polityka-prywatnosci';
+    } else if (view === 'sale') {
+      window.location.hash = 'wyprzedaz';
+    } else {
+      window.location.hash = '';
+      if (window.location.pathname !== '/') {
+        window.history.pushState({}, '', '/');
+      }
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollTo = (id: string) => {
+    if (currentView !== 'home') {
+      navigateTo('home');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 120);
+      return;
+    }
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleSelectService = (serviceTitle: string) => {
+    setPrefilledCategory(serviceTitle.includes('Kuchni') ? 'Kuchnia' : 'Nowy projekt / wycena');
+    setPrefilledMessage(`Dzień dobry, interesuje mnie realizacja w zakresie: "${serviceTitle}". Proszę o kontakt w sprawie wstępnych ustaleń.`);
+    scrollTo('contact');
+  };
+
+  const handleSelectProjectForQuote = (projectTitle: string) => {
+    setPrefilledCategory('Nowy projekt / wycena');
+    setPrefilledMessage(`Dzień dobry, podoba mi się Wasza realizacja "${projectTitle}". Chciał(a)bym dowiedzieć się o możliwość i szacunkowy koszt wykonania podobnego projektu.`);
+    scrollTo('contact');
+  };
+
+  if (currentView === 'blog-post') {
+    return (
+      <BlogPostPage
+        slug={activeBlogSlug}
+        onBackToBlog={() => navigateTo('blog')}
+        onBackToHome={() => navigateTo('home')}
+        onSelectPost={(slug) => navigateTo('blog-post', slug)}
+        onQuoteRequest={() => {
+          setPrefilledCategory('Nowy projekt / wycena');
+          setPrefilledMessage('Dzień dobry, czytałem Państwa poradnik na blogu i chciałbym skonsultować projekt mebli.');
+          scrollTo('contact');
+        }}
+      />
+    );
+  }
+
+  if (currentView === 'blog') {
+    return (
+      <BlogPage
+        onBackToHome={() => navigateTo('home')}
+        onSelectPost={(slug) => navigateTo('blog-post', slug)}
+      />
+    );
+  }
+
+  if (currentView === 'privacy') {
+    return <PrivacyPolicyPage onBackToHome={() => navigateTo('home')} />;
+  }
+
+  if (currentView === 'sale') {
+    return (
+      <SalePage 
+        onBackToHome={() => navigateTo('home')}
+        onQuoteRequest={(productName) => {
+          setPrefilledCategory('Inne');
+          setPrefilledMessage(`Dzień dobry, jestem zainteresowana/y produktem z wyprzedaży: "${productName}". Proszę o potwierdzenie dostępności.`);
+          navigateTo('home');
+          setTimeout(() => scrollTo('contact'), 200);
+        }}
+        onCustomDesignRequest={() => {
+          setPrefilledCategory('Nowy projekt / wycena');
+          setPrefilledMessage('Dzień dobry, interesuje mnie zaprojektowanie i wycena mebli na wymiar według indywidualnego układu.');
+          navigateTo('home');
+          setTimeout(() => scrollTo('contact'), 200);
+        }}
+      />
+    );
+  }
+
   return (
-    <nav
-      className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
-        hasTopBar ? 'top-10' : 'top-0'
-      } ${
-        navScrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-[#e0ddd8] shadow-sm py-3.5'
-          : 'bg-transparent border-b border-transparent py-5'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Brand Logo with automatic white/black contrast */}
-        <a
-          href="#hero"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavClick('hero');
-          }}
-          className="group flex items-center gap-2 focus:outline-none transition-opacity duration-300 hover:opacity-80"
-        >
-          <img
-            src="/logo.svg"
-            alt="Werk Mebel - Made in Germany"
-            className="h-8 md:h-9 w-auto object-contain transition-all duration-300"
-            style={{
-              filter: navScrolled ? 'none' : 'brightness(0) invert(1)',
-            }}
-          />
-        </a>
-
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
-          {navItems.map(({ key, id, isSpecial }) => (
-            <button
-              key={key}
-              onClick={() => handleNavClick(id)}
-              className={`nav-link flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium transition-colors cursor-pointer ${
-                navScrolled ? 'text-[#0a0a0a] hover:text-[#c5a880]' : 'text-white hover:text-[#c5a880]'
-              }`}
-            >
-              {tr.nav[key as keyof typeof tr.nav]}
-              {isSpecial && (
-                <span className="px-1.5 py-0.5 bg-[#c5a880]/15 text-[#c5a880] border border-[#c5a880]/30 text-[9px] tracking-wider -ml-1">
-                  {tr.nav.saleBadge}
-                </span>
-              )}
-            </button>
-          ))}
-
-          {/* Lang toggle button */}
-          <button
-            onClick={onToggleLang}
-            className={`text-[11px] tracking-[0.2em] uppercase border px-3.5 py-1.5 transition-all duration-300 cursor-pointer ${
-              navScrolled
-                ? 'border-[#0a0a0a] text-[#0a0a0a] hover:border-[#c5a880] hover:text-[#c5a880]'
-                : 'border-white/60 text-white hover:border-white hover:bg-white/10'
-            }`}
-            aria-label="Przełącz język"
-          >
-            {tr.nav.lang}
-          </button>
-        </div>
-
-        {/* Mobile hamburger button */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2 rounded focus:outline-none"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Menu"
-          aria-expanded={mobileMenuOpen}
-        >
-          <span
-            className={`block w-6 h-0.5 transition-transform duration-200 ${
-              navScrolled ? 'bg-[#0a0a0a]' : 'bg-white'
-            } ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}
-          />
-          <span
-            className={`block w-6 h-0.5 transition-opacity duration-200 ${
-              navScrolled ? 'bg-[#0a0a0a]' : 'bg-white'
-            } ${mobileMenuOpen ? 'opacity-0' : ''}`}
-          />
-          <span
-            className={`block w-6 h-0.5 transition-transform duration-200 ${
-              navScrolled ? 'bg-[#0a0a0a]' : 'bg-white'
-            } ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}
-          />
-        </button>
+    <div className="min-h-full flex flex-col selection:bg-[#c8a96e] selection:text-black">
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <TopBar
+          items={mockTopBarItems}
+          onScrollTo={scrollTo}
+          onDismissChange={(dismissed) => setIsTopBarVisible(!dismissed)}
+        />
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white/98 backdrop-blur-lg border-t border-gray-100 px-6 py-6 flex flex-col gap-5 shadow-2xl">
-          {navItems.map(({ key, id, isSpecial }) => (
-            <button
-              key={key}
-              onClick={() => handleNavClick(id)}
-              className="text-left flex items-center justify-between text-sm tracking-[0.2em] uppercase font-medium text-gray-900 hover:text-[#c5a880] transition-colors"
-            >
-              <span>{tr.nav[key as keyof typeof tr.nav]}</span>
-              {isSpecial && (
-                <span className="px-2 py-0.5 bg-[#c5a880]/15 text-[#c5a880] border border-[#c5a880]/30 text-[10px] tracking-wider">
-                  {tr.nav.saleBadge}
-                </span>
-              )}
-            </button>
-          ))}
-          <button
-            onClick={() => {
-              onToggleLang();
-              setMobileMenuOpen(false);
-            }}
-            className="text-left text-xs tracking-[0.2em] uppercase border border-gray-900 px-4 py-2 w-fit hover:border-[#c5a880] hover:text-[#c5a880]"
-          >
-            {tr.nav.lang}
-          </button>
-        </div>
-      )}
-    </nav>
+      <Navbar
+        tr={tr}
+        lang={lang}
+        hasTopBar={isTopBarVisible}
+        onToggleLang={() => setLang(lang === 'pl' ? 'en' : 'pl')}
+        onScrollTo={scrollTo}
+        onOpenBlog={() => navigateTo('blog')}
+      />
+
+      <main className="flex-1">
+        <Hero tr={tr} onScrollTo={scrollTo} />
+        <Services tr={tr} lang={lang} onSelectService={handleSelectService} />
+        <Portfolio tr={tr} lang={lang} onSelectProjectForQuote={handleSelectProjectForQuote} />
+        {/* BANER WYPRZEDAŻY WPIĘTY MIĘDZY PORTFOLIO A O NAS */}
+        <SaleBanner onOpenSale={() => navigateTo('sale')} />
+        <WhyUs tr={tr} />
+        <About tr={tr} />
+        <InstagramFeed tr={tr} />
+        <Contact
+          tr={tr}
+          prefilledCategory={prefilledCategory}
+          prefilledMessage={prefilledMessage}
+        />
+      </main>
+
+      <Footer
+        tr={tr}
+        onOpenPrivacy={() => navigateTo('privacy')}
+        onOpenBlog={() => navigateTo('blog')}
+      />
+
+      <FloatingCTA
+        label={tr.floating}
+        onClick={() => scrollTo('contact')}
+      />
+
+      <ImagePopup />
+    </div>
   );
-};
+}
