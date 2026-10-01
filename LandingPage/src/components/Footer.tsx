@@ -17,18 +17,28 @@ export const Footer: React.FC<FooterProps> = ({ tr, onOpenPrivacy, onOpenBlog })
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="py-16 border-t bg-[#060606] border-[#1a1a1a]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Main 3-column footer grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-14">
           <div>
-            <img
-              src="/logo.svg"
-              alt="Werk Mebel"
-              className="h-8 w-auto object-contain mb-4"
-              style={{ filter: 'brightness(0) invert(1)' }}
-            />
+            <button
+              onClick={scrollToTop}
+              className="block mb-4 cursor-pointer focus:outline-none group"
+              aria-label="Wróć na górę strony"
+            >
+              <img
+                src="/logo.svg"
+                alt="Werk Mebel"
+                className="h-8 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
+            </button>
             <p className="text-xs text-gray-400 leading-relaxed max-w-xs font-light">
               {tr.footer.tagline}
             </p>
