@@ -3,7 +3,7 @@ import { TopBarItem, TopBarProps } from '../types/topbar';
 
 export const TopBar: React.FC<TopBarProps> = ({
   items,
-  speedSeconds = 35,
+  speedSeconds = 70,
   storageKey = 'werkmebel_topbar_dismissed',
 }) => {
   const [isVisible, setIsVisible] = useState(false);
