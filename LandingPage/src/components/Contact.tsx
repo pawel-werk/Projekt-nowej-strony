@@ -157,7 +157,7 @@ export const Contact: React.FC<ContactProps> = ({ tr, lang, prefilledProject }) 
                   </div>
                 </div>
 
-                {/* Salon */}
+                {/* Lokalizacje (Salon + Biuro) */}
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-neutral-400 shrink-0 mt-2">
                     <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -165,23 +165,41 @@ export const Contact: React.FC<ContactProps> = ({ tr, lang, prefilledProject }) 
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <div>
-                    <span className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-mono block mb-1">
-                      {isPolish ? 'Salon ekspozycyjny' : 'Showroom'}
-                    </span>
-                    <p className="text-white text-sm md:text-base font-medium mb-1">
-                      Salon Aleja Bielany
-                    </p>
-                    <a
-                      href="https://www.google.com/maps/place/Werk+Mebel/@51.0458333,16.959026,20z/data=!4m6!3m5!1s0x470fc36c4b6f72e5:0x5ff9cef353f07695!8m2!3d51.0458333!4d16.959335!16s%2Fg%2F11jcqlxy3b?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-neutral-400 hover:text-[#c5a880] transition-colors inline-flex items-center gap-1"
-                    >
-                      ul. Czekoladowa 20, 55-040 Bielany Wrocławskie ↗
-                    </a>
+                  <div className="flex flex-col gap-6">
+                    {/* Salon */}
+                    <div>
+                      <span className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-mono block mb-1">
+                        {isPolish ? 'Salon ekspozycyjny' : 'Showroom'}
+                      </span>
+                      <p className="text-white text-sm md:text-base font-medium mb-1">
+                        Salon Aleja Bielany
+                      </p>
+                      <a
+                        href="https://www.google.com/maps/place/Werk+Mebel/@51.0458333,16.959026,20z/data=!4m6!3m5!1s0x470fc36c4b6f72e5:0x5ff9cef353f07695!8m2!3d51.0458333!4d16.959335!16s%2Fg%2F11jcqlxy3b?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-neutral-400 hover:text-[#c5a880] transition-colors inline-flex items-center gap-1"
+                      >
+                        ul. Czekoladowa 20, 55-040 Bielany Wrocławskie ↗
+                      </a>
+                    </div>
+                    {/* Biuro projektowe */}
+                    <div>
+                      <span className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-mono block mb-1">
+                        {isPolish ? 'Biuro projektowe' : 'Concept office'}
+                      </span>
+                      <a
+                        href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x470fc3f4abef2f5b:0xe1594e460d5bc4da?sa=X&ved=1t:8290&ictx=111"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-neutral-400 hover:text-[#c5a880] transition-colors inline-flex items-center gap-1 mt-1"
+                      >
+                        ul. Weigla 12, Wrocław ↗
+                      </a>
+                    </div>
                   </div>
                 </div>
+
               </div>
             </div>
 
