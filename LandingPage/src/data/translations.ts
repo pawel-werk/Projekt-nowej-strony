@@ -5,10 +5,8 @@ export interface TranslationSchema {
     services: string;
     contact: string;
     lang: string;
-    sale: string;       // <-- DODANO
-    saleBadge: string;  // <-- DODANO
-  };
-  // ... reszta pozostaje bez zmian
+    sale: string;
+    saleBadge: string;
   };
   hero: {
     eyebrow: string;
@@ -86,10 +84,8 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       services: "Usługi",
       contact: "Kontakt",
       lang: "EN",
-      sale: "Wyprzedaż",     // <-- DODANO
-      saleBadge: "Okazje",   // <-- DODANO
-    },
-    // ...
+      sale: "Wyprzedaż",
+      saleBadge: "Okazje",
     },
     hero: {
       eyebrow: "Meble na wymiar · 15 lat doświadczenia",
@@ -212,10 +208,8 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       services: "Services",
       contact: "Contact",
       lang: "PL",
-      sale: "Sale",          // <-- DODANO
-      saleBadge: "Offers",   // <-- DODANO
-    },
-    // ...
+      sale: "Sale",
+      saleBadge: "Offers",
     },
     hero: {
       eyebrow: "Custom furniture · 15 years of experience",
@@ -330,5 +324,5 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       copy: "© 2026 Werk Mebel. All rights reserved.",
     },
     floating: "Zapytaj o wycenę",
-  },
+  }
 };
