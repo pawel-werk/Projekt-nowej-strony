@@ -47,7 +47,6 @@ export const SaleBanner: React.FC<SaleBannerProps> = ({ onOpenSale }) => {
           </div>
           <div className="w-40 h-52 bg-white/5 border border-white/10 p-2 shadow-2xl z-10 relative">
              <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=400&q=80" alt="Gotowa zabudowa kuchenna z ekspozycji" className="w-full h-full object-cover" />
-             <div className="absolute -bottom-4 -left-4 bg-[#c5a880] text-black px-3 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase">Ostatnie Sztuki</div>
           </div>
         </div>
       </div>

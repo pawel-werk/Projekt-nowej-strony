@@ -1,7 +1,7 @@
 export interface SaleItem {
   id: string;
   title: string;
-  category: 'Kuchnie' | 'Szafy i garderoby' | 'Stoły i komody' | 'Łazienkowe';
+  category: 'Kuchnie' | 'Szafy i garderoby' | 'Stoły i komody' | 'Łazienkowe' | 'Zabudowy';
   description: string;
   dimensions: string;
   material: string;
@@ -9,5 +9,4 @@ export interface SaleItem {
   newPrice: number;
   image: string;
   isExhibition: boolean;
-  isLastPiece: boolean;
 }
