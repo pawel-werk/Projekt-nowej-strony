@@ -16,7 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   hasTopBar = false,
   onToggleLang,
   onScrollTo,
-  onOpenBlog, // Choć nie używane, dopisane do propsów dla zachowania wstecznej kompat.
+  onOpenBlog, // Zachowane dla kompatybilności wstecznej
 }) => {
   const [navScrolled, setNavScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 navScrolled ? 'text-[#0a0a0a] hover:text-[#c5a880]' : 'text-white hover:text-[#c5a880]'
               }`}
             >
-              {tr.nav[key]}
+              {tr.nav[key as keyof typeof tr.nav]}
               {isSpecial && (
                 <span className="px-1.5 py-0.5 bg-[#c5a880]/15 text-[#c5a880] border border-[#c5a880]/30 text-[9px] tracking-wider -ml-1">
                   {tr.nav.saleBadge}
@@ -144,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => handleNavClick(id)}
               className="text-left flex items-center justify-between text-sm tracking-[0.2em] uppercase font-medium text-gray-900 hover:text-[#c5a880] transition-colors"
             >
-              <span>{tr.nav[key]}</span>
+              <span>{tr.nav[key as keyof typeof tr.nav]}</span>
               {isSpecial && (
                 <span className="px-2 py-0.5 bg-[#c5a880]/15 text-[#c5a880] border border-[#c5a880]/30 text-[10px] tracking-wider">
                   {tr.nav.saleBadge}
