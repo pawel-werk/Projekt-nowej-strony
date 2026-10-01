@@ -194,12 +194,11 @@ export const Contact: React.FC<ContactProps> = ({ tr, lang, prefilledProject }) 
                     <span className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-mono block mb-1">
                       {isPolish ? 'Biuro projektowe' : 'Concept office'}
                     </span>
-                    <br />
                     <a
                       href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x470fc3f4abef2f5b:0xe1594e460d5bc4da?sa=X&ved=1t:8290&ictx=111"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white hover:text-[#c5a880] transition-colors text-sm md:text-base font-medium inline-flex items-center gap-1"
+                      className="text-xs text-neutral-400 hover:text-[#c5a880] transition-colors inline-flex items-center gap-1 block"
                     >
                       ul. Weigla 12, Wrocław ↗
                     </a>
