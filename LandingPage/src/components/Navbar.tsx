@@ -7,6 +7,7 @@ interface NavbarProps {
   hasTopBar?: boolean;
   onToggleLang: () => void;
   onScrollTo: (id: string) => void;
+  onOpenBlog?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -15,6 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   hasTopBar = false,
   onToggleLang,
   onScrollTo,
+  onOpenBlog, // Choć nie używane, dopisane do propsów dla zachowania wstecznej kompat.
 }) => {
   const [navScrolled, setNavScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,10 +33,16 @@ export const Navbar: React.FC<NavbarProps> = ({
     { key: 'services', id: 'services' },
     { key: 'portfolio', id: 'portfolio' },
     { key: 'about', id: 'about' },
+    { key: 'sale', id: 'sale', isSpecial: true },
     { key: 'contact', id: 'contact' },
   ] as const;
 
   const handleNavClick = (id: string) => {
+    if (id === 'sale') {
+      window.location.hash = 'wyprzedaz';
+      setMobileMenuOpen(false);
+      return;
+    }
     onScrollTo(id);
     setMobileMenuOpen(false);
   };
@@ -71,15 +79,20 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
-          {navItems.map(({ key, id }) => (
+          {navItems.map(({ key, id, isSpecial }) => (
             <button
               key={key}
               onClick={() => handleNavClick(id)}
-              className={`nav-link text-xs tracking-[0.2em] uppercase font-medium transition-colors cursor-pointer ${
+              className={`nav-link flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium transition-colors cursor-pointer ${
                 navScrolled ? 'text-[#0a0a0a] hover:text-[#c5a880]' : 'text-white hover:text-[#c5a880]'
               }`}
             >
               {tr.nav[key]}
+              {isSpecial && (
+                <span className="px-1.5 py-0.5 bg-[#c5a880]/15 text-[#c5a880] border border-[#c5a880]/30 text-[9px] tracking-wider -ml-1">
+                  {tr.nav.saleBadge}
+                </span>
+              )}
             </button>
           ))}
 
@@ -125,13 +138,18 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/98 backdrop-blur-lg border-t border-gray-100 px-6 py-6 flex flex-col gap-5 shadow-2xl">
-          {navItems.map(({ key, id }) => (
+          {navItems.map(({ key, id, isSpecial }) => (
             <button
               key={key}
               onClick={() => handleNavClick(id)}
-              className="text-left text-sm tracking-[0.2em] uppercase font-medium text-gray-900 hover:text-[#c5a880] transition-colors"
+              className="text-left flex items-center justify-between text-sm tracking-[0.2em] uppercase font-medium text-gray-900 hover:text-[#c5a880] transition-colors"
             >
-              {tr.nav[key]}
+              <span>{tr.nav[key]}</span>
+              {isSpecial && (
+                <span className="px-2 py-0.5 bg-[#c5a880]/15 text-[#c5a880] border border-[#c5a880]/30 text-[10px] tracking-wider">
+                  {tr.nav.saleBadge}
+                </span>
+              )}
             </button>
           ))}
           <button

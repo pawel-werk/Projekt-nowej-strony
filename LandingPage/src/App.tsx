@@ -16,8 +16,11 @@ import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { BlogPage } from './components/Blog/BlogPage';
 import { BlogPostPage } from './components/Blog/BlogPostPage';
 import { ImagePopup } from './components/ImagePopup';
+// IMPORTY SEKCJI WYPRZEDAŻY
+import { SalePage } from './components/Sale/SalePage';
+import { SaleBanner } from './components/Sale/SaleBanner';
 
-type AppView = 'home' | 'privacy' | 'blog' | 'blog-post';
+type AppView = 'home' | 'privacy' | 'blog' | 'blog-post' | 'sale';
 
 export default function App() {
   const [lang, setLang] = useState<'pl' | 'en'>('pl');
@@ -37,8 +40,12 @@ export default function App() {
     if (path === '/polityka-prywatnosci' || hash === '#polityka-prywatnosci') {
       return { view: 'privacy' };
     }
+    
+    // Obsługa nowej ścieżki
+    if (path === '/wyprzedaz' || hash === '#wyprzedaz') {
+      return { view: 'sale' };
+    }
 
-    // Blog post slug detection: /blog/jak-zaprojektowac... or #blog/jak-zaprojektowac...
     if (path.startsWith('/blog/')) {
       const slug = path.replace('/blog/', '').replace('/', '');
       if (slug) return { view: 'blog-post', slug };
@@ -48,7 +55,6 @@ export default function App() {
       if (slug) return { view: 'blog-post', slug };
     }
 
-    // Blog list: /blog or #blog
     if (path === '/blog' || hash === '#blog') {
       return { view: 'blog' };
     }
@@ -57,7 +63,6 @@ export default function App() {
   };
 
   useEffect(() => {
-    // Initial view parse
     const initial = parseCurrentUrl();
     setCurrentView(initial.view);
     if (initial.slug) setActiveBlogSlug(initial.slug);
@@ -91,6 +96,8 @@ export default function App() {
       window.location.hash = 'blog';
     } else if (view === 'privacy') {
       window.location.hash = 'polityka-prywatnosci';
+    } else if (view === 'sale') {
+      window.location.hash = 'wyprzedaz';
     } else {
       window.location.hash = '';
       if (window.location.pathname !== '/') {
@@ -127,7 +134,6 @@ export default function App() {
     scrollTo('contact');
   };
 
-  // 1. Widok: Pojedynczy artykuł bloga
   if (currentView === 'blog-post') {
     return (
       <BlogPostPage
@@ -144,7 +150,6 @@ export default function App() {
     );
   }
 
-  // 2. Widok: Lista wpisów bloga
   if (currentView === 'blog') {
     return (
       <BlogPage
@@ -154,15 +159,32 @@ export default function App() {
     );
   }
 
-  // 3. Widok: Polityka Prywatności
   if (currentView === 'privacy') {
     return <PrivacyPolicyPage onBackToHome={() => navigateTo('home')} />;
   }
 
-  // 4. Widok główny: Landing Page
+  if (currentView === 'sale') {
+    return (
+      <SalePage 
+        onBackToHome={() => navigateTo('home')}
+        onQuoteRequest={(productName) => {
+          setPrefilledCategory('Inne');
+          setPrefilledMessage(`Dzień dobry, jestem zainteresowana/y produktem z wyprzedaży: "${productName}". Proszę o potwierdzenie dostępności.`);
+          navigateTo('home');
+          setTimeout(() => scrollTo('contact'), 200);
+        }}
+        onCustomDesignRequest={() => {
+          setPrefilledCategory('Nowy projekt / wycena');
+          setPrefilledMessage('Dzień dobry, interesuje mnie zaprojektowanie i wycena mebli na wymiar według indywidualnego układu.');
+          navigateTo('home');
+          setTimeout(() => scrollTo('contact'), 200);
+        }}
+      />
+    );
+  }
+
   return (
     <div className="min-h-full flex flex-col selection:bg-[#c8a96e] selection:text-black">
-      {/* Górny pasek ogłoszeń */}
       <div className="fixed top-0 left-0 right-0 z-50">
         <TopBar
           items={mockTopBarItems}
@@ -171,7 +193,6 @@ export default function App() {
         />
       </div>
 
-      {/* Nawigacja główna ze wsparciem linku Blog */}
       <Navbar
         tr={tr}
         lang={lang}
@@ -181,11 +202,12 @@ export default function App() {
         onOpenBlog={() => navigateTo('blog')}
       />
 
-      {/* Główna treść */}
       <main className="flex-1">
         <Hero tr={tr} onScrollTo={scrollTo} />
         <Services tr={tr} lang={lang} onSelectService={handleSelectService} />
         <Portfolio tr={tr} lang={lang} onSelectProjectForQuote={handleSelectProjectForQuote} />
+        {/* BANER WYPRZEDAŻY WPIĘTY MIĘDZY PORTFOLIO A O NAS */}
+        <SaleBanner onOpenSale={() => navigateTo('sale')} />
         <WhyUs tr={tr} />
         <About tr={tr} />
         <InstagramFeed tr={tr} />
@@ -196,20 +218,17 @@ export default function App() {
         />
       </main>
 
-      {/* Stopka z linkami do Bloga i Polityki Prywatności */}
       <Footer
         tr={tr}
         onOpenPrivacy={() => navigateTo('privacy')}
         onOpenBlog={() => navigateTo('blog')}
       />
 
-{/* Pływający przycisk CTA */}
       <FloatingCTA
         label={tr.floating}
         onClick={() => scrollTo('contact')}
       />
 
-      {/* Nasz nowy Pop-up */}
       <ImagePopup />
     </div>
   );

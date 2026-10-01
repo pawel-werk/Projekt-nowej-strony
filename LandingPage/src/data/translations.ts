@@ -5,6 +5,10 @@ export interface TranslationSchema {
     services: string;
     contact: string;
     lang: string;
+    sale: string;       // <-- DODANO
+    saleBadge: string;  // <-- DODANO
+  };
+  // ... reszta pozostaje bez zmian
   };
   hero: {
     eyebrow: string;
@@ -82,6 +86,10 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       services: "Usługi",
       contact: "Kontakt",
       lang: "EN",
+      sale: "Wyprzedaż",     // <-- DODANO
+      saleBadge: "Okazje",   // <-- DODANO
+    },
+    // ...
     },
     hero: {
       eyebrow: "Meble na wymiar · 15 lat doświadczenia",
@@ -204,6 +212,10 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       services: "Services",
       contact: "Contact",
       lang: "PL",
+      sale: "Sale",          // <-- DODANO
+      saleBadge: "Offers",   // <-- DODANO
+    },
+    // ...
     },
     hero: {
       eyebrow: "Custom furniture · 15 years of experience",
