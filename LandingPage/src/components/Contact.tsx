@@ -62,7 +62,6 @@ export const Contact: React.FC<ContactProps> = ({ tr, lang, prefilledProject }) 
         ? 'Dzień dobry,\nPlanuję wykończenie wnętrz i interesuje mnie kompleksowa zabudowa meblowa dla całego domu lub apartamentu. Szukam wykonawcy, który zadba o spójny design i najwyższą jakość we wszystkich pomieszczeniach. Proszę o kontakt w sprawie umówienia spotkania.'
         : 'Hello,\nI am planning an interior fit-out and am interested in comprehensive custom furniture for my entire home/apartment. I am looking for a contractor who will ensure a cohesive design and the highest quality across all rooms. Please contact me to arrange a meeting.';
     } else if (selected !== '') {
-      // Domyślna wiadomość dla pozostałych (niesklasyfikowanych) kategorii
       autoMessage = isPolish
         ? 'Dzień dobry,\nChciałbym zapytać o Państwa usługi i wycenę mojego projektu. Proszę o kontakt w wolnej chwili, abyśmy mogli omówić szczegóły i ramy czasowe.'
         : 'Hello,\nI would like to inquire about your services and get a quote for my project. Please contact me at your earliest convenience so we can discuss the details and timeline.';
@@ -157,46 +156,53 @@ export const Contact: React.FC<ContactProps> = ({ tr, lang, prefilledProject }) 
                   </div>
                 </div>
 
-                {/* Lokalizacje (Salon + Biuro) */}
+                {/* Salon */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-neutral-400 shrink-0 mt-2">
+                  <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-neutral-400 shrink-0">
                     <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <div className="flex flex-col gap-6">
-                    {/* Salon */}
-                    <div>
-                      <span className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-mono block mb-1">
-                        {isPolish ? 'Salon ekspozycyjny' : 'Showroom'}
-                      </span>
-                      <p className="text-white text-sm md:text-base font-medium mb-1">
-                        Salon Aleja Bielany
-                      </p>
-                      <a
-                        href="https://www.google.com/maps/place/Werk+Mebel/@51.0458333,16.959026,20z/data=!4m6!3m5!1s0x470fc36c4b6f72e5:0x5ff9cef353f07695!8m2!3d51.0458333!4d16.959335!16s%2Fg%2F11jcqlxy3b?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-neutral-400 hover:text-[#c5a880] transition-colors inline-flex items-center gap-1"
-                      >
-                        ul. Czekoladowa 20, 55-040 Bielany Wrocławskie ↗
-                      </a>
-                    </div>
-                    {/* Biuro projektowe */}
-                    <div>
-                      <span className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-mono block mb-1">
-                        {isPolish ? 'Biuro projektowe' : 'Concept office'}
-                      </span>
-                      <a
-                        href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x470fc3f4abef2f5b:0xe1594e460d5bc4da?sa=X&ved=1t:8290&ictx=111"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-neutral-400 hover:text-[#c5a880] transition-colors inline-flex items-center gap-1 mt-1"
-                      >
-                        ul. Weigla 12, Wrocław ↗
-                      </a>
-                    </div>
+                  <div>
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-mono block mb-1">
+                      {isPolish ? 'Salon ekspozycyjny' : 'Showroom'}
+                    </span>
+                    <p className="text-white text-sm md:text-base font-medium mb-1">
+                      Salon Aleja Bielany
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/place/Werk+Mebel/@51.0458333,16.959026,20z/data=!4m6!3m5!1s0x470fc36c4b6f72e5:0x5ff9cef353f07695!8m2!3d51.0458333!4d16.959335!16s%2Fg%2F11jcqlxy3b?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-neutral-400 hover:text-[#c5a880] transition-colors inline-flex items-center gap-1"
+                    >
+                      ul. Czekoladowa 20, 55-040 Bielany Wrocławskie ↗
+                    </a>
+                  </div>
+                </div>
+
+                {/* Biuro projektowe */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 border border-white/10 flex items-center justify-center text-neutral-400 shrink-0">
+                    <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-neutral-500 font-mono block mb-1">
+                      {isPolish ? 'Biuro projektowe' : 'Concept office'}
+                    </span>
+                    <br />
+                    <a
+                      href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x470fc3f4abef2f5b:0xe1594e460d5bc4da?sa=X&ved=1t:8290&ictx=111"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:text-[#c5a880] transition-colors text-sm md:text-base font-medium inline-flex items-center gap-1"
+                    >
+                      ul. Weigla 12, Wrocław ↗
+                    </a>
                   </div>
                 </div>
 
