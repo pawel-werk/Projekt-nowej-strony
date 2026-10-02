@@ -338,6 +338,6 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       social: "Follow us",
       copy: "© 2026 Werk Mebel. All rights reserved.",
     },
-    floating: "Zapytaj o wycenę",
+    floating: "Request a quote",
   }
 };
