@@ -33,6 +33,8 @@ export interface TranslationSchema {
     eyebrow: string;
     title: string;
     body: string;
+    processEyebrow: string;
+    processTitle: string;
     stats: { val: string; label: string }[];
     process: { step: string; title: string; desc: string }[];
   };
@@ -67,7 +69,10 @@ export interface TranslationSchema {
   };
   footer: {
     tagline: string;
-    address: string;
+    address1Name: string;
+    address1: string;
+    address2Name: string;
+    address2: string;
     phone: string;
     email: string;
     social: string;
@@ -129,6 +134,8 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       eyebrow: "O nas",
       title: "15 lat. Tysiące zadowolonych klientów.",
       body: "Werk Mebel to rodzinna pracownia meblarska z Wrocławia. Od 2011 roku tworzymy meble na wymiar, które łączą precyzję wykonania z ponadczasowym designem. Używamy materiałów klasy premium i pracujemy z najlepszymi dostawcami okuć i frontów z Niemiec, Włoch i Polski.",
+      processEyebrow: "Jak pracujemy",
+      processTitle: "Od pomysłu do realizacji",
       stats: [
         { val: "15+", label: "Lat doświadczenia" },
         { val: "2400+", label: "Zrealizowanych projects" },
@@ -193,7 +200,10 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
     },
     footer: {
       tagline: "Meble na wymiar dla wymagających.",
-      address: "ul. Czekoladowa 20, 55-040 Bielany Wrocławskie",
+      address1Name: "Salon ekspozycyjny",
+      address1: "ul. Czekoladowa 20, 55-040 Bielany Wrocławskie",
+      address2Name: "Biuro projektowe",
+      address2: "ul. Weigla 12, Wrocław",
       phone: "+48 71 778 90 80",
       email: "biuro@werkmebel.pl",
       social: "Obserwuj nas",
@@ -253,6 +263,8 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       eyebrow: "About us",
       title: "15 years. Thousands of happy clients.",
       body: "Werk Mebel is a family-owned furniture workshop from Wrocław. Since 2011 we have been creating custom furniture that combines precision craftsmanship with timeless design. We use premium materials and work with the best hardware and front suppliers from Germany, Italy, and Poland.",
+      processEyebrow: "How we work",
+      processTitle: "From concept to completion",
       stats: [
         { val: "15+", label: "Years of experience" },
         { val: "2400+", label: "Completed projects" },
@@ -317,7 +329,10 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
     },
     footer: {
       tagline: "Custom furniture for discerning clients.",
-      address: "ul. Czekoladowa 20, Aleja Bielany II, 55-040 Bielany Wrocławskie, Poland",
+      address1Name: "Showroom",
+      address1: "ul. Czekoladowa 20, 55-040 Bielany Wrocławskie, Poland",
+      address2Name: "Concept office",
+      address2: "ul. Weigla 12, Wrocław, Poland",
       phone: "+48 71 778 90 80",
       email: "biuro@werkmebel.pl",
       social: "Follow us",

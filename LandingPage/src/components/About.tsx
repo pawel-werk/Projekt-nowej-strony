@@ -55,7 +55,7 @@ export const About: React.FC<AboutProps> = ({ tr, onOpenTeam }) => {
         </div>
 
         {/* Feature image banner */}
-        <div className="relative mb-20 overflow-hidden bg-gray-100 h-96 lg:h-[480px]">
+        <div className="relative mb-24 overflow-hidden bg-gray-100 h-96 lg:h-[480px]">
           <img
             src="https://images.unsplash.com/photo-1632583824020-937ae9564495?w=1400&h=600&fit=crop&auto=format"
             alt="Warsztat mebli Werk Mebel Wrocław"
@@ -70,6 +70,22 @@ export const About: React.FC<AboutProps> = ({ tr, onOpenTeam }) => {
               Meble z duszą.<br />
             </p>
           </div>
+        </div>
+
+        {/* Sekcja 6 Kroków - Nowy Nagłówek */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="w-6 h-[1px] bg-[#c8a96e]" />
+            <span className="text-[11px] tracking-[0.3em] uppercase text-[#c8a96e] font-medium">
+              {tr.about.processEyebrow}
+            </span>
+          </div>
+          <h2
+            className="font-serif text-[#0a0a0a] tracking-tight"
+            style={{ fontSize: "clamp(2rem, 3vw, 2.8rem)" }}
+          >
+            {tr.about.processTitle}
+          </h2>
         </div>
 
         {/* Process steps */}
