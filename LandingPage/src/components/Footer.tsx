@@ -136,7 +136,7 @@ export const Footer: React.FC<FooterProps> = ({ tr, onOpenPrivacy, onOpenBlog })
           <div className="flex items-center justify-center gap-2">
             <span className="text-[#c5a880] text-xs">✦</span>
             <span className="text-xs text-gray-400 tracking-wider uppercase font-medium">
-              Złota Firma & Lider Jakości 2026
+              Złota Firma & Lider Jakości 2022–2025
             </span>
           </div>
         </div>

@@ -1,252 +1,121 @@
-import { useState, useEffect } from 'react';
-import { translations } from './data/translations';
-import { TopBar } from './components/TopBar';
-import { mockTopBarItems } from './data/topbarData';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { Services } from './components/Services';
-import { Portfolio } from './components/Portfolio';
-import { WhyUs } from './components/WhyUs';
-import { About } from './components/About';
-import { InstagramFeed } from './components/InstagramFeed';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
-import { FloatingCTA } from './components/FloatingCTA';
-import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
-import { BlogPage } from './components/Blog/BlogPage';
-import { BlogPostPage } from './components/Blog/BlogPostPage';
-import { ImagePopup } from './components/ImagePopup';
+import React from 'react';
+import { TranslationSchema } from '../data/translations';
 
-// IMPORTY SEKCJI WYPRZEDAŻY I ZESPOŁU
-import { SalePage } from './components/Sale/SalePage';
-import { SaleBanner } from './components/Sale/SaleBanner';
-import { TeamPage } from './components/TeamPage';
-
-type AppView = 'home' | 'privacy' | 'blog' | 'blog-post' | 'sale' | 'team';
-
-export default function App() {
-  const [lang, setLang] = useState<'pl' | 'en'>('pl');
-  const [prefilledCategory, setPrefilledCategory] = useState<string>('');
-  const [prefilledMessage, setPrefilledMessage] = useState<string>('');
-  const [isTopBarVisible, setIsTopBarVisible] = useState(true);
-  const [currentView, setCurrentView] = useState<AppView>('home');
-  const [activeBlogSlug, setActiveBlogSlug] = useState<string>('');
-
-  const tr = translations[lang];
-
-  // Helper do parsowania URL i hasha
-  const parseCurrentUrl = (): { view: AppView; slug?: string } => {
-    const path = window.location.pathname;
-    const hash = window.location.hash;
-
-    if (path === '/polityka-prywatnosci' || hash === '#polityka-prywatnosci') {
-      return { view: 'privacy' };
-    }
-    
-    // Obsługa nowej ścieżki wyprzedaży
-    if (path === '/wyprzedaz' || hash === '#wyprzedaz') {
-      return { view: 'sale' };
-    }
-
-    // Obsługa ścieżki zespołu
-    if (path === '/zespol' || hash === '#zespol') {
-      return { view: 'team' };
-    }
-
-    if (path.startsWith('/blog/')) {
-      const slug = path.replace('/blog/', '').replace('/', '');
-      if (slug) return { view: 'blog-post', slug };
-    }
-    if (hash.startsWith('#blog/')) {
-      const slug = hash.replace('#blog/', '');
-      if (slug) return { view: 'blog-post', slug };
-    }
-
-    if (path === '/blog' || hash === '#blog') {
-      return { view: 'blog' };
-    }
-
-    return { view: 'home' };
-  };
-
-  useEffect(() => {
-    const initial = parseCurrentUrl();
-    setCurrentView(initial.view);
-    if (initial.slug) setActiveBlogSlug(initial.slug);
-
-    const isDismissed = sessionStorage.getItem('werkmebel_topbar_dismissed');
-    if (isDismissed) {
-      setIsTopBarVisible(false);
-    }
-
-    const handleUrlChange = () => {
-      const parsed = parseCurrentUrl();
-      setCurrentView(parsed.view);
-      if (parsed.slug) setActiveBlogSlug(parsed.slug);
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    };
-
-    window.addEventListener('popstate', handleUrlChange);
-    window.addEventListener('hashchange', handleUrlChange);
-    return () => {
-      window.removeEventListener('popstate', handleUrlChange);
-      window.removeEventListener('hashchange', handleUrlChange);
-    };
-  }, []);
-
-  const navigateTo = (view: AppView, slug?: string) => {
-    setCurrentView(view);
-    if (view === 'blog-post' && slug) {
-      setActiveBlogSlug(slug);
-      window.location.hash = `blog/${slug}`;
-    } else if (view === 'blog') {
-      window.location.hash = 'blog';
-    } else if (view === 'privacy') {
-      window.location.hash = 'polityka-prywatnosci';
-    } else if (view === 'sale') {
-      window.location.hash = 'wyprzedaz';
-    } else if (view === 'team') {
-      window.location.hash = 'zespol';
-    } else {
-      window.location.hash = '';
-      if (window.location.pathname !== '/') {
-        window.history.pushState({}, '', '/');
-      }
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const scrollTo = (id: string) => {
-    if (currentView !== 'home') {
-      navigateTo('home');
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 120);
-      return;
-    }
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleSelectService = (serviceTitle: string) => {
-    setPrefilledCategory(serviceTitle.includes('Kuchni') ? 'Kuchnia' : 'Nowy projekt / wycena');
-    setPrefilledMessage(`Dzień dobry, interesuje mnie realizacja w zakresie: "${serviceTitle}". Proszę o kontakt w sprawie wstępnych ustaleń.`);
-    scrollTo('contact');
-  };
-
-  const handleSelectProjectForQuote = (projectTitle: string) => {
-    setPrefilledCategory('Nowy projekt / wycena');
-    setPrefilledMessage(`Dzień dobry, podoba mi się Wasza realizacja "${projectTitle}". Chciał(a)bym dowiedzieć się o możliwość i szacunkowy koszt wykonania podobnego projektu.`);
-    scrollTo('contact');
-  };
-
-  if (currentView === 'blog-post') {
-    return (
-      <BlogPostPage
-        slug={activeBlogSlug}
-        onBackToBlog={() => navigateTo('blog')}
-        onBackToHome={() => navigateTo('home')}
-        onSelectPost={(slug) => navigateTo('blog-post', slug)}
-        onQuoteRequest={() => {
-          setPrefilledCategory('Nowy projekt / wycena');
-          setPrefilledMessage('Dzień dobry, czytałem Państwa poradnik na blogu i chciałbym skonsultować projekt mebli.');
-          scrollTo('contact');
-        }}
-      />
-    );
-  }
-
-  if (currentView === 'blog') {
-    return (
-      <BlogPage
-        onBackToHome={() => navigateTo('home')}
-        onSelectPost={(slug) => navigateTo('blog-post', slug)}
-      />
-    );
-  }
-
-  if (currentView === 'privacy') {
-    return <PrivacyPolicyPage onBackToHome={() => navigateTo('home')} />;
-  }
-
-  if (currentView === 'sale') {
-    return (
-      <SalePage 
-        onBackToHome={() => navigateTo('home')}
-        onQuoteRequest={(productName) => {
-          setPrefilledCategory('Inne');
-          setPrefilledMessage(`Dzień dobry, jestem zainteresowana/y produktem z wyprzedaży: "${productName}". Proszę o potwierdzenie dostępności.`);
-          navigateTo('home');
-          setTimeout(() => scrollTo('contact'), 200);
-        }}
-        onCustomDesignRequest={() => {
-          setPrefilledCategory('Nowy projekt / wycena');
-          setPrefilledMessage('Dzień dobry, interesuje mnie zaprojektowanie i wycena mebli na wymiar według indywidualnego układu.');
-          navigateTo('home');
-          setTimeout(() => scrollTo('contact'), 200);
-        }}
-      />
-    );
-  }
-
-  if (currentView === 'team') {
-    return (
-      <TeamPage onBackToHome={() => navigateTo('home')} />
-    );
-  }
-
-  return (
-    <div className="min-h-full flex flex-col selection:bg-[#c8a96e] selection:text-black">
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <TopBar
-          items={mockTopBarItems}
-          onScrollTo={scrollTo}
-          onDismissChange={(dismissed) => setIsTopBarVisible(!dismissed)}
-        />
-      </div>
-
-      <Navbar
-        tr={tr}
-        lang={lang}
-        hasTopBar={isTopBarVisible}
-        onToggleLang={() => setLang(lang === 'pl' ? 'en' : 'pl')}
-        onScrollTo={scrollTo}
-        onOpenBlog={() => navigateTo('blog')}
-      />
-
-      <main className="flex-1">
-        <Hero tr={tr} onScrollTo={scrollTo} />
-        <Services tr={tr} lang={lang} onSelectService={handleSelectService} />
-        <Portfolio tr={tr} lang={lang} onSelectProjectForQuote={handleSelectProjectForQuote} />
-        <SaleBanner onOpenSale={() => navigateTo('sale')} />
-        <WhyUs tr={tr} />
-        
-        {/* Przekazanie akcji onOpenTeam do komponentu About */}
-        <About tr={tr} onOpenTeam={() => navigateTo('team')} />
-        
-        <InstagramFeed tr={tr} />
-        <Contact
-          tr={tr}
-          prefilledCategory={prefilledCategory}
-          prefilledMessage={prefilledMessage}
-        />
-      </main>
-
-      <Footer
-        tr={tr}
-        onOpenPrivacy={() => navigateTo('privacy')}
-        onOpenBlog={() => navigateTo('blog')}
-      />
-
-      <FloatingCTA
-        label={tr.floating}
-        onClick={() => scrollTo('contact')}
-      />
-
-      <ImagePopup />
-    </div>
-  );
+interface AboutProps {
+  tr: TranslationSchema;
+  onOpenTeam: () => void;
 }
+
+export const About: React.FC<AboutProps> = ({ tr, onOpenTeam }) => {
+  return (
+    <section id="about" className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Story and stats */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-end">
+          <div>
+            <p className="text-xs tracking-[0.3em] uppercase mb-3 text-[#c8a96e] font-medium">
+              {tr.about.eyebrow}
+            </p>
+            <h2
+              className="font-serif mb-6 text-[#0a0a0a]"
+              style={{ fontSize: "clamp(2.2rem, 4vw, 3.5rem)" }}
+            >
+              {tr.about.title}
+            </h2>
+            <p className="text-gray-600 leading-relaxed max-w-lg font-light">
+              {tr.about.body}
+            </p>
+            
+            {/* Przycisk CTA kierujący do podstrony Zespołu */}
+            <div className="mt-10 flex justify-start">
+              <button
+                onClick={onOpenTeam}
+                aria-label="Przejdź do podstrony Poznaj nasz zespół"
+                className="inline-flex items-center gap-3 border border-[#0a0a0a] text-[#0a0a0a] hover:border-[#c8a96e] hover:text-[#c8a96e] transition-colors cursor-pointer px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium bg-transparent"
+              >
+                <span>Poznaj nasz zespół</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Stats grid */}
+          <div className="grid grid-cols-2 gap-px bg-[#e0ddd8]">
+            {tr.about.stats.map((s, i) => (
+              <div key={i} className="bg-white p-8 group hover:bg-[#f9f8f6] transition-colors">
+                <p className="font-serif text-4xl lg:text-5xl text-[#0a0a0a] leading-none mb-2">
+                  {s.val}
+                </p>
+                <p className="text-xs tracking-widest uppercase text-[#6b6b6b]">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Feature image banner */}
+        <div className="relative mb-24 overflow-hidden bg-gray-100 h-96 lg:h-[480px]">
+          <img
+            src="https://images.unsplash.com/photo-1632583824020-937ae9564495?w=1400&h=600&fit=crop&auto=format"
+            alt="Warsztat mebli Werk Mebel Wrocław"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+          <div className="absolute left-8 lg:left-12 bottom-8 lg:bottom-12">
+            <p className="text-[#c8a96e] text-xs tracking-[0.3em] uppercase mb-2 font-medium">
+              Wrocław · od 2011
+            </p>
+            <p className="text-white font-serif text-2xl lg:text-4xl leading-tight mb-5">
+              Meble z duszą.
+            </p>
+            
+            {/* Wyróżnienie / Nagroda na banerze */}
+            <div className="flex items-center gap-3 bg-black/30 backdrop-blur-sm w-fit px-4 py-2.5 border border-white/10">
+              <span className="text-[#c8a96e] text-xs">✦</span>
+              <span className="text-[10px] text-white/95 tracking-[0.2em] uppercase font-medium">
+                Złota Firma & Lider Jakości 2022–2025
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Sekcja 6 Kroków - Nowy Nagłówek */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="w-6 h-[1px] bg-[#c8a96e]" />
+            <span className="text-[11px] tracking-[0.3em] uppercase text-[#c8a96e] font-medium">
+              {tr.about.processEyebrow}
+            </span>
+          </div>
+          <h2
+            className="font-serif text-[#0a0a0a] tracking-tight"
+            style={{ fontSize: "clamp(2rem, 3vw, 2.8rem)" }}
+          >
+            {tr.about.processTitle}
+          </h2>
+        </div>
+
+        {/* Process steps */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#e0ddd8]">
+          {tr.about.process.map((p) => (
+            <div
+              key={p.step}
+              className="card-interactive bg-white p-8 group hover:bg-black transition-colors duration-300"
+            >
+              <p className="text-xs tracking-[0.3em] uppercase mb-4 text-[#c8a96e] font-semibold">
+                {p.step}
+              </p>
+              <h3 className="font-serif text-xl font-medium mb-3 text-[#0a0a0a] group-hover:text-white transition-colors">
+                {p.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-[#6b6b6b] group-hover:text-gray-300 transition-colors font-light">
+                {p.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
