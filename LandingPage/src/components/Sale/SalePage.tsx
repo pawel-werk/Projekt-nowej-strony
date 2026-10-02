@@ -47,7 +47,7 @@ export const SalePage: React.FC<SalePageProps> = ({ onBackToHome, onQuoteRequest
     },
     {
       q: 'Jak przebiega odbiór lub dostawa?',
-      a: 'Wskazane promocyjne ceny nie uwzględniają kosztów transportu oraz prac montażowych w lokalizacji klienta. Chętnie zorganizujemy profesjonalny, dedykowany dowóz oraz usługę instalacyjną — koszty te wyceniamy każdorazowo na zapytanie w zależności od odległości. <!-- TODO: Jeśli macie stały cennik dowozu z salonu, uzupełnij go tutaj -->'
+      a: 'Wskazane promocyjne ceny nie uwzględniają kosztów transportu oraz prac montażowych w lokalizacji klienta. Chętnie zorganizujemy profesjonalny, dedykowany dowóz oraz usługę instalacyjną — koszty te wyceniamy każdorazowo na zapytanie w zależności od odległości.'
     }
   ];
 
@@ -89,26 +89,41 @@ export const SalePage: React.FC<SalePageProps> = ({ onBackToHome, onQuoteRequest
           </div>
         </section>
 
-        {/* BENEFIT BAR */}
+        {/* BENEFIT BAR - Luksusowy minimalizm bez ikon */}
         <section className="border-y border-white/10 bg-[#0a0a0a]">
-          <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="flex flex-col gap-2 border-l border-white/5 pl-4 md:border-none md:pl-0">
-              <span className="text-[#c5a880] text-xl mb-1">✦</span>
+          <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
+            <div className="flex flex-col gap-3 border-l border-white/5 pl-5 md:border-none md:pl-0 group">
+              <div className="flex items-center gap-3 mb-1">
+                <span className="text-[10px] font-mono text-[#c5a880] tracking-widest">01</span>
+                <span className="w-8 h-[1px] bg-[#c5a880]/30 group-hover:bg-[#c5a880] transition-colors duration-300"></span>
+              </div>
               <h3 className="text-white text-sm tracking-widest uppercase font-medium">Jakość Premium</h3>
               <p className="text-xs text-gray-500 font-light leading-relaxed">Solidne materiały i topowe okucia bez kompromisów jakościowych.</p>
             </div>
-            <div className="flex flex-col gap-2 border-l border-white/5 pl-4 md:border-none md:pl-0">
-              <span className="text-[#c5a880] text-xl mb-1">✦</span>
+            
+            <div className="flex flex-col gap-3 border-l border-white/5 pl-5 md:border-none md:pl-0 group">
+              <div className="flex items-center gap-3 mb-1">
+                <span className="text-[10px] font-mono text-[#c5a880] tracking-widest">02</span>
+                <span className="w-8 h-[1px] bg-[#c5a880]/30 group-hover:bg-[#c5a880] transition-colors duration-300"></span>
+              </div>
               <h3 className="text-white text-sm tracking-widest uppercase font-medium">Możliwość oględzin</h3>
               <p className="text-xs text-gray-500 font-light leading-relaxed">Wszystkie meble stoją fizycznie w salonie – zapraszamy by ich dotknąć.</p>
             </div>
-            <div className="flex flex-col gap-2 border-l border-white/5 pl-4 md:border-none md:pl-0">
-              <span className="text-[#c5a880] text-xl mb-1">✦</span>
+            
+            <div className="flex flex-col gap-3 border-l border-white/5 pl-5 md:border-none md:pl-0 group">
+              <div className="flex items-center gap-3 mb-1">
+                <span className="text-[10px] font-mono text-[#c5a880] tracking-widest">03</span>
+                <span className="w-8 h-[1px] bg-[#c5a880]/30 group-hover:bg-[#c5a880] transition-colors duration-300"></span>
+              </div>
               <h3 className="text-white text-sm tracking-widest uppercase font-medium">Dostępność od ręki</h3>
               <p className="text-xs text-gray-500 font-light leading-relaxed">Nie czekasz tygodniami na produkcję – meble są gotowe do zabrania.</p>
             </div>
-            <div className="flex flex-col gap-2 border-l border-white/5 pl-4 md:border-none md:pl-0">
-              <span className="text-[#c5a880] text-xl mb-1">✦</span>
+            
+            <div className="flex flex-col gap-3 border-l border-white/5 pl-5 md:border-none md:pl-0 group">
+              <div className="flex items-center gap-3 mb-1">
+                <span className="text-[10px] font-mono text-[#c5a880] tracking-widest">04</span>
+                <span className="w-8 h-[1px] bg-[#c5a880]/30 group-hover:bg-[#c5a880] transition-colors duration-300"></span>
+              </div>
               <h3 className="text-white text-sm tracking-widest uppercase font-medium">Limitowana pula</h3>
               <p className="text-xs text-gray-500 font-light leading-relaxed">W ofercie posiadamy wyłącznie ściśle pojedyncze, demonstracyjne egzemplarze.</p>
             </div>
