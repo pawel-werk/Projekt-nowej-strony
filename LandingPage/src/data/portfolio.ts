@@ -1,3 +1,4 @@
+
 export interface PortfolioItem {
   id: string;
   title: string;
@@ -11,6 +12,7 @@ export interface PortfolioItem {
   descEn?: string;
   gallery: string[];
   materials: string[];
+  instagramReelUrl?: string; // Opcjonalny link do wideo
 }
 
 export const portfolioItems: PortfolioItem[] = [
@@ -37,7 +39,8 @@ export const portfolioItems: PortfolioItem[] = [
       'Masywne blaty z ciemnego kamienia',
       'Matowe fronty Anty Finger bezuchwytowe',
       'Przeszklenia z czarnego szkła'
-    ]
+    ],
+    instagramReelUrl: 'https://www.instagram.com/p/DdtaQQ6CZ8O/', // Dodany link
   },
   {
     id: 'kuchnia-orzech-antracyt',
@@ -211,35 +214,4 @@ export const portfolioItems: PortfolioItem[] = [
       'Ukryte oświetlenie akcentujące cokół'
     ]
   }
-];
-
-export const instagramPosts = [
-  {
-    id: '1',
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-    likes: 142,
-    comments: 18,
-    url: 'https://instagram.com/werkmebel',
-  },
-  {
-    id: '2',
-    imageUrl: 'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=800&q=80',
-    likes: 98,
-    comments: 12,
-    url: 'https://instagram.com/werkmebel',
-  },
-  {
-    id: '3',
-    imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
-    likes: 215,
-    comments: 24,
-    url: 'https://instagram.com/werkmebel',
-  },
-  {
-    id: '4',
-    imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
-    likes: 176,
-    comments: 15,
-    url: 'https://instagram.com/werkmebel',
-  },
 ];

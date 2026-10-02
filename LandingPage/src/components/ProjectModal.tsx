@@ -163,7 +163,24 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             )}
           </div>
 
+          {/* Sekcja przycisków na dole */}
           <div className="pt-4 border-t border-white/10 mt-auto">
+            {/* Opcjonalny przycisk Instagram Reel */}
+            {project.instagramReelUrl && (
+              <a
+                href={project.instagramReelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full mb-3 py-3 border border-white/15 text-gray-300 hover:border-[#c5a880] hover:text-[#c5a880] font-medium text-[10px] tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653Z" />
+                </svg>
+                <span>{lang === 'pl' ? 'Obejrzyj wideo na Instagramie' : 'Watch video on Instagram'}</span>
+              </a>
+            )}
+            
+            {/* Główny przycisk wyceny */}
             <button
               onClick={() => {
                 onClose();
