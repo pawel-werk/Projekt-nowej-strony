@@ -33,7 +33,7 @@ const icons = [
 
 export const WhyUs: React.FC<WhyUsProps> = ({ tr }) => {
   return (
-    <section className="py-28 bg-[#0a0a0a] border-t border-white/5">
+    <section className="py-28 bg-[#f5f5f3] border-t border-[#e8e6e1]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Section Header */}
         <div className="mb-16">
@@ -44,32 +44,32 @@ export const WhyUs: React.FC<WhyUsProps> = ({ tr }) => {
             </span>
           </div>
           <h2
-            className="text-white font-serif tracking-tight"
+            className="text-[#0a0a0a] font-serif tracking-tight"
             style={{ fontSize: "clamp(2.4rem, 4vw, 3.6rem)" }}
           >
             {tr.pain.title}
           </h2>
         </div>
 
-        {/* 2x2 Architectural Grid with Sleek White Line Icons */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#222222]">
+        {/* 2x2 Architectural Grid with Sleek Line Icons */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#e0ddd8]">
           {tr.pain.items.map((item, i) => (
             <div
               key={i}
-              className="p-10 lg:p-12 group bg-[#0e0e0e] hover:bg-white transition-colors duration-400 cursor-default"
+              className="p-10 lg:p-12 group bg-white hover:bg-[#0a0a0a] transition-colors duration-400 cursor-default"
             >
               {/* Elegant Line Icon */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-sm bg-white/5 border border-white/10 text-white group-hover:bg-[#0a0a0a] group-hover:border-[#0a0a0a] group-hover:text-white transition-all duration-300 mb-8">
+              <div className="w-12 h-12 flex items-center justify-center rounded-sm bg-gray-50 border border-gray-100 text-[#0a0a0a] group-hover:bg-[#1a1a1a] group-hover:border-[#1a1a1a] group-hover:text-[#c5a880] transition-all duration-300 mb-8">
                 {icons[i] || icons[0]}
               </div>
 
-              {/* Problem (former strike-through, now refined & legible) */}
-              <p className="text-[11px] tracking-[0.2em] uppercase mb-4 text-gray-400 group-hover:text-red-600/80 transition-colors font-medium">
+              {/* Problem */}
+              <p className="text-[11px] tracking-[0.2em] uppercase mb-4 text-gray-500 group-hover:text-[#c5a880] transition-colors font-medium">
                 — {item.problem}
               </p>
 
               {/* Solution */}
-              <p className="text-white text-base lg:text-lg leading-relaxed group-hover:text-[#0a0a0a] transition-colors duration-300 font-light">
+              <p className="text-[#0a0a0a] text-base lg:text-lg leading-relaxed group-hover:text-gray-300 transition-colors duration-300 font-light">
                 {item.solution}
               </p>
             </div>
