@@ -1,14 +1,19 @@
 export interface TopBarItem {
   id: string | number;
   text: string;
+  textEn?: string; // Angielska wersja tekstu
   url: string;
   badge?: string;
+  badgeEn?: string; // Angielska wersja etykiety
   icon?: string;
   highlight?: boolean;
 }
 
 export interface TopBarProps {
   items: TopBarItem[];
-  speedSeconds?: number; // Czas trwania jednego pełnego cyklu animacji marquee
-  storageKey?: string;   // Klucz sesji w sessionStorage
+  lang: 'pl' | 'en'; // Wymagany parametr językowy
+  speedSeconds?: number; 
+  storageKey?: string;   
+  onScrollTo?: (id: string) => void;
+  onDismissChange?: (dismissed: boolean) => void;
 }

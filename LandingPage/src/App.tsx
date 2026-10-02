@@ -203,6 +203,7 @@ export default function App() {
       <div className="fixed top-0 left-0 right-0 z-50">
         <TopBar
           items={mockTopBarItems}
+          lang={lang}
           onScrollTo={scrollTo}
           onDismissChange={(dismissed) => setIsTopBarVisible(!dismissed)}
         />
@@ -232,8 +233,8 @@ export default function App() {
         <InstagramFeed tr={tr} />
         <Contact
           tr={tr}
-          prefilledCategory={prefilledCategory}
-          prefilledMessage={prefilledMessage}
+          lang={lang}
+          prefilledProject={prefilledCategory}
         />
       </main>
 
