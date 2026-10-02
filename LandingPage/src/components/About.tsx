@@ -33,7 +33,7 @@ export const About: React.FC<AboutProps> = ({ tr, onOpenTeam }) => {
                 aria-label="Przejdź do podstrony Poznaj nasz zespół"
                 className="inline-flex items-center gap-3 border border-[#0a0a0a] text-[#0a0a0a] hover:border-[#c8a96e] hover:text-[#c8a96e] transition-colors cursor-pointer px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium bg-transparent"
               >
-                <span>Poznaj nasz zespół</span>
+                <span>{tr.about.teamCta}</span>
                 <span>→</span>
               </button>
             </div>
@@ -64,17 +64,17 @@ export const About: React.FC<AboutProps> = ({ tr, onOpenTeam }) => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
           <div className="absolute left-8 lg:left-12 bottom-8 lg:bottom-12">
             <p className="text-[#c8a96e] text-xs tracking-[0.3em] uppercase mb-2 font-medium">
-              Wrocław · od 2011
+              {tr.about.cityYear}
             </p>
             <p className="text-white font-serif text-2xl lg:text-4xl leading-tight mb-5">
-              Meble z duszą.
+              {tr.about.bannerQuote}
             </p>
             
             {/* Wyróżnienie / Nagroda na banerze */}
             <div className="flex items-center gap-3 bg-black/30 backdrop-blur-sm w-fit px-4 py-2.5 border border-white/10">
               <span className="text-[#c8a96e] text-xs">✦</span>
               <span className="text-[10px] text-white/95 tracking-[0.2em] uppercase font-medium">
-                Złota Firma & Lider Jakości 2022–2025
+                {tr.about.award}
               </span>
             </div>
           </div>
