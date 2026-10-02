@@ -61,14 +61,22 @@ export const About: React.FC<AboutProps> = ({ tr, onOpenTeam }) => {
             alt="Warsztat mebli Werk Mebel Wrocław"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
           <div className="absolute left-8 lg:left-12 bottom-8 lg:bottom-12">
             <p className="text-[#c8a96e] text-xs tracking-[0.3em] uppercase mb-2 font-medium">
               Wrocław · od 2011
             </p>
-            <p className="text-white font-serif text-2xl lg:text-4xl leading-tight">
-              Meble z duszą.<br />
+            <p className="text-white font-serif text-2xl lg:text-4xl leading-tight mb-5">
+              Meble z duszą.
             </p>
+            
+            {/* Wyróżnienie / Nagroda na banerze */}
+            <div className="flex items-center gap-3 bg-black/30 backdrop-blur-sm w-fit px-4 py-2.5 border border-white/10">
+              <span className="text-[#c8a96e] text-xs">✦</span>
+              <span className="text-[10px] text-white/95 tracking-[0.2em] uppercase font-medium">
+                Złota Firma & Lider Jakości 2022–2025
+              </span>
+            </div>
           </div>
         </div>
 
