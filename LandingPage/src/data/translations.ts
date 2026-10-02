@@ -35,6 +35,10 @@ export interface TranslationSchema {
     body: string;
     processEyebrow: string;
     processTitle: string;
+    teamCta: string; // Nowy klucz dla przycisku Zespołu
+    cityYear: string; // Nowy klucz dla "Wrocław od 2011"
+    bannerQuote: string; // Nowy klucz dla "Meble z duszą"
+    award: string; // Nowy klucz dla "Złota Firma"
     stats: { val: string; label: string }[];
     process: { step: string; title: string; desc: string }[];
   };
@@ -77,6 +81,7 @@ export interface TranslationSchema {
     email: string;
     social: string;
     copy: string;
+    award: string; // Nagroda w stopce
   };
   floating: string;
 }
@@ -101,7 +106,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
     },
     portfolio: {
       title: "Nasze realizacje",
-      sub: "Wybierz kategorię, by zobaczyć ukończone projekty",
+      sub: "Kliknij w wybraną realizację, aby przejrzeć pełną galerię ujęć, użyte materiały oraz opis techniczny.",
       filters: ["Wszystkie", "Kuchnie", "Garderoby", "Wnętrza", "Łazienki"],
     },
     pain: {
@@ -136,6 +141,10 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       body: "Werk Mebel to rodzinna pracownia meblarska z Wrocławia. Od 2011 roku tworzymy meble na wymiar, które łączą precyzję wykonania z ponadczasowym designem. Używamy materiałów klasy premium i pracujemy z najlepszymi dostawcami okuć i frontów z Niemiec, Włoch i Polski.",
       processEyebrow: "Jak pracujemy",
       processTitle: "Od pomysłu do realizacji",
+      teamCta: "Poznaj nasz zespół",
+      cityYear: "Wrocław · od 2011",
+      bannerQuote: "Meble z duszą.",
+      award: "Złota Firma & Lider Jakości 2022–2025",
       stats: [
         { val: "15+", label: "Lat doświadczenia" },
         { val: "2400+", label: "Zrealizowanych projects" },
@@ -208,6 +217,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       email: "biuro@werkmebel.pl",
       social: "Obserwuj nas",
       copy: "© 2026 Werk Mebel. Wszelkie prawa zastrzeżone.",
+      award: "Złota Firma & Lider Jakości 2022–2025"
     },
     floating: "Zapytaj o wycenę",
   },
@@ -230,7 +240,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
     },
     portfolio: {
       title: "Our projects",
-      sub: "Select a category to browse completed work",
+      sub: "Click on a selected project to view the full image gallery, materials used, and technical specifications.",
       filters: ["All", "Kitchens", "Wardrobes", "Interiors", "Bathrooms"],
     },
     pain: {
@@ -265,6 +275,10 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       body: "Werk Mebel is a family-owned furniture workshop from Wrocław. Since 2011 we have been creating custom furniture that combines precision craftsmanship with timeless design. We use premium materials and work with the best hardware and front suppliers from Germany, Italy, and Poland.",
       processEyebrow: "How we work",
       processTitle: "From concept to completion",
+      teamCta: "Meet our team",
+      cityYear: "Wrocław · since 2011",
+      bannerQuote: "Furniture with soul.",
+      award: "Gold Company & Quality Leader 2022–2025",
       stats: [
         { val: "15+", label: "Years of experience" },
         { val: "2400+", label: "Completed projects" },
@@ -337,6 +351,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       email: "biuro@werkmebel.pl",
       social: "Follow us",
       copy: "© 2026 Werk Mebel. All rights reserved.",
+      award: "Gold Company & Quality Leader 2022–2025"
     },
     floating: "Request a quote",
   }
