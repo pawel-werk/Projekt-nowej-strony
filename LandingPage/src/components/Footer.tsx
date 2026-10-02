@@ -45,32 +45,48 @@ export const Footer: React.FC<FooterProps> = ({ tr, onOpenPrivacy, onOpenBlog })
           </div>
 
           <div>
-            <p className="text-xs tracking-widest uppercase text-gray-400 mb-3 font-medium">Lokalizacja i kontakt</p>
-            <a
-              href="https://www.google.com/maps/place/Werk+Mebel/@51.0458333,16.959026,20z/data=!4m6!3m5!1s0x470fc36c4b6f72e5:0x5ff9cef353f07695!8m2!3d51.0458333!4d16.959335!16s%2Fg%2F11jcqlxy3b?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-[#c5a880] transition-colors text-sm font-light leading-relaxed inline-flex items-center gap-1"
-            >
-              {tr.footer.address} ↗
-            </a>
+            <p className="text-xs tracking-widest uppercase text-gray-400 mb-5 font-medium">Lokalizacja i kontakt</p>
+            
+            <div className="flex flex-col gap-3 mb-6">
+              {/* Adres 1: Salon ekspozycyjny */}
+              <a
+                href="https://www.google.com/maps/place/Werk+Mebel/@51.0458333,16.959026,20z/data=!4m6!3m5!1s0x470fc36c4b6f72e5:0x5ff9cef353f07695!8m2!3d51.0458333!4d16.959335!16s%2Fg%2F11jcqlxy3b?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#c5a880] transition-colors text-sm font-light flex items-center gap-1 w-fit"
+              >
+                {tr.footer.address1Name} ↗
+              </a>
+
+              {/* Adres 2: Biuro projektowe */}
+              <a
+                href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x470fc3f4abef2f5b:0xe1594e460d5bc4da?sa=X&ved=1t:8290&ictx=111"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#c5a880] transition-colors text-sm font-light flex items-center gap-1 w-fit"
+              >
+                {tr.footer.address2Name} ↗
+              </a>
+            </div>
+
+            {/* Dane kontaktowe */}
             <a
               href="tel:+48717789080"
-              className="text-gray-300 text-sm block mt-2 hover:text-[#c5a880] transition-colors"
+              className="text-gray-300 text-sm block mb-2 hover:text-[#c5a880] transition-colors w-fit"
             >
               {tr.footer.phone}
             </a>
             <a
               href="mailto:biuro@werkmebel.pl"
-              className="text-gray-300 text-sm block mt-1 hover:text-[#c5a880] transition-colors"
+              className="text-gray-300 text-sm block hover:text-[#c5a880] transition-colors w-fit"
             >
               {tr.footer.email}
             </a>
           </div>
 
           <div>
-            <p className="text-xs tracking-widest uppercase text-gray-400 mb-3 font-medium">Social Media</p>
-            <div className="flex flex-col gap-2">
+            <p className="text-xs tracking-widest uppercase text-gray-400 mb-5 font-medium">Social Media</p>
+            <div className="flex flex-col gap-3">
               {[
                 { name: "Instagram", url: "https://instagram.com/werkmebel" },
                 { name: "Facebook", url: "https://facebook.com/werkmebel" },
@@ -82,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({ tr, onOpenPrivacy, onOpenBlog })
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-1"
+                  className="text-gray-400 text-sm hover:text-white transition-colors flex items-center gap-1 w-fit"
                 >
                   <span>{s.name}</span>
                   <span className="text-xs">→</span>
