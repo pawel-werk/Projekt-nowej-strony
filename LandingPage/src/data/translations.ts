@@ -16,9 +16,16 @@ export interface TranslationSchema {
     cta2: string;
   };
   portfolio: {
+    eyebrow: string;
     title: string;
     sub: string;
     filters: string[];
+  };
+  saleBanner: {
+    eyebrow: string;
+    title: string;
+    desc: string;
+    cta: string;
   };
   pain: {
     eyebrow: string;
@@ -35,10 +42,10 @@ export interface TranslationSchema {
     body: string;
     processEyebrow: string;
     processTitle: string;
-    teamCta: string; // Nowy klucz dla przycisku Zespołu
-    cityYear: string; // Nowy klucz dla "Wrocław od 2011"
-    bannerQuote: string; // Nowy klucz dla "Meble z duszą"
-    award: string; // Nowy klucz dla "Złota Firma"
+    teamCta: string;
+    cityYear: string;
+    bannerQuote: string;
+    award: string;
     stats: { val: string; label: string }[];
     process: { step: string; title: string; desc: string }[];
   };
@@ -81,7 +88,11 @@ export interface TranslationSchema {
     email: string;
     social: string;
     copy: string;
-    award: string; // Nagroda w stopce
+    award: string;
+    links: {
+      blog: string;
+      privacy: string;
+    };
   };
   floating: string;
 }
@@ -105,9 +116,16 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       cta2: "Zapytaj o wycenę",
     },
     portfolio: {
+      eyebrow: "Portfolio & Realizacje",
       title: "Nasze realizacje",
       sub: "Kliknij w wybraną realizację, aby przejrzeć pełną galerię ujęć, użyte materiały oraz opis techniczny.",
       filters: ["Wszystkie", "Kuchnie", "Garderoby", "Wnętrza", "Łazienki"],
+    },
+    saleBanner: {
+      eyebrow: "Oferta limitowana",
+      title: "Wyprzedaż Ekspozycji.\nJakość premium od ręki.",
+      desc: "Odkryj unikalne, gotowe egzemplarze mebli z naszych showroomów. Perfekcyjne wykonanie, luksusowe materiały i natychmiastowa dostępność w obniżonych cenach.",
+      cta: "Zobacz wyprzedaż ekspozycji",
     },
     pain: {
       eyebrow: "Dlaczego Werk Mebel",
@@ -217,7 +235,11 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       email: "biuro@werkmebel.pl",
       social: "Obserwuj nas",
       copy: "© 2026 Werk Mebel. Wszelkie prawa zastrzeżone.",
-      award: "Złota Firma & Lider Jakości 2022–2025"
+      award: "Złota Firma & Lider Jakości 2022–2025",
+      links: {
+        blog: "Blog & Poradniki",
+        privacy: "Polityka prywatności"
+      }
     },
     floating: "Zapytaj o wycenę",
   },
@@ -239,9 +261,16 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       cta2: "Request a quote",
     },
     portfolio: {
+      eyebrow: "Portfolio & Projects",
       title: "Our projects",
       sub: "Click on a selected project to view the full image gallery, materials used, and technical specifications.",
       filters: ["All", "Kitchens", "Wardrobes", "Interiors", "Bathrooms"],
+    },
+    saleBanner: {
+      eyebrow: "Limited Offer",
+      title: "Exhibition Sale.\nPremium quality on hand.",
+      desc: "Discover unique, ready-made furniture pieces from our showrooms. Perfect craftsmanship, luxury materials, and immediate availability at reduced prices.",
+      cta: "View exhibition sale",
     },
     pain: {
       eyebrow: "Why Werk Mebel",
@@ -351,7 +380,11 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       email: "biuro@werkmebel.pl",
       social: "Follow us",
       copy: "© 2026 Werk Mebel. All rights reserved.",
-      award: "Gold Company & Quality Leader 2022–2025"
+      award: "Gold Company & Quality Leader 2022–2025",
+      links: {
+        blog: "Blog & Guides",
+        privacy: "Privacy Policy"
+      }
     },
     floating: "Request a quote",
   }

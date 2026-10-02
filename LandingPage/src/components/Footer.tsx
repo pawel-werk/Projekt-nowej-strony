@@ -121,14 +121,14 @@ export const Footer: React.FC<FooterProps> = ({ tr, onOpenPrivacy, onOpenBlog })
               }}
               className="text-xs text-gray-400 hover:text-[#c5a880] transition-colors underline underline-offset-4 decoration-white/20 cursor-pointer bg-transparent border-0 p-0 font-light"
             >
-              Blog & Poradniki
+              {tr.footer.links.blog}
             </button>
             <span className="text-gray-700 hidden sm:inline">|</span>
             <button
               onClick={handlePrivacyClick}
               className="text-xs text-gray-400 hover:text-[#c5a880] transition-colors underline underline-offset-4 decoration-white/20 cursor-pointer bg-transparent border-0 p-0 font-light"
             >
-              Polityka prywatności
+              {tr.footer.links.privacy}
             </button>
           </div>
 

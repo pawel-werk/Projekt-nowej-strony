@@ -1,10 +1,12 @@
 import React from 'react';
+import { TranslationSchema } from '../../data/translations';
 
 interface SaleBannerProps {
   onOpenSale: () => void;
+  tr: TranslationSchema;
 }
 
-export const SaleBanner: React.FC<SaleBannerProps> = ({ onOpenSale }) => {
+export const SaleBanner: React.FC<SaleBannerProps> = ({ onOpenSale, tr }) => {
   return (
     <section className="bg-[#0f0f0f] border-t border-b border-white/10 py-16 md:py-24 relative overflow-hidden">
       {/* Background with overlay */}
@@ -22,21 +24,20 @@ export const SaleBanner: React.FC<SaleBannerProps> = ({ onOpenSale }) => {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-6 h-[1px] bg-[#c5a880]" />
             <span className="text-[11px] tracking-[0.3em] uppercase text-[#c5a880] font-medium">
-              Oferta limitowana
+              {tr.saleBanner.eyebrow}
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-serif text-white mb-4 leading-tight">
-            Wyprzedaż Ekspozycji.<br />Jakość premium od ręki.
+          <h2 className="text-3xl md:text-4xl font-serif text-white mb-4 leading-tight whitespace-pre-line">
+            {tr.saleBanner.title}
           </h2>
           <p className="text-gray-400 font-light text-sm md:text-base mb-8 leading-relaxed">
-            Odkryj unikalne, gotowe egzemplarze mebli z naszych showroomów. 
-            Perfekcyjne wykonanie, luksusowe materiały i natychmiastowa dostępność w obniżonych cenach.
+            {tr.saleBanner.desc}
           </p>
           <button
             onClick={onOpenSale}
             className="btn-luxury btn-luxury-white"
           >
-            Zobacz wyprzedaż ekspozycji
+            {tr.saleBanner.cta}
           </button>
         </div>
         

@@ -220,13 +220,15 @@ export default function App() {
       <main className="flex-1">
         <Hero tr={tr} onScrollTo={scrollTo} />
         <Services tr={tr} lang={lang} onSelectService={handleSelectService} />
+        
+        {/* Przekazanie obiektu 'tr' do Portfolio */}
         <Portfolio tr={tr} lang={lang} onSelectProjectForQuote={handleSelectProjectForQuote} />
-        <SaleBanner onOpenSale={() => navigateTo('sale')} />
+        
+        {/* Przekazanie obiektu 'tr' do baneru wyprzedaży */}
+        <SaleBanner onOpenSale={() => navigateTo('sale')} tr={tr} />
+        
         <WhyUs tr={tr} />
-        
-        {/* Przekazanie akcji onOpenTeam do komponentu About */}
         <About tr={tr} onOpenTeam={() => navigateTo('team')} />
-        
         <InstagramFeed tr={tr} />
         <Contact
           tr={tr}
