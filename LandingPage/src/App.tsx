@@ -17,11 +17,12 @@ import { BlogPage } from './components/Blog/BlogPage';
 import { BlogPostPage } from './components/Blog/BlogPostPage';
 import { ImagePopup } from './components/ImagePopup';
 
-// IMPORTY SEKCJI WYPRZEDAŻY
+// IMPORTY SEKCJI WYPRZEDAŻY I ZESPOŁU
 import { SalePage } from './components/Sale/SalePage';
 import { SaleBanner } from './components/Sale/SaleBanner';
+import { TeamPage } from './components/TeamPage';
 
-type AppView = 'home' | 'privacy' | 'blog' | 'blog-post' | 'sale';
+type AppView = 'home' | 'privacy' | 'blog' | 'blog-post' | 'sale' | 'team';
 
 export default function App() {
   const [lang, setLang] = useState<'pl' | 'en'>('pl');
@@ -42,9 +43,14 @@ export default function App() {
       return { view: 'privacy' };
     }
     
-    // Obsługa nowej ścieżki
+    // Obsługa nowej ścieżki wyprzedaży
     if (path === '/wyprzedaz' || hash === '#wyprzedaz') {
       return { view: 'sale' };
+    }
+
+    // Obsługa ścieżki zespołu
+    if (path === '/zespol' || hash === '#zespol') {
+      return { view: 'team' };
     }
 
     if (path.startsWith('/blog/')) {
@@ -99,6 +105,8 @@ export default function App() {
       window.location.hash = 'polityka-prywatnosci';
     } else if (view === 'sale') {
       window.location.hash = 'wyprzedaz';
+    } else if (view === 'team') {
+      window.location.hash = 'zespol';
     } else {
       window.location.hash = '';
       if (window.location.pathname !== '/') {
@@ -184,6 +192,12 @@ export default function App() {
     );
   }
 
+  if (currentView === 'team') {
+    return (
+      <TeamPage onBackToHome={() => navigateTo('home')} />
+    );
+  }
+
   return (
     <div className="min-h-full flex flex-col selection:bg-[#c8a96e] selection:text-black">
       <div className="fixed top-0 left-0 right-0 z-50">
@@ -207,10 +221,12 @@ export default function App() {
         <Hero tr={tr} onScrollTo={scrollTo} />
         <Services tr={tr} lang={lang} onSelectService={handleSelectService} />
         <Portfolio tr={tr} lang={lang} onSelectProjectForQuote={handleSelectProjectForQuote} />
-        {/* BANER WYPRZEDAŻY WPIĘTY MIĘDZY PORTFOLIO A O NAS */}
         <SaleBanner onOpenSale={() => navigateTo('sale')} />
         <WhyUs tr={tr} />
-        <About tr={tr} />
+        
+        {/* Przekazanie akcji onOpenTeam do komponentu About */}
+        <About tr={tr} onOpenTeam={() => navigateTo('team')} />
+        
         <InstagramFeed tr={tr} />
         <Contact
           tr={tr}

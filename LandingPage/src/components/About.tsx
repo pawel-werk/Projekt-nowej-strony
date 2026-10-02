@@ -3,9 +3,10 @@ import { TranslationSchema } from '../data/translations';
 
 interface AboutProps {
   tr: TranslationSchema;
+  onOpenTeam: () => void;
 }
 
-export const About: React.FC<AboutProps> = ({ tr }) => {
+export const About: React.FC<AboutProps> = ({ tr, onOpenTeam }) => {
   return (
     <section id="about" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -24,6 +25,18 @@ export const About: React.FC<AboutProps> = ({ tr }) => {
             <p className="text-gray-600 leading-relaxed max-w-lg font-light">
               {tr.about.body}
             </p>
+            
+            {/* Przycisk CTA kierujący do podstrony Zespołu */}
+            <div className="mt-10 flex justify-start">
+              <button
+                onClick={onOpenTeam}
+                aria-label="Przejdź do podstrony Poznaj nasz zespół"
+                className="inline-flex items-center gap-3 border border-[#0a0a0a] text-[#0a0a0a] hover:border-[#c8a96e] hover:text-[#c8a96e] transition-colors cursor-pointer px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-medium bg-transparent"
+              >
+                <span>Poznaj nasz zespół</span>
+                <span>→</span>
+              </button>
+            </div>
           </div>
 
           {/* Stats grid */}
