@@ -34,7 +34,6 @@ export const SalePage: React.FC<SalePageProps> = ({
     }).format(price);
   };
 
-  // Wyciągnięte funkcje, aby uniknąć błędów parsowania (Unexpected token) w Vite/Rolldown
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     onBackToHome();
@@ -45,6 +44,10 @@ export const SalePage: React.FC<SalePageProps> = ({
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleGeneralQuote = () => {
+    onQuoteRequest("Ogólne pytanie o proces wyprzedaży");
   };
 
   const faqs = [
@@ -68,7 +71,6 @@ export const SalePage: React.FC<SalePageProps> = ({
 
   return (
     <div className="min-h-screen bg-[#070707] text-gray-300 font-sans selection:bg-[#c5a880] selection:text-black">
-      {/* Nawigacja górna dla podstrony */}
       <header className="border-b border-white/10 bg-[#0a0a0a]/90 backdrop-blur-md sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a 
@@ -94,7 +96,6 @@ export const SalePage: React.FC<SalePageProps> = ({
       </header>
 
       <main className="pb-24">
-        {/* HERO SECTION */}
         <section className="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-12">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
@@ -118,7 +119,6 @@ export const SalePage: React.FC<SalePageProps> = ({
           </div>
         </section>
 
-        {/* BENEFIT BAR */}
         <section className="border-y border-white/10 bg-[#0a0a0a]">
           <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
             <div className="flex flex-col gap-3 border-l border-white/5 pl-5 md:border-none md:pl-0 group">
@@ -159,7 +159,6 @@ export const SalePage: React.FC<SalePageProps> = ({
           </div>
         </section>
 
-        {/* PRODUCTS LIST */}
         <section id="sale-products" className="max-w-7xl mx-auto px-6 py-20">
           {saleProducts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -203,32 +202,3 @@ export const SalePage: React.FC<SalePageProps> = ({
                           {formatPrice(item.oldPrice)}
                         </span>
                         <span className="text-2xl text-white font-serif">{formatPrice(item.newPrice)}</span>
-                      </div>
-                    </div>
-
-                    <button 
-                      onClick={() => onQuoteRequest(item.title)} 
-                      className="w-full py-3.5 bg-transparent border border-white/20 text-white hover:bg-[#c5a880] hover:border-[#c5a880] hover:text-black font-medium text-[10px] tracking-[0.2em] uppercase transition-all duration-300 cursor-pointer"
-                    >
-                      Zapytaj o ten produkt
-                    </button>
-                  </div>
-                </article>
-              ))}
-            </div>
-          ) : (
-            <div className="py-24 text-center border border-white/10 bg-[#0f0f0f] shadow-inner">
-              <p className="text-white font-serif text-2xl mb-3">Obecnie nie posiadamy mebli z wyprzedaży</p>
-              <p className="text-gray-400 font-light text-sm max-w-lg mx-auto">
-                Zapraszamy do skorzystania z naszej oferty na indywidualne zabudowy według Twojego projektu.
-              </p>
-            </div>
-          )}
-        </section>
-
-        {/* HOW IT WORKS */}
-        <section className="bg-[#0a0a0a] py-24 border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-2xl md:text-3xl font-serif text-white text-center mb-16">
-              Proces zakupu mebli ekspozycyjnych
-            </h2>
