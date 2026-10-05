@@ -1,4 +1,3 @@
-
 export interface PortfolioItem {
   id: string;
   title: string;
@@ -43,27 +42,27 @@ export const portfolioItems: PortfolioItem[] = [
     instagramReelUrl: 'https://www.instagram.com/p/DdtaQQ6CZ8O/', // Dodany link
   },
   {
-    id: 'kuchnia-orzech-antracyt',
-    title: 'Kuchnia Fornirowana Orzech & Antracyt',
-    titleEn: 'Walnut & Anthracite Kitchen Island',
+    id: 'kuchnia-wyspa-jasny-blat',
+    title: 'Kuchnia z Fornirem i Jasną Wyspą',
+    titleEn: 'Wood Veneer Kitchen with Light Island',
     category: 'Kuchnie',
     categoryEn: 'Kitchens',
     tag: 'REALIZACJA',
-    location: 'Wrocław, Oporów',
-    img: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=80',
-    description: 'Harmonijna kompozycja naturalnego forniru orzecha amerykańskiego z satynowym antracytem. Wyspa kuchenna ze zintegrowaną strefą winiarki podblatowej oraz systemem kieszeniowych drzwi chowanych w korpusie (Pocket Doors) maskujących strefę małego AGD.',
-    descEn: 'Harmonious composition of natural American walnut veneer and satin anthracite. Kitchen island featuring integrated under-counter wine climate cabinet and pocket door system.',
+    location: 'Wrocław',
+    img: '1.jpg',
+    description: 'Przestronna kuchnia, w której główną rolę odgrywa obszerna wyspa z jasnym, subtelnym blatem[cite: 8]. Wyspę uzupełnia solidna, drewniana dostawka pełniąca funkcję stołu barowego[cite: 8, 9]. Całość kompozycji dopełnia wysoka zabudowa z ciemnego forniru z pionowymi lamelami oraz minimalistyczny regał na wino[cite: 8]. Wyspa została funkcjonalnie wyposażona w zlewozmywak oraz płytę grzewczą zlicowaną z powierzchnią blatu[cite: 10, 11].',
+    descEn: 'A spacious kitchen where the main role is played by a large island with a light, subtle countertop[cite: 8]. The island is complemented by a solid wooden extension serving as a bar table[cite: 8, 9]. The entire composition is completed by tall cabinetry made of dark veneer with vertical slats and a minimalist wine rack[cite: 8]. The island is functionally equipped with a sink and a flush-mounted hob[cite: 10, 11].',
     gallery: [
-      'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=80'
+      '1.jpg',
+      '2.jpg',
+      '3.jpg',
+      '4.jpg'
     ],
     materials: [
-      'Fornir naturalny Orzech Amerykański w lakierze matowym',
-      'Blaty granitowe Nero Assoluto szczotkowany',
-      'System chowanych drzwi Hawa Concepta',
-      'Okucia z cichym domykiem Hettich Sensys'
+      'Jasny blat (prawdopodobnie spiek kwarcowy lub konglomerat)',
+      'Fornir naturalny (wysoka zabudowa i stół barowy)',
+      'Czarne profile uchwytowe',
+      'Stal nierdzewna szczotkowana (bateria zlewozmywakowa)'
     ]
   },
 
