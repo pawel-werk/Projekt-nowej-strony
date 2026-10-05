@@ -34,6 +34,19 @@ export const SalePage: React.FC<SalePageProps> = ({
     }).format(price);
   };
 
+  // Wyciągnięte funkcje, aby uniknąć błędów parsowania (Unexpected token) w Vite/Rolldown
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    onBackToHome();
+  };
+
+  const handleScrollToProducts = () => {
+    const el = document.getElementById('sale-products');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const faqs = [
     {
       q: 'Czy meble z wyprzedaży są pełnowartościowe?',
@@ -60,10 +73,7 @@ export const SalePage: React.FC<SalePageProps> = ({
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a 
             href="/" 
-            onClick={(e) => { 
-              e.preventDefault(); 
-              onBackToHome(); 
-            }} 
+            onClick={handleLogoClick} 
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
             <img 
@@ -100,10 +110,7 @@ export const SalePage: React.FC<SalePageProps> = ({
               Przeglądaj ekskluzywne meble przygotowane pierwotnie jako ozdoba naszych salonów. To wyjątkowa okazja na unikalne bryły w obniżonej cenie, dostępne do odbioru natychmiastowego. Zwróć uwagę, że każdy model to pojedyncza sztuka.
             </p>
             <button 
-              onClick={() => {
-                const el = document.getElementById('sale-products');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }} 
+              onClick={handleScrollToProducts} 
               className="btn-luxury btn-luxury-dark border-white/20 bg-[#121212] hover:border-[#c5a880] hover:text-[#c5a880]"
             >
               Rozpocznij poszukiwania ↓
@@ -211,9 +218,7 @@ export const SalePage: React.FC<SalePageProps> = ({
             </div>
           ) : (
             <div className="py-24 text-center border border-white/10 bg-[#0f0f0f] shadow-inner">
-              <p className="text-white font-serif text-2xl mb-3">
-                Obecnie nie posiadamy mebli z wyprzedaży
-              </p>
+              <p className="text-white font-serif text-2xl mb-3">Obecnie nie posiadamy mebli z wyprzedaży</p>
               <p className="text-gray-400 font-light text-sm max-w-lg mx-auto">
                 Zapraszamy do skorzystania z naszej oferty na indywidualne zabudowy według Twojego projektu.
               </p>
@@ -227,101 +232,3 @@ export const SalePage: React.FC<SalePageProps> = ({
             <h2 className="text-2xl md:text-3xl font-serif text-white text-center mb-16">
               Proces zakupu mebli ekspozycyjnych
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 text-center relative">
-              <div className="hidden md:block absolute top-6 left-1/6 right-1/6 h-[1px] bg-gradient-to-r from-transparent via-[#c5a880]/30 to-transparent z-0" />
-              {[
-                { 
-                  s: '01', 
-                  t: 'Podejmij decyzję', 
-                  d: 'Znajdź interesujący Cię model w naszym zestawieniu i skorzystaj z przycisku, by w łatwy sposób wysłać e-mailowe zapytanie.' 
-                },
-                { 
-                  s: '02', 
-                  t: 'Weryfikacja stoku', 
-                  d: 'Ze względu na unikalność oferty, doradca niezwłocznie potwierdzi dla Ciebie rezerwację i poinformuje o ostatecznej dostępności mebla.' 
-                },
-                { 
-                  s: '03', 
-                  t: 'Finalizacja', 
-                  d: 'Umów się z nami w salonie na żywe oględziny i sfinalizuj płatność. Zorganizuj swój transport lub poproś nas o indywidualną wycenę naszej dostawy.' 
-                }
-              ].map((step, i) => (
-                <div key={i} className="relative z-10 bg-[#0a0a0a] px-4 md:px-8">
-                  <div className="w-12 h-12 mx-auto border border-[#c5a880] text-[#c5a880] rounded-full flex items-center justify-center text-sm font-serif mb-6 bg-[#0a0a0a] shadow-[0_0_15px_rgba(197,168,128,0.15)]">
-                    {step.s}
-                  </div>
-                  <h3 className="text-white font-medium uppercase tracking-widest text-xs mb-4">
-                    {step.t}
-                  </h3>
-                  <p className="text-gray-400 text-sm font-light leading-relaxed">
-                    {step.d}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ ACCORDION */}
-        <section className="max-w-3xl mx-auto px-6 py-20 border-t border-white/5">
-          <h2 className="text-2xl md:text-3xl font-serif text-white mb-10 text-center">
-            Najczęściej zadawane pytania
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <div key={i} className="border border-white/10 bg-[#0f0f0f]">
-                <button
-                  onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none cursor-pointer group"
-                >
-                  <span className="text-sm font-medium text-white tracking-wide group-hover:text-[#c5a880] transition-colors">
-                    {faq.q}
-                  </span>
-                  <span className="text-[#c5a880] text-xl font-light transform transition-transform duration-300">
-                    {expandedFaq === i ? '−' : '+'}
-                  </span>
-                </button>
-                <div 
-                  className={`overflow-hidden transition-all duration-300 ${expandedFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-                >
-                  <p className="px-6 pb-6 text-sm text-gray-400 font-light leading-relaxed border-t border-transparent">
-                    {faq.a}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* FINAL CTA */}
-        <section className="max-w-5xl mx-auto px-6 pt-10 text-center">
-          <div className="p-10 md:p-20 border border-[#c5a880]/30 bg-gradient-to-br from-[#161616] to-[#0a0a0a]">
-            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
-              Wypatrzyłaś idealny mebel?
-            </h2>
-            <p className="text-gray-400 font-light mb-10 max-w-lg mx-auto leading-relaxed">
-              Odezwij się do nas, zanim ubiegnie Cię inny inwestor. Przypominamy, że oferta ekspozycyjna obejmuje pojedyncze sztuki – kiedy znikną ze sklepu, to już bezpowrotnie.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-              <button 
-                onClick={() => onQuoteRequest("Ogólne pytanie o proces wyprzedaży")} 
-                className="btn-luxury btn-luxury-dark border-white/20 bg-[#0a0a0a] hover:border-[#c5a880] hover:text-white w-full sm:w-auto"
-              >
-                Zapytaj o szczegóły
-              </button>
-              <button 
-                onClick={onCustomDesignRequest} 
-                className="btn-luxury btn-luxury-ghost w-full sm:w-auto text-[#c5a880] border-[#c5a880]/50 hover:bg-[#c5a880]/10"
-              >
-                Otwórz wycenę od zera
-              </button>
-            </div>
-            <p className="mt-8 text-[9px] text-gray-600 tracking-[0.2em] uppercase font-light">
-              <span className="text-[#c5a880]">Ważne: </span>Wycena nowoprojektowanych mebli, niebędących częścią ekspozycji jest usługą odpłatną z ramienia naszej pracowni.
-            </p>
-          </div>
-        </section>
-      </main>
-    </div>
-  );
-};
