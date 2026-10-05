@@ -49,14 +49,14 @@ export const portfolioItems: PortfolioItem[] = [
     categoryEn: 'Kitchens',
     tag: 'REALIZACJA',
     location: 'Wrocław',
-    img: '/1.jpg',
+    img: 'https://i.postimg.cc/4x83hxmM/1.jpg',
     description: 'Przestronna kuchnia, w której główną rolę odgrywa obszerna wyspa z jasnym, subtelnym blatem. Wyspę uzupełnia solidna, drewniana dostawka pełniąca funkcję stołu barowego. Całość kompozycji dopełnia wysoka zabudowa z ciemnego forniru z pionowymi lamelami oraz elegancki, otwarty regał na wino. Wyspa została funkcjonalnie wyposażona w zlewozmywak oraz płytę grzewczą zlicowaną z powierzchnią blatu.',
     descEn: 'A spacious kitchen where the main role is played by a large island with a light, subtle countertop. The island is complemented by a solid wooden extension serving as a bar table. The entire composition is completed by tall cabinetry made of dark veneer with vertical slats and a minimalist wine rack. The island is functionally equipped with a sink and a flush-mounted hob.',
     gallery: [
-      '/1.jpg',
-      '/2.jpg',
-      '/3.jpg',
-      '/4.jpg'
+      'https://i.postimg.cc/4x83hxmM/1.jpg',
+      'https://i.postimg.cc/Jzd1zYF4/2.jpg',
+      'https://i.postimg.cc/sxczdTW0/3.jpg',
+      'https://i.postimg.cc/7YHDMy8Z/4.jpg'
     ],
     materials: [
       'Jasny blat z konglomeratu kwarcowego',
