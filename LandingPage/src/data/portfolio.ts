@@ -39,7 +39,7 @@ export const portfolioItems: PortfolioItem[] = [
       'Matowe fronty Anty Finger bezuchwytowe',
       'Przeszklenia z czarnego szkła'
     ],
-    instagramReelUrl: 'https://www.instagram.com/p/DdtaQQ6CZ8O/', // Dodany link
+    instagramReelUrl: 'https://www.instagram.com/p/DdtaQQ6CZ8O/', // Link do rolki na IG
   },
   {
     id: 'kuchnia-wyspa-jasny-blat',
@@ -49,17 +49,17 @@ export const portfolioItems: PortfolioItem[] = [
     categoryEn: 'Kitchens',
     tag: 'REALIZACJA',
     location: 'Wrocław',
-    img: '1.jpg',
-    description: 'Przestronna kuchnia, w której główną rolę odgrywa obszerna wyspa z jasnym, subtelnym blatem[cite: 8]. Wyspę uzupełnia solidna, drewniana dostawka pełniąca funkcję stołu barowego[cite: 8, 9]. Całość kompozycji dopełnia wysoka zabudowa z ciemnego forniru z pionowymi lamelami oraz minimalistyczny regał na wino[cite: 8]. Wyspa została funkcjonalnie wyposażona w zlewozmywak oraz płytę grzewczą zlicowaną z powierzchnią blatu[cite: 10, 11].',
-    descEn: 'A spacious kitchen where the main role is played by a large island with a light, subtle countertop[cite: 8]. The island is complemented by a solid wooden extension serving as a bar table[cite: 8, 9]. The entire composition is completed by tall cabinetry made of dark veneer with vertical slats and a minimalist wine rack[cite: 8]. The island is functionally equipped with a sink and a flush-mounted hob[cite: 10, 11].',
+    img: '/1.jpg',
+    description: 'Przestronna kuchnia, w której główną rolę odgrywa obszerna wyspa z jasnym, subtelnym blatem. Wyspę uzupełnia solidna, drewniana dostawka pełniąca funkcję stołu barowego. Całość kompozycji dopełnia wysoka zabudowa z ciemnego forniru z pionowymi lamelami oraz elegancki, otwarty regał na wino. Wyspa została funkcjonalnie wyposażona w zlewozmywak oraz płytę grzewczą zlicowaną z powierzchnią blatu.',
+    descEn: 'A spacious kitchen where the main role is played by a large island with a light, subtle countertop. The island is complemented by a solid wooden extension serving as a bar table. The entire composition is completed by tall cabinetry made of dark veneer with vertical slats and a minimalist wine rack. The island is functionally equipped with a sink and a flush-mounted hob.',
     gallery: [
-      '1.jpg',
-      '2.jpg',
-      '3.jpg',
-      '4.jpg'
+      '/1.jpg',
+      '/2.jpg',
+      '/3.jpg',
+      '/4.jpg'
     ],
     materials: [
-      'Jasny blat (prawdopodobnie spiek kwarcowy lub konglomerat)',
+      'Jasny blat z konglomeratu kwarcowego',
       'Fornir naturalny (wysoka zabudowa i stół barowy)',
       'Czarne profile uchwytowe',
       'Stal nierdzewna szczotkowana (bateria zlewozmywakowa)'
