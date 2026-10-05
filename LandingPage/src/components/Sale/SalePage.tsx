@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { saleProducts } from '../../data/saleProducts';
-import { SaleItem } from '../../types/sale';
 
 interface SalePageProps {
   onBackToHome: () => void;
@@ -8,20 +7,31 @@ interface SalePageProps {
   onCustomDesignRequest: () => void;
 }
 
-export const SalePage: React.FC<SalePageProps> = ({ onBackToHome, onQuoteRequest, onCustomDesignRequest }) => {
+export const SalePage: React.FC<SalePageProps> = ({ 
+  onBackToHome, 
+  onQuoteRequest, 
+  onCustomDesignRequest 
+}) => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
 
   useEffect(() => {
     document.title = "Wyprzedaż Ekspozycji | Werk Mebel - Luksusowe Meble";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute("content", "Unikalne egzemplarze mebli na wymiar z naszych showroomów. Gotowe do odbioru od ręki w wyjątkowych cenach.");
+      metaDesc.setAttribute(
+        "content", 
+        "Unikalne egzemplarze mebli na wymiar z naszych showroomów. Gotowe do odbioru od ręki w wyjątkowych cenach."
+      );
     }
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN', maximumFractionDigits: 0 }).format(price);
+    return new Intl.NumberFormat('pl-PL', { 
+      style: 'currency', 
+      currency: 'PLN', 
+      maximumFractionDigits: 0 
+    }).format(price);
   };
 
   const faqs = [
@@ -44,8 +54,4 @@ export const SalePage: React.FC<SalePageProps> = ({ onBackToHome, onQuoteRequest
   ];
 
   return (
-    <div className="min-h-screen bg-[#070707] text-gray-300 font-sans selection:bg-[#c5a880] selection:text-black">
-      {/* Nawigacja górna dla podstrony */}
-      <header className="border-b border-white/10 bg-[#0a0a0a]/90 backdrop-blur-md sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" onClick={(e) => { e.preventDefault(); onBackToHome(); }} className
+    <div className="min-h-screen bg-[#070707] text-gray-3
