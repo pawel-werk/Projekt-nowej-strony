@@ -50,6 +50,10 @@ export const SalePage: React.FC<SalePageProps> = ({
     onQuoteRequest("Ogólne pytanie o proces wyprzedaży");
   };
 
+  const handleFaqToggle = (index: number) => {
+    setExpandedFaq(expandedFaq === index ? null : index);
+  };
+
   const faqs = [
     {
       q: 'Czy meble z wyprzedaży są pełnowartościowe?',
@@ -273,7 +277,7 @@ export const SalePage: React.FC<SalePageProps> = ({
             {faqs.map((faq, i) => (
               <div key={i} className="border border-white/10 bg-[#0f0f0f]">
                 <button
-                  onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
+                  onClick={() => handleFaqToggle(i)}
                   className="w-full flex items-center justify-between p-6 text-left focus:outline-none cursor-pointer group"
                 >
                   <span className="text-sm font-medium text-white tracking-wide group-hover:text-[#c5a880] transition-colors">{faq.q}</span>
