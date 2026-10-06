@@ -235,7 +235,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       email: "biuro@werkmebel.pl",
       social: "Obserwuj nas",
       copy: "© 2026 Werk Mebel. Wszelkie prawa zastrzeżone.",
-      award: "Złota Firma & Lider Jakości 2022–2025",
+      award: "Złota Firma i Lider Jakości 2022–2025",
       links: {
         blog: "Blog & Poradniki",
         privacy: "Polityka prywatności"
