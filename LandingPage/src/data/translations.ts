@@ -162,7 +162,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       teamCta: "Poznaj nasz zespół",
       cityYear: "Wrocław · od 2011",
       bannerQuote: "Meble z duszą.",
-      award: "Złota Firma & Lider Jakości 2022–2025",
+      award: "Złota Firma i Lider Jakości 2022–2025",
       stats: [
         { val: "15+", label: "Lat doświadczenia" },
         { val: "2400+", label: "Zrealizowanych projects" },
