@@ -15,10 +15,10 @@ export const About: React.FC<AboutProps> = ({ tr, onOpenTeam }) => {
           {/* Story and stats - wyśrodkowane w pionie */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-center">
             <div>
-              {/* Zaktualizowany nagłówek z kreską */}
+              {/* Zaktualizowany nagłówek z kreską w kolorze złotym */}
               <div className="flex items-center gap-3 mb-3">
-                <span className="w-6 h-[1px] bg-gray-400" />
-                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium">
+                <span className="w-6 h-[1px] bg-[#c8a96e]" />
+                <span className="text-xs tracking-[0.3em] uppercase text-[#c8a96e] font-medium">
                   {tr.about.eyebrow}
                 </span>
               </div>
