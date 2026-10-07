@@ -1,18 +1,23 @@
 import React, { useEffect } from 'react';
 import { teamMembers } from '../data/teamData';
+import { TranslationSchema } from '../data/translations';
+import { Footer } from './Footer';
 
 interface TeamPageProps {
   onBackToHome: () => void;
+  tr: TranslationSchema;
+  onOpenPrivacy: () => void;
+  onOpenBlog: () => void;
 }
 
-export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome }) => {
+export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome, tr, onOpenPrivacy, onOpenBlog }) => {
   useEffect(() => {
     document.title = "Poznaj nasz zespół | Werk Mebel";
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f9f8f6] text-[#0a0a0a] font-sans selection:bg-[#c8a96e] selection:text-white">
+    <div className="min-h-screen bg-[#f9f8f6] text-[#0a0a0a] font-sans selection:bg-[#c8a96e] selection:text-white flex flex-col">
       {/* Header */}
       <header className="border-b border-[#e0ddd8] bg-white/90 backdrop-blur-md sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -26,7 +31,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome }) => {
         </div>
       </header>
 
-      <main className="pb-24">
+      <main className="flex-1 pb-24">
         {/* Sekcja Intro */}
         <section className="max-w-4xl mx-auto px-6 pt-16 md:pt-24 pb-12 text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
@@ -51,7 +56,6 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome }) => {
                 key={member.id} 
                 className="group bg-white border border-[#e0ddd8] flex flex-col md:flex-row transition-all duration-300 hover:-translate-y-1 hover:border-[#c8a96e]/60 hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] overflow-hidden"
               >
-                {/* Obrazek / Szkic - Lewa strona (Desktop) / Góra (Mobile) */}
                 <div className="w-full md:w-2/5 lg:w-1/3 bg-[#f5f5f3] flex items-center justify-center p-10 border-b md:border-b-0 md:border-r border-[#e0ddd8] group-hover:bg-white transition-colors duration-500">
                   <div className="w-32 h-32 md:w-36 md:h-36 relative">
                     <img 
@@ -65,7 +69,6 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome }) => {
                   </div>
                 </div>
 
-                {/* Dane personalne - Prawa strona */}
                 <div className="w-full md:w-3/5 lg:w-2/3 p-8 md:p-10 flex flex-col justify-center text-left">
                   <h3 className="font-serif text-2xl md:text-3xl text-[#0a0a0a] mb-2">{member.name}</h3>
                   <p className="text-[10px] tracking-[0.2em] uppercase text-[#c8a96e] mb-5 font-medium">{member.role}</p>
@@ -73,7 +76,6 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome }) => {
                     {member.description}
                   </p>
 
-                  {/* Kontakty (optycznie oddzielone) */}
                   <div className="w-full pt-5 border-t border-[#e0ddd8] flex flex-wrap gap-x-8 gap-y-3">
                     <a href={`mailto:${member.email}`} className="text-xs tracking-wider text-gray-500 hover:text-[#0a0a0a] transition-colors flex items-center gap-2" aria-label={`Wyślij e-mail do ${member.name}`}>
                       <span className="text-[#c8a96e] opacity-70">✉</span> {member.email}
@@ -88,6 +90,13 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome }) => {
           </div>
         </section>
       </main>
+
+      {/* Stopka */}
+      <Footer 
+        tr={tr} 
+        onOpenPrivacy={onOpenPrivacy} 
+        onOpenBlog={onOpenBlog} 
+      />
     </div>
   );
 };
