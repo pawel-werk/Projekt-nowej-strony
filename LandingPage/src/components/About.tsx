@@ -15,9 +15,14 @@ export const About: React.FC<AboutProps> = ({ tr, onOpenTeam }) => {
           {/* Story and stats - wyśrodkowane w pionie */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-center">
             <div>
-              <p className="text-xs tracking-[0.3em] uppercase mb-3 text-gray-400 font-medium">
-                {tr.about.eyebrow}
-              </p>
+              {/* Zaktualizowany nagłówek z kreską */}
+              <div className="flex items-center gap-3 mb-3">
+                <span className="w-6 h-[1px] bg-gray-400" />
+                <span className="text-xs tracking-[0.3em] uppercase text-gray-400 font-medium">
+                  {tr.about.eyebrow}
+                </span>
+              </div>
+              
               <h2
                 className="font-serif mb-6 text-white"
                 style={{ fontSize: "clamp(2.2rem, 4vw, 3.5rem)" }}
