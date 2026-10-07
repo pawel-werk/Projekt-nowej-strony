@@ -48,4 +48,61 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome, tr, onOpenPriv
           </p>
         </section>
 
-        {/* Pozi
+        {/* Pozioma lista pracowników */}
+        <section className="max-w-4xl mx-auto px-6">
+          <div className="flex flex-col gap-8">
+            {teamMembers.map((member) => (
+              <article 
+                key={member.id} 
+                className="group bg-white border border-[#e0ddd8] flex flex-col md:flex-row transition-all duration-300 hover:-translate-y-1 hover:border-[#c8a96e]/60 hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] overflow-hidden"
+              >
+                <div className="w-full md:w-2/5 lg:w-1/3 bg-[#f5f5f3] flex items-center justify-center p-10 border-b md:border-b-0 md:border-r border-[#e0ddd8] group-hover:bg-white transition-colors duration-500">
+                  <div className="w-32 h-32 md:w-36 md:h-36 relative">
+                    <img 
+                      src={member.image} 
+                      alt={`Szkic: ${member.role}`} 
+                      className="w-full h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                      onError={(e) => {
+                        e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23c8a96e" stroke-width="1"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>';
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="w-full md:w-3/5 lg:w-2/3 p-8 md:p-10 flex flex-col justify-center text-left">
+                  <h3 className="font-serif text-2xl md:text-3xl text-[#0a0a0a] mb-2">{member.name}</h3>
+                  <p className="text-[10px] tracking-[0.2em] uppercase text-[#c8a96e] mb-5 font-medium">{member.role}</p>
+                  <p className="text-sm md:text-base text-gray-600 font-light mb-8 flex-grow leading-relaxed">
+                    {member.description}
+                  </p>
+
+                  <div className="w-full pt-5 border-t border-[#e0ddd8] flex flex-wrap gap-x-8 gap-y-4">
+                    <a href={`mailto:${member.email}`} className="text-xs tracking-wider text-gray-500 hover:text-[#0a0a0a] transition-colors flex items-center gap-2.5" aria-label={`Wyślij e-mail do ${member.name}`}>
+                      <svg className="w-3.5 h-3.5 text-[#c8a96e]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      {member.email}
+                    </a>
+                    <a href={`tel:${member.phone.replace(/\s/g, '')}`} className="text-xs tracking-widest text-[#c8a96e] hover:text-[#0a0a0a] transition-colors flex items-center gap-2.5" aria-label={`Zadzwoń do ${member.name}`}>
+                      <svg className="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      {member.phone}
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      {/* Stopka */}
+      <Footer 
+        tr={tr} 
+        onOpenPrivacy={onOpenPrivacy} 
+        onOpenBlog={onOpenBlog} 
+      />
+    </div>
+  );
+};
