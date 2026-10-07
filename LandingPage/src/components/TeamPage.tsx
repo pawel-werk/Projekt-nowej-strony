@@ -97,11 +97,12 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome, tr, onOpenPriv
         </section>
       </main>
 
-      {/* Stopka */}
+      {/* Stopka - Jasny motyw wymuszony atrybutem theme */}
       <Footer 
         tr={tr} 
         onOpenPrivacy={onOpenPrivacy} 
         onOpenBlog={onOpenBlog} 
+        theme="light"
       />
     </div>
   );
