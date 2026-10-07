@@ -44,9 +44,13 @@ export const InstagramFeed: React.FC<InstagramFeedProps> = ({ tr }) => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase mb-3 text-[#c8a96e] font-medium">
-              {tr.instagram.eyebrow}
-            </p>
+            {/* Zaktualizowany nagłówek z dodaną złotą kreską */}
+            <div className="flex items-center gap-3 mb-3">
+              <span className="w-6 h-[1px] bg-[#c8a96e]" />
+              <span className="text-[11px] tracking-[0.3em] uppercase text-[#c8a96e] font-medium">
+                {tr.instagram.eyebrow}
+              </span>
+            </div>
             <h2
               className="font-serif text-[#0a0a0a]"
               style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)' }}
