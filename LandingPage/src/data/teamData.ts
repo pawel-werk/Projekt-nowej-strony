@@ -16,7 +16,7 @@ export const teamMembers: TeamMember[] = [
     description: 'Tworzy fotorealistyczne wizualizacje 3D. Przekłada marzenia klientów na techniczne rysunki i dobiera najwyższej jakości materiały.',
     email: 'anna.n@werkmebel.pl',
     phone: '+48 600 111 333',
-    image: '/img/team/designer.svg'
+    image: 'https://i.postimg.cc/85gxWQWk/image.png'
   },
   {
     id: 'team-2',
@@ -25,7 +25,7 @@ export const teamMembers: TeamMember[] = [
     description: 'Ekspert od zawiasów, podnośników i systemów przesuwnych. Testuje wytrzymałość i płynność każdego mechanizmu, gwarantując niezawodność na lata.',
     email: 'michal.k@werkmebel.pl',
     phone: '+48 600 111 888',
-    image: '/img/team/technician.svg'
+    image: 'https://i.postimg.cc/XYpM6g4V/image.png'
   },
   {
     id: 'team-3',
@@ -34,7 +34,7 @@ export const teamMembers: TeamMember[] = [
     description: 'Programista maszyn stolarskich. Rozumie język maszyn lepiej niż ktokolwiek inny, optymalizując rozkrój i precyzyjne frezowania.',
     email: 'tomasz.w@werkmebel.pl',
     phone: '+48 600 111 777',
-    image: '/img/team/cnc.svg'
+    image: 'https://i.postimg.cc/T2JvVwC4/image.png'
   },
   {
     id: 'team-4',
@@ -43,7 +43,7 @@ export const teamMembers: TeamMember[] = [
     description: 'Odpowiada za bezpieczny załadunek i transport gotowych mebli. Dzięki niemu elementy docierają na miejsce na czas i bez najmniejszej rysy.',
     email: 'dawid.l@werkmebel.pl',
     phone: '+48 600 111 999',
-    image: '/img/team/logistics.svg'
+    image: 'https://i.postimg.cc/7LJy0nWb/image.png'
   },
   {
     id: 'team-5',
@@ -52,6 +52,6 @@ export const teamMembers: TeamMember[] = [
     description: 'To on sprawia, że projekt staje się rzeczywistością w Twoim domu. Czystość pracy i milimetrowa precyzja montażu to jego wizytówka.',
     email: 'marek.d@werkmebel.pl',
     phone: '+48 600 111 555',
-    image: '/img/team/installer.svg'
+    image: 'https://i.postimg.cc/0jPRgR20/image.png'
   }
 ];
