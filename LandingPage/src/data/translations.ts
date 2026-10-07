@@ -165,7 +165,7 @@ export const translations: Record<'pl' | 'en', TranslationSchema> = {
       award: "Złota Firma i Lider Jakości 2022–2025",
       stats: [
         { val: "15+", label: "Lat doświadczenia" },
-        { val: "2400+", label: "Zrealizowanych projects" },
+        { val: "2400+", label: "Zrealizowanych projektów" },
         { val: "98%", label: "Zadowolonych klientów" },
         { val: "6", label: "Etapów realizacji" },
       ],
