@@ -21,7 +21,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 'team-2',
     name: 'Michał Kamiński',
-    role: 'Technolog ds. okuć',
+    role: 'Technolog',
     description: 'Ekspert od zawiasów, podnośników i systemów przesuwnych. Testuje wytrzymałość i płynność każdego mechanizmu, gwarantując niezawodność na lata.',
     email: 'michal.k@werkmebel.pl',
     phone: '+48 600 111 888',
@@ -34,7 +34,7 @@ export const teamMembers: TeamMember[] = [
     description: 'Programista maszyn stolarskich. Rozumie język maszyn lepiej niż ktokolwiek inny, optymalizując rozkrój i precyzyjne frezowania.',
     email: 'tomasz.w@werkmebel.pl',
     phone: '+48 600 111 777',
-    image: 'https://i.postimg.cc/9Fwt34KL/image.png'
+    image: 'https://i.postimg.cc/gJh5zvz6/image.png'
   },
   {
     id: 'team-4',
@@ -43,7 +43,7 @@ export const teamMembers: TeamMember[] = [
     description: 'Odpowiada za bezpieczny załadunek i transport gotowych mebli. Dzięki niemu elementy docierają na miejsce na czas i bez najmniejszej rysy.',
     email: 'dawid.l@werkmebel.pl',
     phone: '+48 600 111 999',
-    image: 'https://i.postimg.cc/TwHmFG9R/image.png'
+    image: 'https://i.postimg.cc/7LhrkGJF/image.png'
   },
   {
     id: 'team-5',
