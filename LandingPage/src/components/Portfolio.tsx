@@ -44,7 +44,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ tr, lang, onSelectProjectF
           <div className="flex items-center gap-3 mb-3">
             <span className="w-6 h-[1px] bg-[#c5a880]" />
             <span className="text-[11px] tracking-[0.3em] uppercase text-[#c5a880] font-medium">
-              Portfolio & Realizacje
+              {lang === 'en' ? 'PORTFOLIO & PROJECTS' : 'PORTFOLIO & REALIZACJE'}
             </span>
           </div>
           <h2
@@ -54,7 +54,9 @@ export const Portfolio: React.FC<PortfolioProps> = ({ tr, lang, onSelectProjectF
             {tr.portfolio.title}
           </h2>
           <p className="text-gray-500 text-sm md:text-base max-w-xl font-light">
-            Kliknij w wybraną realizację, aby przejrzeć pełną galerię ujęć, użyte materiały oraz opis techniczny.
+            {lang === 'en' 
+              ? 'Click on a selected project to view the full gallery, materials used, and technical description.' 
+              : 'Kliknij w wybraną realizację, aby przejrzeć pełną galerię ujęć, użyte materiały oraz opis techniczny.'}
           </p>
         </div>
 
@@ -105,7 +107,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ tr, lang, onSelectProjectF
 
                 <div className="absolute top-3.5 left-3.5 z-20 flex items-center gap-1.5 px-2.5 py-1 bg-black/80 backdrop-blur-md border border-white/15 text-white text-[9px] tracking-[0.2em] uppercase font-mono transition-all duration-300 group-hover:border-[#c5a880]">
                   <span className="text-[#c5a880]">⊞</span>
-                  <span>{photoCount} {photoCount === 1 ? 'ujęcie' : photoCount < 5 ? 'ujęcia' : 'ujęć'}</span>
+                  <span>{photoCount} {lang === 'en' ? 'SHOTS' : (photoCount === 1 ? 'ujęcie' : photoCount < 5 ? 'ujęcia' : 'ujęć')}</span>
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/20 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6 z-10">
