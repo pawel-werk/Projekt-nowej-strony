@@ -56,12 +56,13 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome, tr, onOpenPriv
                 key={member.id} 
                 className="group bg-white border border-[#e0ddd8] flex flex-col md:flex-row transition-all duration-300 hover:-translate-y-1 hover:border-[#c8a96e]/60 hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] overflow-hidden"
               >
-                <div className="w-full md:w-2/5 lg:w-1/3 bg-[#f5f5f3] flex items-center justify-center p-10 border-b md:border-b-0 md:border-r border-[#e0ddd8] group-hover:bg-white transition-colors duration-500">
-                  <div className="w-32 h-32 md:w-36 md:h-36 relative">
+                {/* Obrazek - Zmienione proporcje z 1/3 na 2/5 i powiększony rozmiar ilustracji */}
+                <div className="w-full md:w-2/5 lg:w-2/5 bg-[#f5f5f3] flex items-center justify-center p-8 md:p-12 border-b md:border-b-0 md:border-r border-[#e0ddd8] group-hover:bg-white transition-colors duration-500">
+                  <div className="w-48 h-48 md:w-64 md:h-64 relative">
                     <img 
                       src={member.image} 
-                      alt={`Szkic: ${member.role}`} 
-                      className="w-full h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+                      alt={`Grafika: ${member.role}`} 
+                      className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                       onError={(e) => {
                         e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23c8a96e" stroke-width="1"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>';
                       }}
@@ -69,7 +70,8 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onBackToHome, tr, onOpenPriv
                   </div>
                 </div>
 
-                <div className="w-full md:w-3/5 lg:w-2/3 p-8 md:p-10 flex flex-col justify-center text-left">
+                {/* Tekst - Zmienione proporcje na 3/5 */}
+                <div className="w-full md:w-3/5 lg:w-3/5 p-8 md:p-10 flex flex-col justify-center text-left">
                   <h3 className="font-serif text-2xl md:text-3xl text-[#0a0a0a] mb-2">{member.name}</h3>
                   <p className="text-[10px] tracking-[0.2em] uppercase text-[#c8a96e] mb-5 font-medium">{member.role}</p>
                   <p className="text-sm md:text-base text-gray-600 font-light mb-8 flex-grow leading-relaxed">
