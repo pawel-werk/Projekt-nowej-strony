@@ -15,7 +15,7 @@ export const SalePage: React.FC<SalePageProps> = ({
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
 
   useEffect(() => {
-    document.title = "Wyprzedaż Ekspozycji | Werk Mebel - Luksusowe Meble";
+    document.title = "Wyprzedaż ekspozycji | Werk Mebel - luksusowe meble";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
