@@ -136,9 +136,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
             </div>
 
             <div className="mb-6">
-              <h3 className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 font-mono mb-2">
-                {lang === 'pl' ? 'O PROJEKCIE I ERGONOMII' : 'PROJECT OVERVIEW'}
-              </h3>
+              {/* Dodana złota kreska przed nagłówkiem */}
+              <div className="flex items-center gap-3 mb-2">
+                <span className="w-4 h-[1px] bg-[#c5a880]" />
+                <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#c5a880] font-mono m-0">
+                  {lang === 'pl' ? 'O PROJEKCIE I ERGONOMII' : 'PROJECT OVERVIEW'}
+                </h3>
+              </div>
               <p className="text-xs md:text-sm text-neutral-300 leading-relaxed font-light">
                 {description}
               </p>
@@ -146,9 +150,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
             {project.materials && project.materials.length > 0 && (
               <div className="mb-6">
-                <h3 className="text-[10px] tracking-[0.2em] uppercase text-neutral-400 font-mono mb-3">
-                  {lang === 'pl' ? 'UŻYTE MATERIAŁY I OKUCIA' : 'MATERIALS & HARDWARE'}
-                </h3>
+                {/* Dodana złota kreska przed nagłówkiem */}
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="w-4 h-[1px] bg-[#c5a880]" />
+                  <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#c5a880] font-mono m-0">
+                    {lang === 'pl' ? 'UŻYTE MATERIAŁY I OKUCIA' : 'MATERIALS & HARDWARE'}
+                  </h3>
+                </div>
                 <div className="flex flex-wrap gap-2">
                   {project.materials.map((mat, i) => (
                     <span
