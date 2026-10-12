@@ -130,7 +130,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onBackToHo
                             href="https://home.pl"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#c5a880] underline hover:opacity-80 transition-opacity relative z-10 cursor-pointer"
+                            className="text-[#c5a880] underline hover:opacity-80 transition-opacity cursor-pointer"
                           >
                             home.pl
                           </a>
