@@ -8,7 +8,7 @@ export const saleProducts: SaleItem[] = [
     description: 'Nowoczesna kuchnia niemieckiej produkcji łącząca matowe, jasne fronty bezuchwytowe z eleganckimi detalami w postaci drewnopodobnej okładziny ściennej i otwartego regału. Wyposażona w solidny, jasny blat roboczy, zintegrowane oświetlenie LED pod szafkami wiszącymi oraz funkcjonalny reling na akcesoria kuchenne. Półwysep kuchenny zapewnia dodatkową przestrzeń roboczą oraz miejsce do spożywania posiłków.',
     dimensions: 'Wymiary dostępne na zapytanie',
     material: 'Matowe fronty, blat przypominający marmur/spiek kwarcowy, drewnopodobny panel ścienny, elementy w ciemnym szarym/grafitowym macie',
-    oldPrice: 85000, // Przykładowa cena pierwotna
+    oldPrice: 85000,
     newPrice: 55900,
     image: 'https://i.postimg.cc/vmsnQhNS/1a.jpg',
     gallery: [
@@ -21,14 +21,18 @@ export const saleProducts: SaleItem[] = [
   },
   {
     id: 'sale-2',
-    title: 'Garderoba Walk-in z Przeszkleniami',
-    category: 'Szafy i garderoby',
-    description: 'Moduł garderobiany w stylistyce loftowej. Posiada przyciemniane szkło antisol, zintegrowane oświetlenie LED na czujnik oraz specjalistyczne wkłady welurowe.',
-    dimensions: '300 cm x 260 cm x 60 cm',
-    material: 'Aluminium anodowane (czarny mat), szkło grafitowe',
-    oldPrice: 285000,
-    newPrice: 169000,
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
+    title: 'Granatowa Kuchnia z Podświetlanym Kamieniem',
+    category: 'Kuchnie',
+    description: 'Zjawiskowa kuchnia ekspozycyjna w głębokim, granatowym macie z klasycznie frezowanymi frontami. Jej niekwestionowanym sercem jest spektakularna ściana z podświetlanego, naturalnego kamienia, która nadaje wnętrzu unikalnego blasku. Całość kompozycji dopełniają designerskie miedziane okapy tubowe, duży zlew w stylu farmerskim z miedzianą baterią oraz podświetlane witryny, tworząc luksusową przestrzeń o niepowtarzalnym klimacie.',
+    dimensions: 'Wymiary dostępne na zapytanie',
+    material: 'Frezowane fronty MDF (granatowy mat), blat z jasnego kamienia, panel ścienny z podświetleniem, miedziane detale i okucia',
+    oldPrice: 115000, // Przykładowa cena pierwotna do zmiany w razie potrzeby
+    newPrice: 79900,  // Przykładowa cena wyprzedażowa do zmiany w razie potrzeby
+    image: 'https://i.postimg.cc/Ssdqckqq/IMG-0478-HDR.jpg',
+    gallery: [
+      'https://i.postimg.cc/Ssdqckqq/IMG-0478-HDR.jpg',
+      'https://i.postimg.cc/DfY3hCzF/IMG-0469.jpg'
+    ],
     isExhibition: true,
   },
   {
