@@ -42,7 +42,7 @@ export const privacySections: PrivacySection[] = [
     number: "03",
     title: "Hosting",
     content: [
-      "Serwis jest hostowany (technicznie utrzymywany) na serwerach operatora: www.home.pl",
+      'Serwis jest hostowany (technicznie utrzymywany) na serwerach operatora: <a href="https://home.pl" target="_blank" rel="noopener noreferrer">home.pl</a>',
     ],
   },
   {
