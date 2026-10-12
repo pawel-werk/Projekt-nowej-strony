@@ -3,12 +3,12 @@ import { SaleItem } from '../types/sale';
 export const saleProducts: SaleItem[] = [
   {
     id: 'sale-1',
-    title: 'Niemiecka Kuchnia Premium z Półwyspem',
+    title: 'Kuchnia "FASHION" z Półwyspem',
     category: 'Kuchnie',
-    description: 'Nowoczesna kuchnia niemieckiej produkcji łącząca matowe, jasne fronty bezuchwytowe z eleganckimi detalami w postaci drewnopodobnej okładziny ściennej i otwartego regału. Wyposażona w solidny, jasny blat roboczy, zintegrowane oświetlenie LED pod szafkami wiszącymi oraz funkcjonalny reling na akcesoria kuchenne. Półwysep kuchenny zapewnia dodatkową przestrzeń roboczą oraz miejsce do spożywania posiłków.',
+    description: 'Nowoczesna kuchnia niemieckiej produkcji łącząca matowe, jasne fronty z eleganckimi, drewnopodobnymi okładzinami ściennymi i otwartym regałem. Oferta specjalna obejmuje meble wraz z akcesoriami oraz luksusowym blatem z konglomeratu Calacatta Gold (dodawanym w promocji za 1 zł). Półwysep kuchenny zapewnia dodatkową przestrzeń roboczą oraz dyskretne miejsce do spożywania posiłków.\n\nWażne: Do podanej kwoty należy doliczyć koszt serwisu/montażu na terenie Dolnego Śląska w wysokości 3000 zł brutto (przy stawce 8% VAT za kompleksową usługę montażu).',
     dimensions: 'Wymiary dostępne na zapytanie',
-    material: 'Matowe fronty, blat przypominający marmur/spiek kwarcowy, drewnopodobny panel ścienny, elementy w ciemnym szarym/grafitowym macie',
-    oldPrice: 85000,
+    material: 'Matowe fronty bezuchwytowe, blat z konglomeratu Calacatta Gold (w promocji), drewnopodobny panel ścienny, zintegrowane oświetlenie LED',
+    oldPrice: 85000, 
     newPrice: 55900,
     image: 'https://i.postimg.cc/vmsnQhNS/1a.jpg',
     gallery: [
@@ -21,13 +21,13 @@ export const saleProducts: SaleItem[] = [
   },
   {
     id: 'sale-2',
-    title: 'Granatowa Kuchnia z Podświetlanym Kamieniem',
+    title: 'Kuchnia "CHALET" z Kwarcytem Cristallo',
     category: 'Kuchnie',
-    description: 'Zjawiskowa kuchnia ekspozycyjna w głębokim, granatowym macie z klasycznie frezowanymi frontami. Jej niekwestionowanym sercem jest spektakularna ściana z podświetlanego, naturalnego kamienia, która nadaje wnętrzu unikalnego blasku. Całość kompozycji dopełniają designerskie miedziane okapy tubowe, duży zlew w stylu farmerskim z miedzianą baterią oraz podświetlane witryny, tworząc luksusową przestrzeń o niepowtarzalnym klimacie.',
+    description: 'Zjawiskowa kuchnia ekspozycyjna w głębokim, granatowym macie z klasycznie frezowanymi frontami. Jej sercem jest spektakularna ściana z podświetlanego, naturalnego kamienia, nadająca wnętrzu unikalnego blasku. W ramach oferty specjalnej do mebli dołączany jest ekskluzywny blat z kwarcytu Cristallo Imperiale (w cenie 1 zł brutto). Kompozycję dopełniają miedziane okapy tubowe, duży zlew w stylu farmerskim i miedziana bateria.\n\nWażne: Do podanej kwoty należy doliczyć koszt serwisu/montażu na terenie Dolnego Śląska w wysokości 3000 zł brutto (przy stawce 8% VAT za kompleksową usługę montażu).',
     dimensions: 'Wymiary dostępne na zapytanie',
-    material: 'Frezowane fronty MDF (granatowy mat), blat z jasnego kamienia, panel ścienny z podświetleniem, miedziane detale i okucia',
-    oldPrice: 115000, // Przykładowa cena pierwotna do zmiany w razie potrzeby
-    newPrice: 79900,  // Przykładowa cena wyprzedażowa do zmiany w razie potrzeby
+    material: 'Frezowane fronty MDF (granatowy mat), blat Kwarcyt Cristallo Imperiale (w promocji), podświetlany panel kamienny, miedziane detale',
+    oldPrice: 115000, 
+    newPrice: 58929,
     image: 'https://i.postimg.cc/Ssdqckqq/IMG-0478-HDR.jpg',
     gallery: [
       'https://i.postimg.cc/Ssdqckqq/IMG-0478-HDR.jpg',
