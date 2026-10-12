@@ -120,13 +120,26 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onBackToHo
                   </h2>
                 </div>
 
-                <div className="space-y-4 text-sm leading-relaxed text-gray-300 font-light">
-                  {sec.content.map((paragraph, idx) => (
-                    <p key={idx} className="whitespace-pre-line">
-                      {paragraph}
-                    </p>
-                  ))}
+<div className="space-y-4 text-sm leading-relaxed text-gray-300 font-light">
+                  {sec.content.map((paragraph, idx) => {
+                    // Sprawdzamy czy paragraf zawiera tag HTML (np. link do home.pl)
+                    if (paragraph.includes('<a href=')) {
+                      return (
+                        <p
+                          key={idx}
+                          className="whitespace-pre-line [&>a]:text-[#c5a880] [&>a]:underline [&>a]:hover:opacity-80"
+                          dangerouslySetInnerHTML={{ __html: paragraph }}
+                        />
+                      );
+                    }
+                    return (
+                      <p key={idx} className="whitespace-pre-line">
+                        {paragraph}
+                      </p>
+                    );
+                  })}
                 </div>
+
               </section>
             ))}
           </div>
