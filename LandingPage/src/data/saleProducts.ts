@@ -20,6 +20,7 @@ export const saleProducts: SaleItem[] = [
     isExhibition: true,
   },
   {
+{
     id: 'sale-2',
     title: 'Kuchnia "CHALET" z Kwarcytem Cristallo',
     category: 'Kuchnie',
@@ -31,6 +32,12 @@ export const saleProducts: SaleItem[] = [
     image: 'https://i.postimg.cc/Ssdqckqq/IMG-0478-HDR.jpg',
     gallery: [
       'https://i.postimg.cc/Ssdqckqq/IMG-0478-HDR.jpg',
+      'https://i.postimg.cc/x1cpzTC6/IMG-0469.jpg'
+    ],
+    isExhibition: true,
+  },
+
+@@ -34,53 +13,4 @@ export const saleProducts: SaleItem[] = [
       'https://i.postimg.cc/x1cpzTC6/IMG-0469.jpg'
     ],
     isExhibition: true,
@@ -83,4 +90,3 @@ export const saleProducts: SaleItem[] = [
     image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80',
     isExhibition: true,
   },
-];
