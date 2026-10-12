@@ -9,4 +9,5 @@ export interface SaleItem {
   newPrice: number;
   image: string;
   isExhibition: boolean;
+  gallery?: string[];
 }

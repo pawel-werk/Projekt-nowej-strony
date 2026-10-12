@@ -3,14 +3,20 @@ import { SaleItem } from '../types/sale';
 export const saleProducts: SaleItem[] = [
   {
     id: 'sale-1',
-    title: 'Wyspa Kuchenna Orzech Amerykański',
+    title: 'Niemiecka Kuchnia Premium z Półwyspem',
     category: 'Kuchnie',
-    description: 'Ekskluzywna wyspa kuchenna z frontami z naturalnego forniru. Wyposażona w system szuflad premium o pełnym wysuwie oraz frezowane uchwyty.',
-    dimensions: '240 cm x 110 cm x 92 cm',
-    material: 'Fornir orzechowy lakierowany matowo, blat kwarcowy 12mm',
-    oldPrice: 320000,
-    newPrice: 185000,
-    image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=800&q=80',
+    description: 'Nowoczesna kuchnia niemieckiej produkcji łącząca matowe, jasne fronty bezuchwytowe z eleganckimi detalami w postaci drewnopodobnej okładziny ściennej i otwartego regału. Wyposażona w solidny, jasny blat roboczy, zintegrowane oświetlenie LED pod szafkami wiszącymi oraz funkcjonalny reling na akcesoria kuchenne. Półwysep kuchenny zapewnia dodatkową przestrzeń roboczą oraz miejsce do spożywania posiłków.',
+    dimensions: 'Wymiary dostępne na zapytanie',
+    material: 'Matowe fronty, blat przypominający marmur/spiek kwarcowy, drewnopodobny panel ścienny, elementy w ciemnym szarym/grafitowym macie',
+    oldPrice: 85000, // Przykładowa cena pierwotna
+    newPrice: 55900,
+    image: 'https://i.postimg.cc/vmsnQhNS/1a.jpg',
+    gallery: [
+      'https://i.postimg.cc/vmsnQhNS/1a.jpg',
+      'https://i.postimg.cc/qvXs6Wnm/1bb.jpg',
+      'https://i.postimg.cc/B6hPB0Q5/1bc.jpg',
+      'https://i.postimg.cc/zv6L4Fhx/1c.jpg'
+    ],
     isExhibition: true,
   },
   {
