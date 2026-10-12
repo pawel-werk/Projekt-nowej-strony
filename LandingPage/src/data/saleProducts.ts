@@ -31,7 +31,7 @@ export const saleProducts: SaleItem[] = [
     image: 'https://i.postimg.cc/Ssdqckqq/IMG-0478-HDR.jpg',
     gallery: [
       'https://i.postimg.cc/Ssdqckqq/IMG-0478-HDR.jpg',
-      'https://i.postimg.cc/DfY3hCzF/IMG-0469.jpg'
+      'https://i.postimg.cc/x1cpzTC6/IMG-0469.jpg'
     ],
     isExhibition: true,
   },
