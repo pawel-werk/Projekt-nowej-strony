@@ -68,7 +68,28 @@ export const privacySections: PrivacySection[] = [
       "Serwis zbiera informacje podane dobrowolnie przez użytkownika, w tym dane osobowe, o ile zostaną one podane.",
       "Serwis może zapisać informacje o parametrach połączenia (oznaczenie czasu, adres IP).",
       "Serwis, w niektórych wypadkach, może zapisać informację ułatwiającą powiązanie danych w formularzu z adresem e-mail użytkownika wypełniającego formularz. W takim wypadku adres e-mail użytkownika pojawia się wewnątrz adresu url strony zawierającej formularz.",
-      "Dane podane w formularzu są przetwarzane w celu wynikającym z funkcji konkretnego formularza, np. w celu dokonania procesu obsługi zgłoszenia serwisowego lub kontaktu handlowego, rejestracji usług itp. Każdorazowo konteks",
+      "Dane podane w formularzu są przetwarzane w celu wynikającym z funkcji konkretnego formularza, np. w celu dokonania procesu obsługi zgłoszenia serwisowego lub kontaktu handlowego, rejestracji usług itp. Każdorazowo kontekst ten jest każdorazowo jasny z opisu formularza znajdującego się na danej stronie Serwisu.",
+      "W sytuacji, gdy dane w formularzu są wypełniane w ramach konkretnego procesu biznesowego (np. zapytanie ofertowe, zgłoszenie serwisowe), dane te są przetwarzane przez czas niezbędny do realizacji tego procesu lub do momentu wycofania zgody na ich przetwarzanie (jeśli podstawą przetwarzania była zgoda).",
+      "Użytkownikowi przysługuje prawo wglądu do swoich danych wprowadzonych w formularzu, ich modyfikacji oraz żądania zaprzestania ich przetwarzania w dowolnym momencie. Zmiana lub usunięcie danych może jednak wpłynąć na możliwość realizacji usług lub obsługi zgłoszenia.",
+    ],
+  },
+  {
+    id: "pliki-cookies",
+    number: "06",
+    title: "Pliki cookies",
+    content: [
+      "Serwis korzysta z plików cookies (ciasteczek), które są plikami tekstowymi przechowywanymi w urządzeniu końcowym użytkownika Serwisu.",
+      "Pliki cookies wykorzystywane są w celu dostosowania zawartości stron Serwisu do preferencji użytkownika, optymalizacji korzystania ze stron, a także w celach statystycznych i analitycznych.",
+      "Użytkownik może w każdej chwili zmienić ustawienia dotyczące plików cookies w swojej przeglądarce internetowej. Szczegółowe informacje o możliwości i sposobach obsługi plików cookies dostępne są w ustawieniach oprogramowania (przeglądarki internetowej).",
+    ],
+  },
+  {
+    id: "zmiany-w-polityce-prywatnosci",
+    number: "07",
+    title: "Zmiany w polityce prywatności",
+    content: [
+      "Operator zastrzega sobie prawo do wprowadzania zmian w niniejszej Polityce Prywatności, na co wpływ może mieć rozwój technologii internetowej, ewentualne zmiany w powszechnie obowiązujących przepisach prawa lub rozwój samego Serwisu.",
+      "O wszelkich zmianach użytkownicy będą informowani w sposób widoczny i zrozumiały na stronach Serwisu.",
     ],
   },
 ];
