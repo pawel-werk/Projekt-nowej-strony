@@ -193,6 +193,8 @@ export const SalePage: React.FC<SalePageProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {saleProducts.map((item) => {
                 const photoCount = item.gallery ? item.gallery.length : 1;
+                // Do kafelka wycinamy fragment z "Ważne:", żeby podgląd był czysty
+                const cleanDescription = item.description.split('Ważne:')[0].trim();
 
                 return (
                   <article 
@@ -231,7 +233,7 @@ export const SalePage: React.FC<SalePageProps> = ({
                     <div className="p-6 md:p-8 flex flex-col flex-1">
                       <span className="text-[10px] tracking-[0.25em] uppercase text-gray-500 mb-2">{item.category}</span>
                       <h3 className="font-serif text-xl md:text-2xl text-white mb-4 leading-snug group-hover:text-[#c5a880] transition-colors">{item.title}</h3>
-                      <p className="text-gray-400 text-sm font-light mb-6 line-clamp-3">{item.description}</p>
+                      <p className="text-gray-400 text-sm font-light mb-6 line-clamp-3">{cleanDescription}</p>
                       
                       <div className="space-y-3 mb-8 mt-auto border-t border-white/5 pt-5">
                         <div className="flex justify-between text-xs text-gray-300">
@@ -459,9 +461,27 @@ export const SalePage: React.FC<SalePageProps> = ({
                       OPIS PRODUKTU
                     </h3>
                   </div>
-                  <p className="text-xs md:text-sm text-neutral-300 leading-relaxed font-light">
-                    {modalProduct.description}
-                  </p>
+                  
+                  {/* System renderowania uwag "Ważne:" */}
+                  {modalProduct.description.includes('Ważne:') ? (
+                    <>
+                      <p className="text-xs md:text-sm text-neutral-300 leading-relaxed font-light whitespace-pre-wrap">
+                        {modalProduct.description.split('Ważne:')[0].trim()}
+                      </p>
+                      <div className="mt-5 p-4 md:p-5 bg-gradient-to-r from-[#c5a880]/10 to-transparent border-l-2 border-[#c5a880]">
+                        <span className="text-[10px] tracking-[0.25em] uppercase text-[#c5a880] font-medium block mb-1.5">
+                          Ważna informacja
+                        </span>
+                        <p className="text-xs md:text-sm text-neutral-300 leading-relaxed font-light">
+                          {modalProduct.description.split('Ważne:')[1].trim()}
+                        </p>
+                      </div>
+                    </>
+                  ) : (
+                    <p className="text-xs md:text-sm text-neutral-300 leading-relaxed font-light whitespace-pre-wrap">
+                      {modalProduct.description}
+                    </p>
+                  )}
                 </div>
                 
                 <div className="flex items-end gap-4 mb-6">
