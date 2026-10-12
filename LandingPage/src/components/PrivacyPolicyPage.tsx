@@ -120,16 +120,21 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onBackToHo
                   </h2>
                 </div>
 
-<div className="space-y-4 text-sm leading-relaxed text-gray-300 font-light">
+                <div className="space-y-4 text-sm leading-relaxed text-gray-300 font-light">
                   {sec.content.map((paragraph, idx) => {
-                    // Sprawdzamy czy paragraf zawiera tag HTML (np. link do home.pl)
-                    if (paragraph.includes('<a href=')) {
+                    if (sec.id === 'hosting') {
                       return (
-                        <p
-                          key={idx}
-                          className="whitespace-pre-line [&>a]:text-[#c5a880] [&>a]:underline [&>a]:hover:opacity-80"
-                          dangerouslySetInnerHTML={{ __html: paragraph }}
-                        />
+                        <p key={idx} className="whitespace-pre-line">
+                          Serwis jest hostowany (technicznie utrzymywany) na serwerach operatora:{' '}
+                          <a
+                            href="https://home.pl"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#c5a880] underline hover:opacity-80 transition-opacity relative z-10 cursor-pointer"
+                          >
+                            home.pl
+                          </a>
+                        </p>
                       );
                     }
                     return (
@@ -139,7 +144,6 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onBackToHo
                     );
                   })}
                 </div>
-
               </section>
             ))}
           </div>
