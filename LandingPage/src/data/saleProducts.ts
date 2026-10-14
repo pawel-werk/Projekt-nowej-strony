@@ -35,12 +35,6 @@ export const saleProducts: SaleItem[] = [
     ],
     isExhibition: true,
   },
-
-@@ -34,53 +13,4 @@ export const saleProducts: SaleItem[] = [
-      'https://i.postimg.cc/x1cpzTC6/IMG-0469.jpg'
-    ],
-    isExhibition: true,
-  },
   {
     id: 'sale-3',
     title: 'Zabudowa Łazienkowa SPA Teak',
@@ -88,4 +82,5 @@ export const saleProducts: SaleItem[] = [
     newPrice: 58000,
     image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80',
     isExhibition: true,
-  },
+  }
+];
