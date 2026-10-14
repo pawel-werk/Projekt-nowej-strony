@@ -20,7 +20,6 @@ export const saleProducts: SaleItem[] = [
     isExhibition: true,
   },
   {
-{
     id: 'sale-2',
     title: 'Kuchnia "CHALET" z Kwarcytem Cristallo',
     category: 'Kuchnie',
