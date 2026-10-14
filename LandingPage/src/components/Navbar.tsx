@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { TranslationSchema } from '../data/translations';
 
 interface NavbarProps {
@@ -20,11 +20,45 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [navScrolled, setNavScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // Nowy stan określający, czy navbar ma być widoczny
+  const [isVisible, setIsVisible] = useState(true);
+
+  // Referencje do śledzenia przewijania
+  const lastScrollY = useRef(0);
+  const scrollAccumulator = useRef(0);
+  const scrollThreshold = 150; // Długość scrolla w px potrzebna do ukrycia/pokazania
 
   useEffect(() => {
     const handleScroll = () => {
-      setNavScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      // Zachowana oryginalna logika zmiany wyglądu po 50px
+      setNavScrolled(currentScrollY > 50);
+
+      // Obliczanie różnicy (delta) względem ostatniej pozycji
+      const delta = currentScrollY - lastScrollY.current;
+
+      // Jeśli zmieniamy kierunek przewijania, zerujemy akumulator
+      if ((delta > 0 && scrollAccumulator.current < 0) || (delta < 0 && scrollAccumulator.current > 0)) {
+        scrollAccumulator.current = 0;
+      }
+
+      scrollAccumulator.current += delta;
+
+      // Logika pokazywania i ukrywania po osiągnięciu progu (scrollThreshold)
+      if (scrollAccumulator.current >= scrollThreshold && currentScrollY > 200) {
+        setIsVisible(false);
+        scrollAccumulator.current = 0;
+        setMobileMenuOpen(false); // Opcjonalnie: zamyka menu mobilne przy ukrywaniu navbara
+      } else if (scrollAccumulator.current <= -scrollThreshold || currentScrollY < 100) {
+        setIsVisible(true);
+        scrollAccumulator.current = 0;
+      }
+
+      lastScrollY.current = currentScrollY;
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -33,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { key: 'services', id: 'services' },
     { key: 'portfolio', id: 'portfolio' },
     { key: 'about', id: 'about' },
-    { key: 'sale', id: 'sale' }, // Usunięto flagę isSpecial
+    { key: 'sale', id: 'sale' },
     { key: 'contact', id: 'contact' },
   ] as const;
 
@@ -51,6 +85,8 @@ export const Navbar: React.FC<NavbarProps> = ({
     <nav
       className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
         hasTopBar ? 'top-10' : 'top-0'
+      } ${
+        !isVisible ? '-translate-y-[150%] opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'
       } ${
         navScrolled
           ? 'bg-white/95 backdrop-blur-md border-b border-[#e0ddd8] shadow-sm py-3.5'
