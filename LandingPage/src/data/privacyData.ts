@@ -6,90 +6,112 @@ export interface PrivacySection {
 }
 
 export const PRIVACY_INTRO =
-  "Polityka prywatności opisuje zasady przetwarzania przez nas informacji na Twój temat, w tym danych osobowych oraz ciasteczek, czyli tzw. cookies.";
+  "POLITYKA PRYWATNOŚCI I PLIKÓW COOKIES Serwisu www.werkmebel.pl";
 
-export const PRIVACY_LAST_UPDATED = "14 września 2026";
+export const PRIVACY_LAST_UPDATED = "16.10.2026r.";
 
 export const privacySections: PrivacySection[] = [
   {
     id: "informacje-ogolne",
     number: "01",
-    title: "Informacje ogólne",
+    title: "Informacje ogólne i dane Administratora",
     content: [
-      "Niniejsza polityka dotyczy Serwisu www, funkcjonującego pod adresem url: werkmebel.pl",
-      "Operatorem serwisu oraz Administratorem danych osobowych jest: Werk Mebel Anna Lewicka Braniborska 14, 53-680, Wrocław",
-      "Adres kontaktowy poczty elektronicznej operatora: biuro@werkmebel.pl",
-      "Operator jest Administratorem Twoich danych osobowych w odniesieniu do danych podanych dobrowolnie w Serwisie.",
-      "Serwis wykorzystuje dane osobowe w następujących celach:\n• Prowadzenie newslettera\n• Obsługa zapytań przez formularz\n• Prezentacja oferty lub informacji",
-      "Serwis realizuje funkcje pozyskiwania informacji o użytkownikach i ich zachowaniu w następujący sposób:\n• Poprzez dobrowolnie wprowadzone w formularzach dane, które zostają wprowadzone do systemów Operatora.\n• Poprzez zapisywanie w urządzeniach końcowych plików cookie (tzw. „ciasteczka”).",
+      "1. Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych osób korzystających z serwisu internetowego działającego pod adresem www.werkmebel.pl (zwanego dalej „Serwisem”).",
+      "2. Administratorem danych osobowych (w rozumieniu Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r., zwanego dalej RODO) jest: Werk Mebel Anna Lewicka-Godula ul. Braniborska 14, 53-680 Wrocław, NIP: 7542676140, REGON: 021701628 (zwana dalej „Administratorem”).",
+      "3. Kontakt z Administratorem w sprawach związanych z przetwarzaniem danych oraz realizacją praw osób, których dane dotyczą, jest możliwy za pośrednictwem poczty elektronicznej: biuro@werkmebel.pl lub korespondencyjnie na adres siedziby firmy."
     ],
   },
   {
-    id: "ochrona-danych",
+    id: "cele-i-podstawy",
     number: "02",
-    title: "Wybrane metody ochrony danych stosowane przez Operatora",
+    title: "Cele, podstawy prawne i okres przechowywania danych",
     content: [
-      "Miejsca logowania i wprowadzania danych osobowych są chronione w warstwie transmisji (certyfikat SSL). Dzięki temu dane osobowe i dane logowania, wprowadzone na stronie, zostają zaszyfrowane w komputerze użytkownika i mogą być odczytane jedynie na docelowym serwerze.",
-      "Dane osobowe przechowywane w bazie danych są zaszyfrowane w taki sposób, że jedynie posiadający Operator klucz może je odczytać. Dzięki temu dane są chronione na wypadek wykradzenia bazy danych z serwera.",
-      "Hasła użytkowników są przechowywane w postaci hashowanej. Funkcja hashująca działa jednokierunkowo – nie jest możliwe odwrócenie jej działania, co stanowi obecnie współczesny standard w zakresie przechowywania haseł użytkowników.",
-      "Operator okresowo zmienia swoje hasła administracyjne.",
-      "W celu ochrony danych Operator regularnie wykonuje kopie bezpieczeństwa.",
-      "Istotnym elementem ochrony danych jest regularna aktualizacja wszelkiego oprogramowania, wykorzystywanego przez Operatora do przetwarzania danych osobowych, co w szczególności oznacza regularne aktualizacje komponentów programistycznych.",
+      "Administrator przetwarza dane osobowe użytkowników Serwisu w następujących celach:",
+      "1. Obsługa zapytań i komunikacja przez formularz kontaktowy lub e-mail:\n- Podstawa prawna: art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes Administratora polegający na budowaniu relacji z klientami i udzielaniu odpowiedzi na kierowane zapytania) lub art. 6 ust. 1 lit. b RODO (podjęcie działań przed zawarciem umowy na żądanie osoby, której dane dotyczą).\n- Okres przechowywania: przez czas niezbędny do udzielenia wyczerpującej odpowiedzi i zakończenia kontaktu, a w sprawach o charakterze ofertowym – do czasu przedawnienia ewentualnych roszczeń.",
+      "2. Przygotowanie oferty, wyceny oraz realizacja umowy (projektowanie i wykonanie mebli):\n- Podstawa prawna: art. 6 ust. 1 lit. b RODO (niezbędność do wykonania umowy lub podjęcia działań przed jej zawarciem) oraz art. 6 ust. 1 lit. c RODO (wypełnienie obowiązków prawnych, w tym przepisów podatkowo-księgowych).\n- Okres przechowywania: przez okres realizacji usługi, a następnie przez 5 lat licząc od końca roku kalendarzowego, w którym upłynął termin płatności podatku (zgodnie z ordynacją podatkową).",
+      "3. Prowadzenie newslettera i marketingu bezpośredniego:\n- Podstawa prawna: art. 6 ust. 1 lit. a RODO (zgoda użytkownika wyrażona przy zapisie) oraz art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes Administratora polegający na promocji własnych produktów i usług).\n- Okres przechowywania: do momentu cofnięcia zgody lub wniesienia skutecznego sprzeciwu wobec przetwarzania.",
+      "4. Dochodzenie roszczeń lub obrona przed roszczeniami:\n- Podstawa prawna: art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes prawny Administratora).\n- Okres przechowywania: do upływu terminów przedawnienia roszczeń wynikających z Kodeksu cywilnego.",
+      "5. Analiza statystyczna i optymalizacja działania Serwisu:\n- Podstawa prawna: art. 6 ust. 1 lit. a RODO (dobrowolna zgoda na instalację analitycznych plików cookies) lub art. 6 ust. 1 lit. f RODO (w zakresie technicznie niezbędnych cookies do prawidłowego działania strony).\n- Okres przechowywania: do czasu wygaśnięcia plików cookies lub ich usunięcia przez użytkownika."
     ],
   },
   {
-    id: "hosting",
+    id: "odbiorcy-danych",
     number: "03",
-    title: "Hosting",
+    title: "Odbiorcy danych osobowych",
     content: [
-      "Serwis jest hostowany (technicznie utrzymywany) na serwerach operatora: home.pl",
+      "Dane osobowe użytkowników mogą być powierzane do przetwarzania zewnętrznym podmiotom wspierającym Administratora w bieżącym funkcjonowaniu Serwisu, na podstawie umów powierzenia przetwarzania danych (art. 28 RODO):",
+      "1. Dostawcy usług hostingu i serwerów (m.in. home.pl S.A.).",
+      "2. Podmiotom świadczącym usługi informatyczne, programistyczne i serwisowe strony www.",
+      "3. Dostawcom narzędzi analitycznych, statystycznych lub marketingowych (w przypadku ich aktywowania w Serwisie).",
+      "4. Biuru rachunkowemu i doradcom prawnym współpracującym z Administratorem.",
+      "5. Upoważnionym pracownikom i współpracownikom Administratora.",
+      "Dane mogą zostać również udostępnione organom publicznym, jeżeli obowiązek taki wynika z powszechnie obowiązujących przepisów prawa."
     ],
   },
   {
-    id: "twoje-prawa",
+    id: "panstwa-trzecie",
     number: "04",
-    title: "Twoje prawa i dodatkowe informacje o sposobie wykorzystania danych",
+    title: "Przekazywanie danych do państw trzecich",
     content: [
-      "W niektórych sytuacjach Administrator ma prawo przekazywać Twoje dane osobowe innym odbiorcom, jeśli będzie to niezbędne do wykonania zawartej z Tobą umowy lub do zrealizowania obowiązków ciążących na Administratorze. Dotyczy to takich grup odbiorców:\n• firma hostingowa na zasadzie powierzenia\n• upoważnieni pracownicy i współpracownicy, którzy korzystają z danych w celu realizacji celu działania strony\n• firmy, świadczące usługi marketingu na rzecz Administratora",
-      "Twoje dane osobowe przetwarzane przez Administratora nie dłużej, niż jest to konieczne do wykonania związanych z nimi czynności określonych osobnymi przepisami (np. o prowadzeniu rachunkowości). W odniesieniu do danych marketingowych dane nie będą przetwarzane dłużej niż przez 3 lata.",
-      "Przysługuje Ci prawo żądania od Administratora:\n• dostępu do danych osobowych Ciebie dotyczących,\n• ich sprostowania,\n• usunięcia,\n• ograniczenia przetwarzania,\n• oraz przenoszenia danych.",
-      "Przysługuje Ci prawo do złożenia sprzeciwu w zakresie przetwarzania wskazanego w pkt 3.3 c) wobec przetwarzania danych osobowych w celu wykonania prawnie uzasadnionych interesów realizowanych przez Administratora, w tym profilowania, przy czym prawo sprzeciwu nie będzie mogło być wykonane w przypadku istnienia ważnych prawnie uzasadnionych podstaw do przetwarzania, nadrzędnych wobec Ciebie interesów, praw i wolności, w szczególności ustalenia, dochodzenia lub obrony roszczeń.",
-      "Na działania Administratora przysługuje skarga do Prezesa Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warszawa.",
-      "Podanie danych osobowych jest dobrowolne, lecz niezbędne do obsługi Serwisu.",
-      "W stosunku do Ciebie mogą być podejmowane czynności polegające na zautomatyzowanym podejmowaniu decyzji, w tym profilowaniu w celu świadczenia usług w ramach zawartej umowy oraz w celu prowadzenia przez Administratora marketingu bezpośredniego.",
-      "Dane osobowe nie są przekazywane od krajów trzecich w rozumieniu przepisów o ochronie danych osobowych. Oznacza to, że nie przesyłamy ich poza teren Unii Europejskiej.",
+      "1. Co do zasady dane osobowe przetwarzane są na terenie Europejskiego Obszaru Gospodarczego (EOG).",
+      "2. W przypadku korzystania przez Serwis z narzędzi dostarczanych przez podmioty mające siedzibę poza EOG (np. usługi Google Ireland Ltd. czy Meta Platforms Ireland Ltd., których spółki macierzyste zlokalizowane są w USA), transfer danych odbywa się w oparciu o standardowe klauzule umowne zatwierdzone przez Komisję Europejską lub decyzję o adekwatności (EU-U.S. Data Privacy Framework), co gwarantuje odpowiedni stopień ochrony danych."
     ],
   },
   {
-    id: "informacje-w-formularzach",
+    id: "prawa-osob",
     number: "05",
-    title: "Informacje w formularzach",
+    title: "Prawa osób, których dane dotyczą",
     content: [
-      "Serwis zbiera informacje podane dobrowolnie przez użytkownika, w tym dane osobowe, o ile zostaną one podane.",
-      "Serwis może zapisać informacje o parametrach połączenia (oznaczenie czasu, adres IP).",
-      "Serwis, w niektórych wypadkach, może zapisać informację ułatwiającą powiązanie danych w formularzu z adresem e-mail użytkownika wypełniającego formularz. W takim wypadku adres e-mail użytkownika pojawia się wewnątrz adresu url strony zawierającej formularz.",
-      "Dane podane w formularzu są przetwarzane w celu wynikającym z funkcji konkretnego formularza, np. w celu dokonania procesu obsługi zgłoszenia serwisowego lub kontaktu handlowego, rejestracji usług itp. Każdorazowo kontekst ten jest każdorazowo jasny z opisu formularza znajdującego się na danej stronie Serwisu.",
-      "W sytuacji, gdy dane w formularzu są wypełniane w ramach konkretnego procesu biznesowego (np. zapytanie ofertowe, zgłoszenie serwisowe), dane te są przetwarzane przez czas niezbędny do realizacji tego procesu lub do momentu wycofania zgody na ich przetwarzanie (jeśli podstawą przetwarzania była zgoda).",
-      "Użytkownikowi przysługuje prawo wglądu do swoich danych wprowadzonych w formularzu, ich modyfikacji oraz żądania zaprzestania ich przetwarzania w dowolnym momencie. Zmiana lub usunięcie danych może jednak wpłynąć na możliwość realizacji usług lub obsługi zgłoszenia.",
+      "Każdej osobie, której dane dotyczą, przysługuje prawo:",
+      "1. Dostępu do danych (art. 15 RODO) – uzyskania potwierdzenia, czy jej dane są przetwarzane, oraz otrzymania ich kopii.",
+      "2. Sprostowania danych (art. 16 RODO) – żądania poprawienia danych nieprawidłowych lub uzupełnienia niekompletnych.",
+      "3. Usunięcia danych („prawo do bycia zapomnianym”) (art. 17 RODO) – w sytuacjach przewidzianych prawem, np. gdy dane nie są już niezbędne do celów, dla których zostały zebrane.",
+      "4. Ograniczenia przetwarzania (art. 18 RODO) – w przypadkach określonych przepisami.",
+      "5. Przenoszenia danych (art. 20 RODO) – w zakresie, w jakim dane są przetwarzane na podstawie zgody lub umowy w sposób zautomatyzowany.",
+      "6. Wniesienia sprzeciwu (art. 21 RODO) – wobec przetwarzania opartego na prawnie uzasadnionym interesie Administratora (art. 6 ust. 1 lit. f RODO), w tym marketingu bezpośredniego.",
+      "7. Cofnięcia zgody – w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej wycofaniem.",
+      "8. Wniesienia skargi do organu nadzorczego: Jeśli uznasz, że przetwarzanie narusza przepisy RODO, masz prawo wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa).",
+      "Podanie danych jest dobrowolne, jednak w określonych przypadkach (np. wysłanie zapytania przez formularz kontaktowy, przygotowanie wyceny lub zawarcie umowy) jest niezbędne do realizacji usługi."
+    ],
+  },
+  {
+    id: "zautomatyzowane-decyzje",
+    number: "06",
+    title: "Zautomatyzowane podejmowanie decyzji i profilowanie",
+    content: [
+      "Dane osobowe użytkowników Serwisu nie będą wykorzystywane do podejmowania zautomatyzowanych decyzji wywołujących wobec użytkownika skutki prawne lub w podobny sposób istotnie na niego wpływających, w tym nie podlegają profilowaniu w rozumieniu art. 22 RODO."
+    ],
+  },
+  {
+    id: "bezpieczenstwo-danych",
+    number: "07",
+    title: "Bezpieczeństwo danych",
+    content: [
+      "Administrator stosuje środki techniczne i organizacyjne zapewniające ochronę przetwarzanych danych osobowych odpowiednią do zagrożeń oraz kategorii danych objętych ochroną:",
+      "1. Połączenie z Serwisem jest szyfrowane za pomocą protokołu SSL/TLS, co zabezpiecza transmisję danych wprowadzanych w formularzach.",
+      "2. Bazy danych i systemy teleinformatyczne zabezpieczone są przed dostępem osób nieuprawnionych oraz podlegają regularnym kopiom zapasowym (backup).",
+      "3. Do przetwarzania danych dopuszczone są wyłącznie osoby posiadające stosowne upoważnienia i zobowiązane do zachowania tajemnicy."
     ],
   },
   {
     id: "pliki-cookies",
-    number: "06",
-    title: "Pliki cookies",
+    number: "08",
+    title: "Pliki cookies (Ciasteczka)",
     content: [
-      "Serwis korzysta z plików cookies (ciasteczek), które są plikami tekstowymi przechowywanymi w urządzeniu końcowym użytkownika Serwisu.",
-      "Pliki cookies wykorzystywane są w celu dostosowania zawartości stron Serwisu do preferencji użytkownika, optymalizacji korzystania ze stron, a także w celach statystycznych i analitycznych.",
-      "Użytkownik może w każdej chwili zmienić ustawienia dotyczące plików cookies w swojej przeglądarce internetowej. Szczegółowe informacje o możliwości i sposobach obsługi plików cookies dostępne są w ustawieniach oprogramowania (przeglądarki internetowej).",
+      "1. Serwis wykorzystuje pliki cookies (niewielkie pliki tekstowe zapisywane na urządzeniu końcowym użytkownika).",
+      "2. Pliki cookies dzielą się na:\n- Niezbędne (techniczne): kluczowe dla prawidłowego wyświetlania i funkcjonowania Serwisu (np. utrzymanie sesji, bezpieczeństwo). Nie wymagają uprzedniej zgody użytkownika.\n- Analityczne / statystyczne: umożliwiające zbieranie anonimowych informacji o sposobie korzystania ze strony w celu optymalizacji jej struktury i treści. Wymagają wyraźnej zgody użytkownika.\n- Marketingowe: umożliwiające dostosowywanie reklam do preferencji użytkownika. Wymagają wyraźnej zgody użytkownika.",
+      "3. Użytkownik może w każdej chwili zarządzać swoimi preferencjami za pośrednictwem paska cookies w Serwisie lub bezpośrednio w ustawieniach swojej przeglądarki internetowej (blokowanie, usuwanie plików cookies).",
+      "4. Ograniczenie stosowania technicznych plików cookies może wpłynąć na niektóre funkcjonalności Serwisu."
     ],
   },
   {
-    id: "zmiany-w-polityce-prywatnosci",
-    number: "07",
-    title: "Zmiany w polityce prywatności",
+    id: "postanowienia-koncowe",
+    number: "09",
+    title: "Postanowienia końcowe",
     content: [
-      "Operator zastrzega sobie prawo do wprowadzania zmian w niniejszej Polityce Prywatności, na co wpływ może mieć rozwój technologii internetowej, ewentualne zmiany w powszechnie obowiązujących przepisach prawa lub rozwój samego Serwisu.",
-      "O wszelkich zmianach użytkownicy będą informowani w sposób widoczny i zrozumiały na stronach Serwisu.",
+      "1. Administrator zastrzega sobie prawo do wprowadzania zmian w niniejszej Polityce Prywatności w przypadku zmiany technologii działania Serwisu lub zmian w obowiązujących przepisach prawa.",
+      "2. Aktualna wersja Polityki Prywatności jest zawsze dostępna pod adresem: www.werkmebel.pl/polityka-prywatnosci.",
+      "3. Data ostatniej aktualizacji: 16.10.2026r."
     ],
   },
 ];

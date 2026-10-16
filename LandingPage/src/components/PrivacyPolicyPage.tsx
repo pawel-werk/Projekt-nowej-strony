@@ -120,12 +120,13 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ onBackToHo
                   </h2>
                 </div>
 
-                <div className="space-y-4 text-sm leading-relaxed text-gray-300 font-light">
-                  {sec.content.map((paragraph, idx) => {
-                    if (sec.id === 'hosting') {
-                      return (
-                        <p key={idx} className="whitespace-pre-line">
-                          Serwis jest hostowany (technicznie utrzymywany) na serwerach operatora:{' '}
+        <div className="space-y-4 text-sm leading-relaxed text-gray-300 font-light">
+                  {sec.content.map((paragraph, idx) => (
+                    <p key={idx} className="whitespace-pre-line">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
                           <a
                             href="https://home.pl"
                             target="_blank"
