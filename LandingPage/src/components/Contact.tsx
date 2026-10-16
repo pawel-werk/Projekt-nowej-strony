@@ -360,6 +360,19 @@ export const Contact: React.FC<ContactProps> = ({ tr, lang, prefilledProject }) 
                   />
                 </div>
 
+                {/* Klauzula informacyjna */}
+                <div className="text-[10px] text-neutral-400 font-light leading-relaxed mb-4">
+                  {isPolish ? (
+                    <>
+                      Administratorem Twoich danych osobowych jest Werk Mebel Anna Lewicka-Godula. Przekazane dane będą przetwarzane w celu obsługi Twojego zapytania (art. 6 ust. 1 lit. f RODO). Więcej informacji o tym, jak przetwarzamy Twoje dane oraz o przysługujących Ci prawach, znajdziesz w naszej <a href="/polityka-prywatnosci" className="text-[#c5a880] hover:underline">Polityce Prywatności</a>.
+                    </>
+                  ) : (
+                    <>
+                      The controller of your personal data is Werk Mebel Anna Lewicka-Godula. The provided data will be processed to handle your inquiry (Article 6(1)(f) GDPR). More information on how we process your data and your rights can be found in our <a href="/polityka-prywatnosci" className="text-[#c5a880] hover:underline">Privacy Policy</a>.
+                    </>
+                  )}
+                </div>
+
                 {/* Przycisk wysyłki */}
                 <button
                   type="submit"
