@@ -137,6 +137,29 @@ export const portfolioItems: PortfolioItem[] = [
     ]
   },
 {
+    id: 'strefa-dzienna-beton-drewno',
+    title: 'Otwarta Strefa Dzienna z Betonowym Sufitem',
+    titleEn: 'Open Plan Living Space with Concrete Ceiling',
+    category: 'Wnętrza',
+    categoryEn: 'Interiors',
+    tag: 'KOMPLEKSOWO',
+    location: 'Wrocław',
+    img: 'https://i.postimg.cc/vZMwVT5f/R1.jpg',
+    description: 'Kompleksowa realizacja otwartej strefy dziennej w nowoczesnym, industrialnym stylu. Surowy, betonowy sufit z wyeksponowanym czarnym oświetleniem szynowym doskonale kontrastuje z ciepłymi, drewnianymi okładzinami ściennymi. Przestrzeń płynnie łączy minimalistyczną, szarą kuchnię z dużą wyspą, przestronną jadalnię ze wspaniałym dębowym stołem oraz strefę wypoczynkową z nowoczesnym wolnostojącym kominkiem. Wyrazistym akcentem wnętrza jest designerska, ażurowa lampa zawieszona nad stołem.',
+    descEn: 'A comprehensive implementation of an open-plan living area in a modern industrial style. The raw concrete ceiling with exposed black track lighting perfectly contrasts with the warm wooden wall paneling. The space seamlessly integrates a minimalist grey kitchen with a large island, a spacious dining area with a stunning oak table, and a lounge zone with a modern freestanding fireplace. A striking wireframe pendant lamp above the dining table serves as a bold visual accent.',
+    gallery: [
+      'https://i.postimg.cc/vZMwVT5f/R1.jpg',
+      'https://i.postimg.cc/0yfRdvC0/R2.jpg',
+      'https://i.postimg.cc/6p0JLKh1/R3.jpg'
+    ],
+    materials: [
+      'Gładkie, szare fronty kuchenne o matowym wykończeniu',
+      'Okładziny ścienne w wyrazistym dekorze drewna',
+      'Stół jadalniany z blatem z litego drewna na stalowej podstawie',
+      'Designerskie oświetlenie (ażurowa lampa i czarne szynoprzewody)'
+    ]
+  },
+{
     id: 'kuchnia-biel-polysk-drewno',
     title: 'Biała Kuchnia w Połysku z Drewnianą Wyspą',
     titleEn: 'High-Gloss White Kitchen with Wooden Island',
