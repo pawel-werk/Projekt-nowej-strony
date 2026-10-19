@@ -113,6 +113,29 @@ export const portfolioItems: PortfolioItem[] = [
       'Ceramiczny zlewozmywak typu farmhouse'
     ]
   },
+{
+    id: 'kuchnia-czarna-miedz',
+    title: 'Czarna Kuchnia z Miedzianymi Akcentami',
+    titleEn: 'Black Kitchen with Copper Accents',
+    category: 'Kuchnie',
+    categoryEn: 'Kitchens',
+    tag: 'PREMIUM',
+    location: 'Warszawa',
+    img: 'https://i.postimg.cc/sgRcwRN8/DSC-6191.jpg',
+    description: 'Odważna i nowoczesna kuchnia w industrialnym klimacie, w której dominują gładkie, matowe fronty w głębokiej czerni. Zostały one zjawiskowo zestawione z wyrazistymi, miedzianymi i rdzawymi teksturami. Blat oraz panel ścienny o strukturze patynowanej miedzi idealnie komponują się z unikalnym, dekoracyjnym okapem ściennym. Przestrzeń wyposażono w zintegrowaną podblatową chłodziarkę na wino, czarną armaturę oraz klimatyczne oświetlenie w stylu loft, tworząc niezwykle eleganckie i oryginalne wnętrze.',
+    descEn: 'A bold and modern industrial-style kitchen, dominated by smooth, matte black fronts. These are spectacularly paired with striking copper and rust textures. The countertop and backsplash, featuring a patinated copper finish, perfectly complement the unique decorative wall-mounted range hood. The space is equipped with an integrated under-counter wine cooler, black fixtures, and atmospheric loft-style lighting, creating an incredibly elegant and highly original interior.',
+    gallery: [
+      'https://i.postimg.cc/sgRcwRN8/DSC-6191.jpg',
+      'https://i.postimg.cc/WbcgPw6H/DSC-6207.jpg',
+      'https://i.postimg.cc/BvzP7Tnz/DSC-6248.jpg'
+    ],
+    materials: [
+      'Matowe, czarne fronty bezuchwytowe',
+      'Blat i panel ścienny w dekorze patynowanej miedzi/rdzy',
+      'Dekoracyjny okap ścienny z miedzianymi detalami',
+      'Podblatowa chłodziarka na wino z drewnianymi półkami'
+    ]
+  },
 
   /* 2. GARDEROBY */
   {
