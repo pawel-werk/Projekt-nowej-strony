@@ -89,6 +89,30 @@ export const portfolioItems: PortfolioItem[] = [
       'Czarne sprzęty AGD oraz zlew kompozytowy'
     ]
   },
+{
+    id: 'kuchnia-klasyczna-niebieska-wyspa',
+    title: 'Klasyczna Kuchnia z Rustykalną Wyspą',
+    titleEn: 'Classic Kitchen with Rustic Island',
+    category: 'Kuchnie',
+    categoryEn: 'Kitchens',
+    tag: 'REALIZACJA',
+    location: 'Wrocław',
+    img: 'https://i.postimg.cc/dt6b2LhK/DSC-6471.jpg',
+    description: 'Elegancka kuchnia w klasycznym stylu z białymi, frezowanymi frontami i dekoracyjnymi witrynami. Przestrzeń zyskuje unikalny charakter dzięki głębokiemu, niebieskiemu kolorowi ścian oraz wzorzystym kafelkom nad blatem. W centrum znajduje się duża, rustykalna wyspa z blatem o wyraźnym rysunku starego drewna. Stylizowany, czarny sprzęt AGD w klimacie retro oraz ceramiczny zlewozmywak typu farmhouse dopełniają tradycyjny, a zarazem luksusowy charakter wnętrza.',
+    descEn: 'An elegant classic-style kitchen with white, milled fronts and decorative glass display cabinets. The space gains a unique character through deep blue walls and patterned backsplash tiles. At the center is a large, rustic island with a distinctively grained aged-wood countertop. Stylish, retro-inspired black appliances and a ceramic farmhouse sink complete the traditional yet luxurious feel of the interior.',
+    gallery: [
+      'https://i.postimg.cc/dt6b2LhK/DSC-6471.jpg',
+      'https://i.postimg.cc/Hn2h9hsQ/DSC-6492.jpg',
+      'https://i.postimg.cc/7ZbWSXvg/DSC-6500.jpg',
+      'https://i.postimg.cc/VvDKC0DT/DSC-6529.jpg'
+    ],
+    materials: [
+      'Białe fronty ramiakowe z klasycznym frezowaniem',
+      'Rustykalny blat wyspy o wyrazistym rysunku drewna',
+      'Zabudowa AGD w stylu retro (m.in. stylizowana kuchnia wolnostojąca)',
+      'Ceramiczny zlewozmywak typu farmhouse'
+    ]
+  },
 
   /* 2. GARDEROBY */
   {
