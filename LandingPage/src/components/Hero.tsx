@@ -20,10 +20,10 @@ export const Hero: React.FC<HeroProps> = ({ tr, onScrollTo }) => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex flex-col justify-center">
-        {/* Architectural Eyebrow */}
+        {/* Architectural Eyebrow - Pogrubiono z font-medium na font-bold */}
         <div className="flex items-center gap-3 mb-5">
           <span className="w-8 h-[1px] bg-[#c5a880]" />
-          <span className="text-[11px] md:text-xs tracking-[0.28em] uppercase text-[#c5a880] font-medium">
+          <span className="text-[11px] md:text-xs tracking-[0.28em] uppercase text-[#c5a880] font-bold">
             {tr.hero.eyebrow}
           </span>
         </div>
@@ -36,7 +36,8 @@ export const Hero: React.FC<HeroProps> = ({ tr, onScrollTo }) => {
           {tr.hero.headline}
         </h1>
 
-        <p className="text-gray-300/90 mb-9 max-w-xl text-sm md:text-base lg:text-lg leading-relaxed font-light">
+        {/* Subtitle - Pogrubiono z font-light na font-medium */}
+        <p className="text-gray-300/90 mb-9 max-w-xl text-sm md:text-base lg:text-lg leading-relaxed font-medium">
           {tr.hero.sub}
         </p>
 
