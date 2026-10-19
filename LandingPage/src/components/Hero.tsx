@@ -28,12 +28,12 @@ export const Hero: React.FC<HeroProps> = ({ tr, onScrollTo }) => {
           </span>
         </div>
 
-        {/* Headline - perfectly proportioned and never cut off */}
+        {/* Headline - tekst wpisany na sztywno i pogrubiony (font-bold) */}
         <h1
-          className="text-white mb-6 leading-[1.06] font-serif tracking-tight"
-          style={{ fontSize: "clamp(2.8rem, 6.2vw, 6rem)", whiteSpace: "pre-line" }}
+          className="text-white mb-6 leading-[1.06] font-serif font-bold tracking-tight"
+          style={{ fontSize: "clamp(2.8rem, 6.2vw, 6rem)" }}
         >
-          {tr.hero.headline}
+          Jedna firma.<br />Wszystkie meble.
         </h1>
 
         <p className="text-gray-300/90 mb-9 max-w-xl text-sm md:text-base lg:text-lg leading-relaxed font-light">
