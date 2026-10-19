@@ -136,6 +136,30 @@ export const portfolioItems: PortfolioItem[] = [
       'Podblatowa chłodziarka na wino z drewnianymi półkami'
     ]
   },
+{
+    id: 'kuchnia-biel-polysk-drewno',
+    title: 'Biała Kuchnia w Połysku z Drewnianą Wyspą',
+    titleEn: 'High-Gloss White Kitchen with Wooden Island',
+    category: 'Kuchnie',
+    categoryEn: 'Kitchens',
+    tag: 'REALIZACJA',
+    location: 'Wrocław',
+    img: 'https://i.postimg.cc/8zJSBMxf/DSC-5694.jpg',
+    description: 'Przestronna, nowoczesna kuchnia łącząca nieskazitelną biel frontów w wysokim połysku z wyrazistym rysunkiem drewna. Centrum aranżacji stanowi rozbudowana wyspa, w którą sprytnie wkomponowano obniżony stół jadalniany. Nad strefą gotowania zawieszono designerski, kulisty okap w białym kolorze, który stanowi mocny akcent wizualny. Zabudowa charakteryzuje się asymetrycznym układem górnych szafek z otwartymi, drewnianymi modułami oraz zaawansowanymi systemami wewnętrznymi, takimi jak szuflady z drewnianymi pegboardami do bezpiecznego przechowywania zastawy.',
+    descEn: 'A spacious, modern kitchen combining pristine high-gloss white fronts with a distinct wood grain pattern. The centerpiece of the design is an extensive island that cleverly integrates a lowered dining table. Above the cooking zone hangs a designer, spherical white range hood, serving as a strong visual accent. The cabinetry features an asymmetrical layout of upper cabinets with open wooden modules and advanced internal systems, such as deep drawers equipped with wooden pegboards for safe tableware storage.',
+    gallery: [
+      'https://i.postimg.cc/8zJSBMxf/DSC-5694.jpg',
+      'https://i.postimg.cc/PrqhJB4c/DSC-5687.jpg',
+      'https://i.postimg.cc/wjypcLny/DSC-5705.jpg',
+      'https://i.postimg.cc/K8y6Lw7w/DSC-5711.jpg'
+    ],
+    materials: [
+      'Białe fronty lakierowane w wysokim połysku',
+      'Blat oraz elementy korpusów w wyrazistym dekorze drewna',
+      'Designerski okap wyspowy w kształcie kuli',
+      'Szuflady wewnętrzne ze szklanymi boczkami i drewnianymi wkładami'
+    ]
+  },
 
   /* 2. GARDEROBY */
   {
