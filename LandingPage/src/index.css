@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap');
 @import 'tailwindcss';
 
 /* Keyframes dla nieskończonego marquee */
@@ -12,7 +12,7 @@
 }
 
 @theme inline {
-  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-serif: 'Outfit', sans-serif;
   --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --color-background: #ffffff;
