@@ -97,11 +97,11 @@ export const portfolioItems: PortfolioItem[] = [
     categoryEn: 'Kitchens',
     tag: 'REALIZACJA',
     location: 'Wrocław',
-    img: 'https://i.postimg.cc/dt6b2LhK/DSC-6471.jpg',
+    img: 'https://i.postimg.cc/WpKzRGgk/DSC-6471-kopia.jpg',
     description: 'Elegancka kuchnia w klasycznym stylu z białymi, frezowanymi frontami i dekoracyjnymi witrynami. Przestrzeń zyskuje unikalny charakter dzięki głębokiemu, niebieskiemu kolorowi ścian oraz wzorzystym kafelkom nad blatem. W centrum znajduje się duża, rustykalna wyspa z blatem o wyraźnym rysunku starego drewna. Stylizowany, czarny sprzęt AGD w klimacie retro oraz ceramiczny zlewozmywak typu farmhouse dopełniają tradycyjny, a zarazem luksusowy charakter wnętrza.',
     descEn: 'An elegant classic-style kitchen with white, milled fronts and decorative glass display cabinets. The space gains a unique character through deep blue walls and patterned backsplash tiles. At the center is a large, rustic island with a distinctively grained aged-wood countertop. Stylish, retro-inspired black appliances and a ceramic farmhouse sink complete the traditional yet luxurious feel of the interior.',
     gallery: [
-      'https://i.postimg.cc/dt6b2LhK/DSC-6471.jpg',
+      'https://i.postimg.cc/WpKzRGgk/DSC-6471-kopia.jpg',
       'https://i.postimg.cc/Hn2h9hsQ/DSC-6492.jpg',
       'https://i.postimg.cc/7ZbWSXvg/DSC-6500.jpg',
       'https://i.postimg.cc/VvDKC0DT/DSC-6529.jpg'
