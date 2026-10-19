@@ -18,8 +18,8 @@ export const portfolioItems: PortfolioItem[] = [
   /* 1. KUCHNIE */
   {
     id: 'kuchnia-fornir-czarny-kamien',
-    title: 'Kuchnia z Fornirem i Czarnym Kamieniem',
-    titleEn: 'Wood Veneer & Black Stone Kitchen',
+    title: 'Kuchnia z fornirem i czarnym kamieniem',
+    titleEn: 'Wood veneer & black stone kitchen',
     category: 'Kuchnie',
     categoryEn: 'Kitchens',
     tag: 'NOWOŚĆ',
@@ -43,8 +43,8 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 'kuchnia-wyspa-jasny-blat',
-    title: 'Kuchnia z Fornirem i Jasną Wyspą',
-    titleEn: 'Wood Veneer Kitchen with Light Island',
+    title: 'Kuchnia z fornirem i jasną Wyspą',
+    titleEn: 'Wood veneer kitchen with light island',
     category: 'Kuchnie',
     categoryEn: 'Kitchens',
     tag: 'REALIZACJA',
@@ -67,8 +67,8 @@ export const portfolioItems: PortfolioItem[] = [
   },
 {
     id: 'kuchnia-biel-szarosc-drewno',
-    title: 'Kuchnia w Bieli, Szarości i Drewnie',
-    titleEn: 'White, Grey and Wood Kitchen',
+    title: 'Kuchnia w bieli, szarości i drewnie',
+    titleEn: 'White, grey and wood kitchen',
     category: 'Kuchnie',
     categoryEn: 'Kitchens',
     tag: 'REALIZACJA',
@@ -91,8 +91,8 @@ export const portfolioItems: PortfolioItem[] = [
   },
 {
     id: 'kuchnia-klasyczna-niebieska-wyspa',
-    title: 'Klasyczna Kuchnia z Rustykalną Wyspą',
-    titleEn: 'Classic Kitchen with Rustic Island',
+    title: 'Klasyczna kuchnia z rustykalną wyspą',
+    titleEn: 'Classic kitchen with rustic island',
     category: 'Kuchnie',
     categoryEn: 'Kitchens',
     tag: 'REALIZACJA',
@@ -115,8 +115,8 @@ export const portfolioItems: PortfolioItem[] = [
   },
 {
     id: 'kuchnia-czarna-miedz',
-    title: 'Czarna Kuchnia z Miedzianymi Akcentami',
-    titleEn: 'Black Kitchen with Copper Accents',
+    title: 'Czarna kuchnia z miedzianymi akcentami',
+    titleEn: 'Black kitchen with copper accents',
     category: 'Kuchnie',
     categoryEn: 'Kitchens',
     tag: 'PREMIUM',
@@ -138,8 +138,8 @@ export const portfolioItems: PortfolioItem[] = [
   },
 {
     id: 'strefa-dzienna-beton-drewno',
-    title: 'Otwarta Strefa Dzienna z Betonowym Sufitem',
-    titleEn: 'Open Plan Living Space with Concrete Ceiling',
+    title: 'Otwarta strefa dzienna z betonowym sufitem',
+    titleEn: 'Open plan living space with concrete ceiling',
     category: 'Wnętrza',
     categoryEn: 'Interiors',
     tag: 'KOMPLEKSOWO',
@@ -161,8 +161,8 @@ export const portfolioItems: PortfolioItem[] = [
   },
 {
     id: 'kuchnia-biel-polysk-drewno',
-    title: 'Biała Kuchnia w Połysku z Drewnianą Wyspą',
-    titleEn: 'High-Gloss White Kitchen with Wooden Island',
+    title: 'Biała kuchnia w połysku z drewnianą wyspą',
+    titleEn: 'High-gloss white kitchen with wooden island',
     category: 'Kuchnie',
     categoryEn: 'Kitchens',
     tag: 'REALIZACJA',
@@ -187,8 +187,8 @@ export const portfolioItems: PortfolioItem[] = [
   /* 2. GARDEROBY */
   {
     id: 'garderoba-walk-in',
-    title: 'Garderoba Master z Przeszkleniami',
-    titleEn: 'Master Walk-In Wardrobe with Glass',
+    title: 'Garderoba master z przeszkleniami',
+    titleEn: 'Master walk-in wardrobe with glass',
     category: 'Garderoby',
     categoryEn: 'Wardrobes',
     tag: 'INDYWIDUALNY PROJEKT',
@@ -211,8 +211,8 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 'garderoba-minimalistyczna',
-    title: 'Garderoba z Wyspą Akcesoryjną',
-    titleEn: 'Bespoke Dressing Room with Island',
+    title: 'Garderoba z wyspą akcesoryjną',
+    titleEn: 'Bespoke dressing room with island',
     category: 'Garderoby',
     categoryEn: 'Wardrobes',
     tag: 'PREMIUM',
@@ -237,8 +237,8 @@ export const portfolioItems: PortfolioItem[] = [
   /* 3. WNĘTRZA / SALONY */
   {
     id: 'salon-strefa-dzienna',
-    title: 'Ściana Medialna & Salon Rezydencji',
-    titleEn: 'Media Wall & Residence Living Room',
+    title: 'Ściana medialna & salon rezydencji',
+    titleEn: 'Media wall & residence living room',
     category: 'Wnętrza',
     categoryEn: 'Interiors',
     tag: 'KOMPLEKSOWO',
