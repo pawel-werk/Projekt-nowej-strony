@@ -65,6 +65,30 @@ export const portfolioItems: PortfolioItem[] = [
       'Stal nierdzewna szczotkowana (bateria zlewozmywakowa)'
     ]
   },
+{
+    id: 'kuchnia-biel-szarosc-drewno',
+    title: 'Kuchnia w Bieli, Szarości i Drewnie',
+    titleEn: 'White, Grey and Wood Kitchen',
+    category: 'Kuchnie',
+    categoryEn: 'Kitchens',
+    tag: 'REALIZACJA',
+    location: 'Wrocław',
+    img: 'https://i.postimg.cc/qqLfq7P9/IMG-0493.jpg',
+    description: 'Nowoczesna kuchnia łącząca matowe, białe fronty dolne z elegancką szarością wysokiej zabudowy i szafek wiszących. Ciepła kompozycji dodają blaty oraz panel ścienny w wyrazistym dekorze drewna. Przestrzeń wyposażono w funkcjonalny półwysep z hokerami, zintegrowane czarne sprzęty AGD oraz elegancką strefę kawową z dekoracyjnym oświetleniem.',
+    descEn: 'A modern kitchen combining matte white lower fronts with elegant grey tall cabinetry and upper cabinets. Wood-decor countertops and a matching wall panel add warmth to the composition. The space is equipped with a functional peninsula with bar stools, integrated black appliances, and an elegant coffee zone with decorative lighting.',
+    gallery: [
+      'https://i.postimg.cc/qqLfq7P9/IMG-0493.jpg',
+      'https://i.postimg.cc/WbHWnrw4/IMG-0486.jpg',
+      'https://i.postimg.cc/J0gNb3CJ/IMG-0488.jpg',
+      'https://i.postimg.cc/tRLDnyqM/IMG-0481.jpg'
+    ],
+    materials: [
+      'Matowe białe fronty bezuchwytowe',
+      'Szare fronty z matowym wykończeniem',
+      'Blat roboczy i panel ścienny w dekorze drewna',
+      'Czarne sprzęty AGD oraz zlew kompozytowy'
+    ]
+  },
 
   /* 2. GARDEROBY */
   {
