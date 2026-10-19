@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ tr, onScrollTo }) => {
 
         {/* Headline - tekst wpisany na sztywno i pogrubiony (font-bold) */}
         <h1
-          className="text-white mb-6 leading-[1.06] font-serif font-bold tracking-tight"
+          className="text-white mb-6 leading-[1.06] font-serif font-semibold tracking-tight"
           style={{ fontSize: "clamp(2.8rem, 6.2vw, 6rem)" }}
         >
           Jedna firma.<br />Wszystkie meble.
