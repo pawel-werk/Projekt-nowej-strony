@@ -237,7 +237,7 @@ export const portfolioItems: PortfolioItem[] = [
   /* 3. WNĘTRZA / SALONY */
   {
     id: 'salon-strefa-dzienna',
-    title: 'Ściana medialna & salon rezydencji',
+    title: 'Ściana medialna i salon',
     titleEn: 'Media wall & residence living room',
     category: 'Wnętrza',
     categoryEn: 'Interiors',
