@@ -81,7 +81,7 @@ export const saleProducts: SaleItem[] = [
     image: 'https://i.postimg.cc/T35CxTmH/1.jpg',
     gallery: [
       'https://i.postimg.cc/T35CxTmH/1.jpg',
-      'https://i.postimg.cc/vZx3yGfG/2.jpg',
+      'https://i.postimg.cc/59vzfjkk/2.jpg',
       'https://i.postimg.cc/BnPM3JHq/3.jpg',
       'https://i.postimg.cc/SxYD4mCQ/4.jpg'
     ],
