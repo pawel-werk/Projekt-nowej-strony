@@ -42,8 +42,8 @@ export const saleProducts: SaleItem[] = [
     description: 'Luksusowa, ciemna zabudowa kuchenna, idealnie wpisująca się w nowoczesne i minimalistyczne wnętrza. Głęboki, matowy odcień frontów nadaje bryle elegancji, a starannie wyselekcjonowane detale i ukryte systemy przechowywania gwarantują najwyższą ergonomię pracy. Zastosowano topowe okucia z cichym domykiem i zintegrowane oświetlenie robocze.\n\nWażne: Cena dotyczy zabudowy meblowej. Ewentualny demontaż i dopasowanie ustroju nośnego do docelowego pomieszczenia wymaga indywidualnej konsultacji.',
     dimensions: 'Szer. 320 cm x Wys. 260 cm x Gł. 60 cm',
     material: 'MDF lakier mat / fronty anti-fingerprint',
-    oldPrice: 42000,
-    newPrice: 28500,
+    oldPrice: 92000,
+    newPrice: 69500,
     image: 'https://i.postimg.cc/Nj30LkVB/1.jpg',
     gallery: [
       'https://i.postimg.cc/Nj30LkVB/1.jpg',
@@ -59,8 +59,8 @@ export const saleProducts: SaleItem[] = [
     description: 'Odważna, a zarazem subtelna zabudowa w odcieniach pudrowego różu. To propozycja dla inwestorów szukających unikalnego, ciepłego designu przełamanego eleganckimi akcentami. Kuchnia wyposażona jest w najwyższej klasy systemy wysuwne, minimalistyczne uchwyty oraz wytrzymały blat roboczy odporny na zarysowania.\n\nWażne: Przed zakupem zalecamy dokładny pomiar pomieszczenia, aby zweryfikować możliwość bezinwazyjnego przeniesienia układu szafek.',
     dimensions: 'Szer. 280 cm x Wys. 250 cm x Gł. 60 cm',
     material: 'Fronty lakierowane (półmat), blat kompozytowy',
-    oldPrice: 35000,
-    newPrice: 24000,
+    oldPrice: 97800,
+    newPrice: 68750,
     image: 'https://i.postimg.cc/1tP5r5sX/ro-z-owa-1.jpg',
     gallery: [
       'https://i.postimg.cc/1tP5r5sX/ro-z-owa-1.jpg',
