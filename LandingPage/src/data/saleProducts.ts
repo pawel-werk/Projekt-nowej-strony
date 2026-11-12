@@ -71,6 +71,24 @@ export const saleProducts: SaleItem[] = [
   },
   {
     id: 'sale-5',
+    title: 'Luksusowa Garderoba Butikowa',
+    category: 'Szafy i garderoby',
+    description: 'Ekskluzywna zabudowa garderobiana zaprojektowana w oparciu o butikowy styl ekspozycji. Posiada zaawansowany system organizacji przestrzeni, w tym eleganckie organizery na dodatki, profilowane drążki oraz szuflady z cichym domykiem. Zintegrowane, nastrojowe oświetlenie LED doskonale eksponuje detale i ułatwia codzienny wybór garderoby.\n\nWażne: Wycena obejmuje meble z ekspozycji. Dostosowanie blend maskujących oraz profesjonalny montaż w docelowym pomieszczeniu podlegają indywidualnej wycenie.',
+    dimensions: 'Wymiary dostępne na zapytanie',
+    material: 'Płyta meblowa premium, profile aluminiowe, zintegrowane oświetlenie LED',
+    oldPrice: 38000,
+    newPrice: 24500,
+    image: 'https://i.postimg.cc/T35CxTmH/1.jpg',
+    gallery: [
+      'https://i.postimg.cc/T35CxTmH/1.jpg',
+      'https://i.postimg.cc/vZx3yGfG/2.jpg',
+      'https://i.postimg.cc/BnPM3JHq/3.jpg',
+      'https://i.postimg.cc/SxYD4mCQ/4.jpg'
+    ],
+    isExhibition: true,
+  },
+  {
+    id: 'sale-6',
     title: 'Szafa Wnękowa z Lustrem Optiwhite',
     category: 'Szafy i garderoby',
     description: 'Przestronna, dwuskrzydłowa szafa z bezszelestnym systemem drzwi przesuwnych. Pełnowymiarowe lustro na froncie idealnie powiększa sypialnię lub przedpokój.',
@@ -82,7 +100,7 @@ export const saleProducts: SaleItem[] = [
     isExhibition: true,
   },
   {
-    id: 'sale-6',
+    id: 'sale-7',
     title: 'Stół Jadalniany Z Litego Dębu',
     category: 'Stoły i komody',
     description: 'Masywny stół z blatem z naturalnego litego drewna dębowego, uszlachetnionego olejem. Spoczywa na unikalnej, stalowej podstawie geometrycznej.',
