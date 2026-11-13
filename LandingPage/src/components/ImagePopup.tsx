@@ -10,7 +10,7 @@ export const ImagePopup: React.FC = () => {
     if (!hasSeenPopup) {
       // Wyświetl po 4 sekundach (4000 milisekund)
       const timer = setTimeout(() => {
-        setIsOpen(true);
+        setIsOpen(false);
       }, 4000);
 
       return () => clearTimeout(timer);
