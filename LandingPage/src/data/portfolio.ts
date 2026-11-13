@@ -65,7 +65,7 @@ export const portfolioItems: PortfolioItem[] = [
       'Stal nierdzewna szczotkowana (bateria zlewozmywakowa)'
     ]
   },
-{
+  {
     id: 'kuchnia-biel-szarosc-drewno',
     title: 'Kuchnia w bieli, szarości i drewnie',
     titleEn: 'White, grey and wood kitchen',
@@ -89,7 +89,7 @@ export const portfolioItems: PortfolioItem[] = [
       'Czarne sprzęty AGD oraz zlew kompozytowy'
     ]
   },
-{
+  {
     id: 'kuchnia-klasyczna-niebieska-wyspa',
     title: 'Klasyczna kuchnia z rustykalną wyspą',
     titleEn: 'Classic kitchen with rustic island',
@@ -113,7 +113,7 @@ export const portfolioItems: PortfolioItem[] = [
       'Ceramiczny zlewozmywak typu farmhouse'
     ]
   },
-{
+  {
     id: 'kuchnia-czarna-miedz',
     title: 'Czarna kuchnia z miedzianymi akcentami',
     titleEn: 'Black kitchen with copper accents',
@@ -136,7 +136,7 @@ export const portfolioItems: PortfolioItem[] = [
       'Podblatowa chłodziarka na wino z drewnianymi półkami'
     ]
   },
-{
+  {
     id: 'strefa-dzienna-beton-drewno',
     title: 'Otwarta strefa dzienna z betonowym sufitem',
     titleEn: 'Open plan living space with concrete ceiling',
@@ -159,7 +159,7 @@ export const portfolioItems: PortfolioItem[] = [
       'Designerskie oświetlenie (ażurowa lampa i czarne szynoprzewody)'
     ]
   },
-{
+  {
     id: 'kuchnia-biel-polysk-drewno',
     title: 'Biała kuchnia w połysku z drewnianą wyspą',
     titleEn: 'High-gloss white kitchen with wooden island',
@@ -193,30 +193,6 @@ export const portfolioItems: PortfolioItem[] = [
     categoryEn: 'Wardrobes',
     tag: 'INDYWIDUALNY PROJEKT',
     location: 'Bielany Wrocławskie',
-    img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80',
-    description: 'Luksusowa garderoba typu walk-in z grafitowymi przeszkleniami w czarnych ramach ze szczotkowanego aluminium. Wnętrza wykończone naturalnym fornirem dębowym z frezowanym, bezcieniowym oświetleniem LED aktywowanym sensorowo przy otwarciu frontu.',
-    descEn: 'Luxury walk-in closet with graphite glass in brushed black aluminum frames. Interiors lined with natural oak veneer and sensor-activated seamless LED strips.',
-    gallery: [
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1540518614846-7ede433c4ef3?auto=format&fit=crop&w=1600&q=80'
-    ],
-    materials: [
-      'Szkło grafitowe hartowane Antisol',
-      'Profile aluminiowe anodowane na czarny mat',
-      'Frezowane profile LED 2700K (CRI > 95)',
-      'Fornirowany dąb czarny szczotkowany'
-    ]
-  },
-  {
-    id: 'garderoba-walk-in',
-    title: 'Garderoba master z przeszkleniami',
-    titleEn: 'Master walk-in wardrobe with glass',
-    category: 'Garderoby',
-    categoryEn: 'Wardrobes',
-    tag: 'INDYWIDUALNY PROJEKT',
-    location: 'Bielany Wrocławskie',
     img: 'https://i.postimg.cc/T35CxTmH/1.jpg',
     description: 'Luksusowa garderoba typu walk-in z grafitowymi przeszkleniami w czarnych ramach ze szczotkowanego aluminium. Wnętrza wykończone naturalnym fornirem dębowym z frezowanym, bezcieniowym oświetleniem LED aktywowanym sensorowo przy otwarciu frontu.',
     descEn: 'Luxury walk-in closet with graphite glass in brushed black aluminum frames. Interiors lined with natural oak veneer and sensor-activated seamless LED strips.',
@@ -231,6 +207,30 @@ export const portfolioItems: PortfolioItem[] = [
       'Profile aluminiowe anodowane na czarny mat',
       'Frezowane profile LED 2700K (CRI > 95)',
       'Fornirowany dąb czarny szczotkowany'
+    ]
+  },
+  {
+    id: 'garderoba-minimalistyczna',
+    title: 'Garderoba z wyspą akcesoryjną',
+    titleEn: 'Bespoke dressing room with island',
+    category: 'Garderoby',
+    categoryEn: 'Wardrobes',
+    tag: 'PREMIUM',
+    location: 'Wrocław, Park Ołtaszyn',
+    img: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1600&q=80',
+    description: 'Centralna wyspa akcesoryjna ze szklanym blatem ekspozycyjnym i welurowymi organizerami na zegarki i biżuterię. Pełna zabudowa sięgająca sufitu z pantografami i zintegrowanym podświetleniem drążków ubraniowych.',
+    descEn: 'Central accessory island with tempered glass showcase top and velvet organizers. Full-height bespoke cabinetry with hidden lift systems and illuminated hanging rails.',
+    gallery: [
+      'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80'
+    ],
+    materials: [
+      'Szkło Optiwhite z fazowaną krawędzią',
+      'Welurowe wkłady jubilerskie na wymiar',
+      'Okucia Blum Tandembox z Tip-On Blumotion',
+      'Pionowe profile świetlne Hafele'
     ]
   },
 
