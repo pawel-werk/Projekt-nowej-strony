@@ -209,30 +209,6 @@ export const portfolioItems: PortfolioItem[] = [
       'Fornirowany dąb czarny szczotkowany'
     ]
   },
-  {
-    id: 'garderoba-minimalistyczna',
-    title: 'Garderoba z wyspą akcesoryjną',
-    titleEn: 'Bespoke dressing room with island',
-    category: 'Garderoby',
-    categoryEn: 'Wardrobes',
-    tag: 'PREMIUM',
-    location: 'Wrocław, Park Ołtaszyn',
-    img: 'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1600&q=80',
-    description: 'Centralna wyspa akcesoryjna ze szklanym blatem ekspozycyjnym i welurowymi organizerami na zegarki i biżuterię. Pełna zabudowa sięgająca sufitu z pantografami i zintegrowanym podświetleniem drążków ubraniowych.',
-    descEn: 'Central accessory island with tempered glass showcase top and velvet organizers. Full-height bespoke cabinetry with hidden lift systems and illuminated hanging rails.',
-    gallery: [
-      'https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1600&q=80',
-      'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80'
-    ],
-    materials: [
-      'Szkło Optiwhite z fazowaną krawędzią',
-      'Welurowe wkłady jubilerskie na wymiar',
-      'Okucia Blum Tandembox z Tip-On Blumotion',
-      'Pionowe profile świetlne Hafele'
-    ]
-  },
 
   /* 3. WNĘTRZA / SALONY */
   {
